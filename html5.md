@@ -3,5 +3,5 @@
 ## input multiple attribute
 
 ```html
-<input type="file" multiple>
+<input type="file" name="upload_file[]" multiple="multiple">
 ```

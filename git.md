@@ -55,3 +55,19 @@ $ git config --global "url.git@github.com:.pushinsteadof" "https://github.com/"
 
 ```
 
+
+## remove file
+
+```bash
+git rm FILE_NAME
+```
+
+## remove dir
+
+```bash
+git rm -r DIR_NAME
+```
+
+
+
+

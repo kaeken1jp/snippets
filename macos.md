@@ -7,3 +7,10 @@
 ```
 cf.https://brew.sh/
 
+## how to convert image format
+
+```bash
+brew install imagemagick
+convert file.jpeg file.png
+```
+

@@ -12,5 +12,6 @@ cf.https://brew.sh/
 ```bash
 brew install imagemagick
 convert file.jpeg file.png
+
 ```
 

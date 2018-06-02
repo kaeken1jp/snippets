@@ -1,5 +1,29 @@
 # google_apps_script snippets
 
+
+## popup
+```javascript
+function hello() {
+  Browser.msgBox("Hello, World");
+}
+```
+
+## prompt
+```javascript
+function helloWithPrompt() {
+  var name = Browser.inputBox("Enter your name");
+  Browser.msgBox("Hello, "+name);
+}
+```
+
+## infinite loop
+```javascript
+function infLoop() {
+  var a = [];
+  while(true) a.push('evil!');
+}
+```
+
 ## search cc official URL from coinmarketcap.com
 ```javascript
 function searchURL(cc_name) {

@@ -42,3 +42,34 @@ with open(output_file, 'w', encoding='UTF-8') as f:
     writer.writerow(asin_list)
 
 ```
+
+## syukatsu-kaigi.jp scraping
+```python
+import urllib.request
+from pyquery import PyQuery
+import re
+import csv
+
+input_url = 'https://syukatsu-kaigi.jp/companies/search'
+output_file = 'syukatsu-kaigi_output.csv'
+
+asin_list = []
+process_html = urllib.request.urlopen(input_url).read().decode('utf-8')
+
+with open(process_file, 'w', encoding='UTF-8') as f:
+    f.write(process_html)
+
+pq = PyQuery(process_html)
+tag = 'body > div.l-main-one > div.l-wrapper__gutter > main > a'
+
+elem_list = pq.find(tag)
+
+for elem in elem_list:
+    q = PyQuery(elem)
+    buffer1 = q.text()
+    print(buffer1)
+
+with open(output_file, 'w', encoding='UTF-8') as f:
+    writer = csv.writer(f, lineterminator='\n')
+    writer.writerow(asin_list)
+```

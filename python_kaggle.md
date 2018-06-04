@@ -34,7 +34,7 @@ Configuration values from /Users/user1/.kaggle
 - competition: None
 ```
 
-## search competition
+## competitions
 ```bash
 $ kaggle competitions list
 ref                                             deadline             category            reward  teamCount  userHasEntered
@@ -69,3 +69,46 @@ twitter-personality-prediction  2012-06-29 23:59:59  Research      $500         
 twitter-psychopathy-prediction  2012-06-29 23:59:59  Research    $1,000        111           False
 crowdflower-weather-twitter     2013-12-01 23:59:00  Playground    $500        259           False
 ```
+
+```bash
+$ kaggle competitions files -c titanic
+name                   size  creationDate
+---------------------  ----  -------------------
+train.csv              60KB  2013-06-28 13:40:25
+test.csv               28KB  2013-06-28 13:40:24
+gender_submission.csv   3KB  2017-02-01 01:49:18
+```
+
+
+## download competition files
+```
+usage: kaggle competitions download [-h] [-c COMPETITION] [-f FILE] [-p PATH]
+                                    [-w] [-o] [-q]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -c COMPETITION, --competition COMPETITION
+                        Competition URL suffix (use "kaggle competitions list" to show options)
+                        If empty, the default competition will be used (use "kaggle config set competition")"
+  -f FILE, --file FILE  File name, all files downloaded if not provided
+                        (use "kaggle competitions files -c <competition>" to show options)
+  -p PATH, --path PATH  Folder where file(s) will be downloaded, defaults to  ~/.kaggle
+  -w, --wp              Download files to current working path
+  -o, --force           Skip check whether local version of file is up to date, force file download
+  -q, --quiet           Suppress printing information about download progress
+```
+
+```bash
+$ kaggle competitions download -c titanic -p .
+train.csv: Downloaded 60KB of 60KB to .
+test.csv: Downloaded 28KB of 28KB to .
+gender_submission.csv: Downloaded 3KB of 3KB to .
+
+$ ls -l
+total 184
+-rw-r--r--  1 user1  staff   3258  6  4 17:55 gender_submission.csv
+-rw-r--r--  1 user1  staff  28629  6  4 17:55 test.csv
+-rw-r--r--  1 user1  staff  61194  6  4 17:55 train.csv
+```
+
+

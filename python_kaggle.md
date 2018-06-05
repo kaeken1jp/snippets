@@ -89,7 +89,7 @@ optional arguments:
   -h, --help            show this help message and exit
   -c COMPETITION, --competition COMPETITION
                         Competition URL suffix (use "kaggle competitions list" to show options)
-                        If empty, the default competition will be used (use "kaggle config set competition")"
+                        If empty, the default competition will be used (use "kaggle config set competition")
   -f FILE, --file FILE  File name, all files downloaded if not provided
                         (use "kaggle competitions files -c <competition>" to show options)
   -p PATH, --path PATH  Folder where file(s) will be downloaded, defaults to  ~/.kaggle
@@ -109,6 +109,31 @@ total 184
 -rw-r--r--  1 user1  staff   3258  6  4 17:55 gender_submission.csv
 -rw-r--r--  1 user1  staff  28629  6  4 17:55 test.csv
 -rw-r--r--  1 user1  staff  61194  6  4 17:55 train.csv
+```
+
+
+## Submit to a competition
+
+```
+usage: kaggle competitions submit [-h] [-c COMPETITION] -f FILE -m MESSAGE
+                                  [-q]
+
+required arguments:
+  -f FILE, --file FILE  File for upload (full path)
+  -m MESSAGE, --message MESSAGE
+                        Message describing this submission
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -c COMPETITION, --competition COMPETITION
+                        Competition URL suffix (use "kaggle competitions list" to show options)
+                        If empty, the default competition will be used (use "kaggle config set competition")"
+  -q, --quiet           Suppress printing information about download progress
+```
+
+```bash
+kaggle competitions submit -c titanic -f titanic-submission.csv -m "submission"
+Successfully submitted to Titanic: Machine Learning from Disaster
 ```
 
 

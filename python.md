@@ -22,3 +22,12 @@ requests-oauthlib==0.8.0
 
 $ pip install -r requirements.txt
 ```
+
+## MKL FATAL ERROR
+```
+Intel MKL FATAL ERROR: Cannot load libmkl_avx.so or libmkl_def.so.
+```
+
+```python
+$ conda install nomkl
+```

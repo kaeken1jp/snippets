@@ -136,4 +136,25 @@ kaggle competitions submit -c titanic -f titanic-submission.csv -m "submission"
 Successfully submitted to Titanic: Machine Learning from Disaster
 ```
 
+```bash
+$ cat kaggle_submission.sh
+#!/bin/bash
+
+compe_name=$1
+if [ "$compe_name" = "" ] ;then
+   echo "compe_name error"
+   exit
+fi
+echo $compe_name
+echo kaggle competitions submit \
+  -c $compe_name \
+  -f ${compe_name}-submission.csv \
+  -m \"submission\"
+sleep 5
+
+kaggle competitions submit \
+  -c $compe_name \
+  -f ${compe_name}-submission.csv \
+  -m "submission"
+```
 

@@ -101,6 +101,39 @@ test.csv               28KB  2013-06-28 13:40:24
 gender_submission.csv   3KB  2017-02-01 01:49:18
 ```
 
+```bash
+$ cat kaggle_competitions_files_list.sh
+#!/bin/bash
+
+ts=$(date "+%Y%m%d-%H%M%S")
+compe_list_csv="kaggle_competitions_list.csv"
+#compe_files_list_csv="kaggle_competitions_files_list.csv"
+#compe_files_list_ts_csv="kaggle_competitions_files_list.${ts}.csv"
+
+while  IFS= read line
+do
+  compe_title=$(echo $line | cut -d, -f1 )
+  if [ "$compe_title" = "ref" ] ; then
+    continue
+  fi
+  compe_deadline=$(echo $line | cut -d, -f2 )
+  compe_category=$(echo $line | cut -d, -f3 )
+  #TODO Comma processing
+  #compe_reward=$(echo $line | cut -d, -f4 )
+  compe_teamCount=$(echo $line | cut -d, -f5 )
+  echo "Title: "$compe_title
+  echo "Deadline: "$compe_deadline
+  echo "Category: "$compe_category
+  #echo "Reward: "$compe_reward
+  echo "teamCount: "$compe_teamcount
+  echo "FileList: "
+  kaggle competitions files -c "${compe_title}" --csv
+  echo
+  echo
+  #sleep 1
+done < $compe_list_csv
+```
+
 
 ## download competition files
 ```

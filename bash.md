@@ -3,8 +3,7 @@
 
 ## date format
 ```bash
-ts=$(date "+%Y%m%d-%H%M%S")
-#20180606-132421
+ts=$(date "+%Y%m%d-%H%M%S") #=> 20180606-132421
 
 ```
 

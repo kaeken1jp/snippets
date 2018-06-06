@@ -34,7 +34,7 @@ Configuration values from /Users/user1/.kaggle
 - competition: None
 ```
 
-## competitions
+## List competitions
 ```bash
 $ kaggle competitions list
 ref                                             deadline             category            reward  teamCount  userHasEntered
@@ -68,6 +68,28 @@ ref                             deadline             category    reward  teamCou
 twitter-personality-prediction  2012-06-29 23:59:59  Research      $500         89           False
 twitter-psychopathy-prediction  2012-06-29 23:59:59  Research    $1,000        111           False
 crowdflower-weather-twitter     2013-12-01 23:59:00  Playground    $500        259           False
+```
+
+```bash
+$ cat kaggle_competitions_list.sh
+#!/bin/bash
+
+kaggle competitions list --csv > kaggle_competitions_list.csv
+kaggle competitions list > kaggle_competitions_list.txt
+```
+
+
+## List competitions files
+```
+usage: kaggle competitions files [-h] [-c COMPETITION] [-v] [-q]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -c COMPETITION, --competition COMPETITION
+                        Competition URL suffix (use "kaggle competitions list" to show options)
+                        If empty, the default competition will be used (use "kaggle config set competition")
+  -v, --csv             Print results in CSV format (if not set print in table format)
+  -q, --quiet           Suppress printing information about download progress
 ```
 
 ```bash
@@ -127,7 +149,7 @@ optional arguments:
   -h, --help            show this help message and exit
   -c COMPETITION, --competition COMPETITION
                         Competition URL suffix (use "kaggle competitions list" to show options)
-                        If empty, the default competition will be used (use "kaggle config set competition")"
+                        If empty, the default competition will be used (use "kaggle config set competition")
   -q, --quiet           Suppress printing information about download progress
 ```
 

@@ -1,5 +1,14 @@
 
-# Bash History: Display Date And Time For Each Command
+# bash snippets
+
+## date format
+```bash
+ts=$(date "+%Y%m%d-%H%M%S")
+#20180606-132421
+
+```
+
+## Bash History: Display Date And Time For Each Command
 
 ```bash
 $ cat ~/.bashrc

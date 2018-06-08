@@ -31,3 +31,15 @@ Intel MKL FATAL ERROR: Cannot load libmkl_avx.so or libmkl_def.so.
 ```python
 $ conda install nomkl
 ```
+
+## "Cannot uninstall 'PyYAML'. It is a distutils installed project and thus we cannot accurately determine which files belong to it which would lead to only a partial uninstall."
+```bash
+pip install PyYAML --ignore-installed
+```
+
+## file glob
+```python
+import glob
+file_list = glob.glob("./*.html")
+file_list = sorted(file_list)
+```

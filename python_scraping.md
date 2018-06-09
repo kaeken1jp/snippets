@@ -73,3 +73,34 @@ with open(output_file, 'w', encoding='UTF-8') as f:
     writer = csv.writer(f, lineterminator='\n')
     writer.writerow(asin_list)
 ```
+
+## scraping coinmarketcap
+```python
+import urllib.request
+from pyquery import PyQuery
+import re
+import csv
+
+cc_name = 'bitcoin'
+
+print(cc_name)
+input_url_coinmarketcap = 'https://coinmarketcap.com/currencies/' + cc_name
+process_html = urllib.request.urlopen(input_url_coinmarketcap).read().decode('utf-8')
+pq = PyQuery(process_html)
+tag = 'body > div.container > div > div.col-lg-10 > div.row.bottom-margin-2x > div.col-sm-4.col-sm-pull-8 > ul > li:nth-child(2) > a'
+elem_list = pq.find(tag)
+
+cc_url = ''
+for elem in elem_list:
+    q = PyQuery(elem)
+    cc_url = q.attr('href')
+    print(cc_url)
+
+process_html = urllib.request.urlopen(cc_url).read().decode('utf-8')
+pq = PyQuery(process_html)
+cc_desc = pq("meta[name='description']").attr('content')
+print(cc_desc)
+```
+
+
+

@@ -4,7 +4,13 @@
 ```
 =REGEXREPLACE(A1, "^[0-9]+? (.+)$", "$1")
 
-cell A1
-before:"123 foo"
-after:"foo"
+before: "123 foo"
+after: "foo"
+```
+
+```
+=SPLIT(REGEXREPLACE(A1, "^[0-9]+ ([a-zA-Z¥-]+) (.+)$", "$1|$2"), "|")
+
+before: "123 foo bar baz"
+after: "foo" "bar baz"
 ```

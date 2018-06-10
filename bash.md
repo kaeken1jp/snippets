@@ -23,3 +23,9 @@ $ history
 ```bash
 for f in $(ls ./*.html); do echo $f; nkf -w --overwrite $f; done
 ```
+
+## sort & count oneliner
+```bash
+sort file.txt | uniq -c | sort -u
+```
+

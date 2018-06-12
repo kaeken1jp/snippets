@@ -43,3 +43,13 @@ import glob
 file_list = glob.glob("./*.html")
 file_list = sorted(file_list)
 ```
+
+## string replace
+```bash
+some_string = 'foo bar'
+some_string.replace(" ", "_")
+#=> 'foo_bar'
+```
+
+
+

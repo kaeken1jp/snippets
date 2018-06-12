@@ -45,11 +45,27 @@ file_list = sorted(file_list)
 ```
 
 ## string replace
-```bash
+```python
 some_string = 'foo bar'
 some_string.replace(" ", "_")
 #=> 'foo_bar'
 ```
 
+## url parse
+```python
+from urllib.parse import urlparse
+o = urlparse('http://www.cwi.nl:80/%7Eguido/Python.html')
+print(o)
+#ParseResult(scheme='http', netloc='www.cwi.nl:80', path='/%7Eguido/Python.html',
+#            params='', query='', fragment='')
 
+print(o.scheme)
+#'http'
+
+print(o.port)
+#80
+
+print(o.geturl())
+#'http://www.cwi.nl:80/%7Eguido/Python.html'
+```
 

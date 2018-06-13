@@ -1,6 +1,29 @@
 
 # bash snippets
 
+## .bash_profile or .bashrc
+```bash
+# export
+export PATH=/usr/local:$PATH
+export PATH="$HOME/.pyenv/shims:$PATH"
+export PATH=~/bin:$PATH
+
+# alias
+alias rm='rm -i'
+alias ..='cd ..'
+alias mv='mv -i'
+alias cp='cp -i'
+alias ll='ls -la'
+alias la='ls -a'
+alias vi='vim'
+alias c='clear'
+
+alias py='python'
+
+# alias / git
+alias gs='git status'
+```
+
 ## date format
 ```bash
 ts=$(date "+%Y%m%d-%H%M%S") #=> 20180606-132421

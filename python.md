@@ -69,3 +69,10 @@ print(o.geturl())
 #'http://www.cwi.nl:80/%7Eguido/Python.html'
 ```
 
+## sleep
+```python
+import time
+
+time.sleep(10)
+
+```

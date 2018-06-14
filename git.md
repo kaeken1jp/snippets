@@ -1,5 +1,11 @@
 # git snippets
 
+## man
+```bash
+$ man git-log
+$ git help log
+```
+
 ## how to show config
 
 ```bash
@@ -14,6 +20,9 @@ $ git config KEY_NAME
 ```bash
 $ git config KEY_NAME VALUE # set local repo
 $ git config --global KEY_NAME VALUE # set global repo
+
+$ git config --global user.name "Your Name Comes Here"
+$ git config --global user.email you@yourdomain.example.com
 ```
 
 ## how to delete config
@@ -53,6 +62,18 @@ ssh -T github
 # set git config
 $ git config --global "url.git@github.com:.pushinsteadof" "https://github.com/"
 
+```
+
+
+
+## Importing a new project
+```bash
+$ tar xzf project.tar.gz
+$ cd project
+$ git init
+
+$ git add .
+$ git commit
 ```
 
 

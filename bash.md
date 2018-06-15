@@ -28,6 +28,8 @@ alias gs='git status'
 ```bash
 ts=$(date "+%Y%m%d-%H%M%S") #=> 20180606-132421
 
+SEC=$(date +"%S") #=> 31
+
 ```
 
 ## Bash History: Display Date And Time For Each Command

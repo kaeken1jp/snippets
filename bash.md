@@ -32,10 +32,31 @@ SEC=$(date +"%S") #=> 31
 
 ```
 
-## path
+## basename
 ```bash
 # shellscript name = 'file.sh'
 CMDNAME=`basename $0` #=> file.sh
+```
+
+## expr
+```bash
+num=1
+res=`expr $num + 5`
+echo $res #=> 6
+```
+
+## random num
+```bash
+$ cat sample.sh
+#!/bin/bash
+
+RND=$(echo $((RANDOM % 500)))
+echo $RND
+
+$ sh sample.sh
+172
+$ sh sample.sh
+218
 ```
 
 ## Bash History: Display Date And Time For Each Command

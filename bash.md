@@ -88,3 +88,23 @@ $ cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1
 $ cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1
 WWfrTpjVFaDroLyL
 ```
+
+## parameter
+```bash
+$ cat param.sh
+#!/bin/bash
+echo $#
+
+$ sh param.sh a b c
+3
+
+$ sh param.sh a b c d e
+5
+```
+
+```bash
+if [ $# -ne 3 ]; then
+    echo "Usage: $CMDNAME a b c" 1>&2
+    exit 1
+fi
+```

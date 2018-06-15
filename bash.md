@@ -52,3 +52,10 @@ for f in $(ls ./*.html); do echo $f; nkf -w --overwrite $f; done
 sort file.txt | uniq -c | sort -u
 ```
 
+## random string generator
+```bash
+$ cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1
+3tasR7LWwBcLyE05
+$ cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1
+WWfrTpjVFaDroLyL
+```

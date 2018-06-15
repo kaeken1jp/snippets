@@ -32,6 +32,12 @@ SEC=$(date +"%S") #=> 31
 
 ```
 
+## path
+```bash
+# shellscript name = 'file.sh'
+CMDNAME=`basename $0` #=> file.sh
+```
+
 ## Bash History: Display Date And Time For Each Command
 
 ```bash

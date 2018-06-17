@@ -21,3 +21,14 @@ $ psql -h <HOSTNAME> \
 ```
 => \q
 ```
+
+## list db
+```
+=> \l
+```
+
+## list table
+```
+=> \dt
+```
+

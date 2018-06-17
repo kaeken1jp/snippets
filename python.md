@@ -76,3 +76,35 @@ import time
 time.sleep(10)
 
 ```
+
+## datetime
+```python
+from datetime import date, datetime, timedelta
+
+# now
+now = datetime.now()
+
+# format
+now.strftime("%Y%m%d")
+
+# diff
+now - timedelta(weeks=3)
+
+# str to date
+date_str = 'Jun 16, 2018'
+dt = datetime.strptime(data_str, '%b %d, %Y')
+dt_formatted = str(dt.year) + '-' + str(dt.month) + '-' + str(dt.day)
+#=> 2018-6-16
+```
+
+## str
+```python
+post_str = pre_str.replace('pre', 'post')
+```
+
+
+
+
+
+
+

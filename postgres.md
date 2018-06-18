@@ -32,3 +32,7 @@ $ psql -h <HOSTNAME> \
 => \dt
 ```
 
+## desc table
+```
+=> \d+ TABLE_NAME
+```

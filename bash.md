@@ -108,3 +108,12 @@ if [ $# -ne 3 ]; then
     exit 1
 fi
 ```
+
+
+## copy shellscript
+#!/bin/bash
+
+src_dir="$1"
+dst_dir="$2"
+cp -rp "$src_dir" "$dst_dir"
+```

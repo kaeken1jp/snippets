@@ -102,6 +102,19 @@ dt_formatted = str(dt.year) + '-' + str(dt.month) + '-' + str(dt.day)
 post_str = pre_str.replace('pre', 'post')
 ```
 
+## split newline
+```python
+"""some
+multi line
+string""".splitlines()
+#=> ['some', 'multi line', 'string']
+
+"""some
+multi line
+string""".split('\n')
+#=> ['some', 'multi line', 'string']
+```
+
 
 
 

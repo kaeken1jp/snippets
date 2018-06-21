@@ -1,5 +1,7 @@
 # python_networkx snippets
 
+https://networkx.github.io/documentation/stable/index.html
+
 ## install
 ```bash
 $ pip install networkx
@@ -26,7 +28,20 @@ or:
 python -c "import networkx as nx; nx.test()"
 ```
 
+## sample plot
+```python
+import matplotlib.pyplot as plt
+plt.switch_backend('agg')
+import networkx as nx
 
+G = nx.DiGraph()
+G.add_path([3, 5, 4, 1, 0, 2, 7, 8, 9, 6])
+G.add_path([3, 0, 6, 4, 2, 7, 1, 9, 8, 5])
+
+nx.draw_networkx(G)
+#plt.show()
+plt.savefig('networkx_plot.png')
+```
 
 
 

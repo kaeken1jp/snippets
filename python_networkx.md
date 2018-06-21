@@ -11,3 +11,23 @@ $ pip install networkx[all]
 $ pip install numpy scipy pandas matplotlib pygraphviz pydot pyyaml gdal
 ```
 
+
+## Test an installed package
+If you have a file-based (not a Python egg) installation you can test the installed package with:
+
+```python
+>>> import networkx as nx
+>>> nx.test()
+```
+
+or:
+
+```bash
+python -c "import networkx as nx; nx.test()"
+```
+
+
+
+
+
+

@@ -1,5 +1,7 @@
 # python_sendgrid snippets
 
+https://github.com/sendgrid/sendgrid-python#example
+
 ## Setup Environment Variables
 ```bash
 echo "export SENDGRID_API_KEY='YOUR_API_KEY'" > sendgrid.env

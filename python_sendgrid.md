@@ -32,6 +32,30 @@ print(response.body)
 print(response.headers)
 ```
 
+```python
+import sendgrid
+from sendgrid.helpers.mail import *
 
+def sendGridMail(apikey, mail_from, mail_to, mail_subject, mail_body):
+    sg = sendgrid.SendGridAPIClient(apikey=apikey)
+    from_email = Email(mail_from)
+    to_email = Email(mail_to)
+    subject = mail_subject
+    content = Content("text/plain", mail_body)
+    mail = Mail(from_email, subject, to_email, content)
+    response = sg.client.mail.send.post(request_body=mail.get())
+    print(response.status_code)
+    print(response.body)
+    print(response.headers)
+
+if __name__ == '__main__':
+    apikey = 'API_KEY'
+    mail_from = 'MAIL_ADDRESS'
+    mail_to = 'MAIL_ADDRESS'
+    mail_subject = 'subject string'
+    mail_body = "body string"
+
+    sendGridMail(apikey, mail_from, mail_to, mail_subject, mail_body)
+```
 
 

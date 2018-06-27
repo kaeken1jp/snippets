@@ -43,7 +43,7 @@ nx.draw_networkx(G)
 plt.savefig('networkx_plot.png')
 ```
 
-## Examples
+## Basic Examples
 ```python
 # Read and write graphs
 

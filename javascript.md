@@ -15,3 +15,8 @@ $(function(){
 });
 </script>
 ```
+
+## replace src
+```javascript
+$("#img_id").attr("src", str);
+```

@@ -13,7 +13,4 @@ browser = webdriver.Firefox()
 browser.get('http://seleniumhq.org/')
 ```
 
-## module
-```python
 
-```

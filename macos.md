@@ -1,5 +1,16 @@
 # macos snippets
 
+## Show/Hide Hidden Files on macOS
+```bash
+# Show
+defaults write com.apple.finder AppleShowAllFiles TRUE
+killall Finder
+
+# Hide
+defaults write com.apple.finder AppleShowAllFiles FALSE
+killall Finder
+```
+
 ## how to install homebrew
 
 ```bash

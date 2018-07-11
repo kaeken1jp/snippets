@@ -1,6 +1,12 @@
 
 # bash snippets
 
+## set locale
+```bash
+# JP
+export LANG=ja_JP.utf8
+```
+
 ## .bash_profile or .bashrc
 ```bash
 # export

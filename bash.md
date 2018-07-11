@@ -30,6 +30,16 @@ alias py='python'
 alias gs='git status'
 ```
 
+
+## how to make local bin file
+```bash
+$ mkdir ~/bin
+$ export PATH=~/bin:$PATH
+$ vi ~/bin/somecode
+$ chmod +x ~/bin/somecode
+$ somecode
+```
+
 ## date format
 ```bash
 ts=$(date "+%Y%m%d-%H%M%S") #=> 20180606-132421

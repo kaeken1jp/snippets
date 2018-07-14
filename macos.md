@@ -40,3 +40,18 @@ Copyright (C) 1987, FUJITSU LTD. (I.Ichikawa).
 Copyright (C) 1996-2015, The nkf Project.
 ```
 
+
+## iCloud Drive location
+```bash
+ls ~/Library/Mobile\ Documents/com~apple~CloudDocs
+```
+
+## change default save location of screenshots
+```bash
+defaults write com.apple.screencapture location "<PATH>"
+killall SystemUIServer
+
+# example
+defaults write com.apple.screencapture location "~/Library/Mobile\ Documents/com~apple~CloudDocs"
+killall SystemUIServer
+```

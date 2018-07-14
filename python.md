@@ -97,6 +97,14 @@ dt_formatted = str(dt.year) + '-' + str(dt.month) + '-' + str(dt.day)
 #=> 2018-6-16
 ```
 
+```python
+from datetime import datetime
+"{:%Y-%m-%d}".format(datetime.now())
+```
+
+
+
+
 ## str
 ```python
 post_str = pre_str.replace('pre', 'post')
@@ -114,7 +122,6 @@ multi line
 string""".split('\n')
 #=> ['some', 'multi line', 'string']
 ```
-
 
 
 

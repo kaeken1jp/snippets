@@ -92,6 +92,12 @@ $ python manage.py runserver
 ```
 
 
+## templates / escape off
+```python
+{% autoescape off %}
+    {{ body }}
+{% endautoescape %}
+```
 
 
 

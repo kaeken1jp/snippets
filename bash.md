@@ -133,3 +133,8 @@ src_dir="$1"
 dst_dir="$2"
 cp -rp "$src_dir" "$dst_dir"
 ```
+
+## oneliner mkdir
+```bash
+n=1; for l in $(cat file);do echo $n$l; mkdir "$n$l" ; n=$(($n+1)) ;done
+```

@@ -4,7 +4,8 @@
 ## set locale
 ```bash
 # JP
-export LANG=ja_JP.utf8
+export LANG=ja_JP.UTF-8
+export LESSCHARSET=utf-8
 ```
 
 ## .bash_profile or .bashrc

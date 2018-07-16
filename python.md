@@ -44,6 +44,13 @@ file_list = glob.glob("./*.html")
 file_list = sorted(file_list)
 ```
 
+## num padding
+```python
+num = 12
+num_zero_padding = str(num).zfill(4)
+#=>0012
+```
+
 ## string replace
 ```python
 some_string = 'foo bar'

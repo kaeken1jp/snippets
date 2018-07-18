@@ -1,5 +1,10 @@
 # mysql snippets
 
+## db login
+```bash
+mysql -u <DB_USER> -D <DB_NAME>
+```
+
 ## Select
 
 ```sql

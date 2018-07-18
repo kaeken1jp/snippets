@@ -23,6 +23,22 @@ requests-oauthlib==0.8.0
 $ pip install -r requirements.txt
 ```
 
+## load original module
+```bash
+# make file
+$ cat <original_module>.py
+...
+def fnc():
+    ...
+...
+
+```
+
+```python
+import <original_module> as om
+res = om.fnc()
+```
+
 ## MKL FATAL ERROR
 ```
 Intel MKL FATAL ERROR: Cannot load libmkl_avx.so or libmkl_def.so.

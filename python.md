@@ -148,6 +148,12 @@ string""".split('\n')
 
 
 ## random number
+https://docs.python.org/3/library/random.html#random.randint
+```python
+from random import randint
+print(randint(0, 9)) #=> 0..9
+```
+
 ```python
 import random
 nums = [x for x in range(10)]

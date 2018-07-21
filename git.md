@@ -11,6 +11,7 @@ $ git help log
 ```bash
 # show all
 $ git config --list
+$ git config -l
 
 # show key only
 $ git config KEY_NAME
@@ -90,5 +91,9 @@ git rm -r DIR_NAME
 ```
 
 
-
+## Changing a commit message
+https://help.github.com/articles/changing-a-commit-message/
+```bash
+git commit --amend
+```
 

@@ -21,9 +21,9 @@ events = pd.Series(np.random.randn(len(days)), index=days)
 calmap.yearplot(events, year=2015)
 
 calmap.calendarplot(events, monthticks=3, daylabels='MTWTFSS',
-                    dayticks=[0, 2, 4, 6], cmap='YlGn',
+                    dayticks=[0, 1, 2, 3, 4, 5, 6], cmap='YlGn',
                     fillcolor='grey', linewidth=0,
-                    fig_kws=dict(figsize=(8, 4)))
+                    fig_kws=dict(figsize=(16, 8)))
 ```
 
 

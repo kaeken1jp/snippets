@@ -1,6 +1,7 @@
 # python_featuretools snippets
 
 https://github.com/Featuretools/featuretools
+https://docs.featuretools.com/
 
 ## pip install
 ```bash
@@ -10,7 +11,7 @@ $ pip install featuretools
 Successfully installed featuretools-0.1.21
 ```
 
-## demo
+## getting started
 ```python
 import featuretools as ft
 es = ft.demo.load_mock_customer(return_entityset=True)
@@ -30,45 +31,41 @@ Entityset: transactions
     sessions.customer_id -> customers.customer_id
 ```
 
+## Running DFS
 ```python
-feature_matrix, features_defs = ft.dfs(entityset=es, target_entity="customers")
+feature_matrix, feature_defs = ft.dfs(entityset=es,
+    target_entity="customers",
+    agg_primitives=["count"],
+    trans_primitives=["month"],
+    max_depth=1)
+
+feature_matrix
+```
+
+## Creating "Deep Features"
+```python
+feature_matrix, feature_defs = ft.dfs(entityset=es,
+    target_entity="customers",
+    agg_primitives=["mean", "sum", "mode"],
+    trans_primitives=["month", "hour"],
+    max_depth=2)
+
+feature_matrix
+feature_matrix[['MEAN(sessions.SUM(transactions.amount))']]
+feature_matrix[['MODE(sessions.HOUR(session_start))']]
+```
+
+
+## Changing Target Entity
+```python
+feature_matrix, feature_defs = ft.dfs(entityset=es,
+    target_entity="sessions",
+    agg_primitives=["mean", "sum", "mode"],
+    trans_primitives=["month", "hour"],
+    max_depth=2)
+
 feature_matrix.head(5)
+feature_matrix[['customers.MEAN(transactions.amount)']].head(5)
 ```
-
-cf.
-https://docs.featuretools.com/
-
-```python
-import featuretools as ft
-import pandas as pd
-#data = ft.demo.load_mock_customer(return_entityset=True)
-data = ft.demo.load_mock_customer()
-print(data)
-customers_df = data["customers"]
-print(customers_df)
-sessions_df = data["sessions"]
-sessions_df_sample = sessions_df.sample(5)
-print(sessions_df_sample)
-transactions_df = data["transactions"]
-transactions_df_sample = transactions_df.sample(5)
-print(transactions_df_sample)
-entities = {
-  "customers" : (customers_df, "customer_id"),
-  "sessions" : (sessions_df, "session_id", "session_start"),
-  "transactions" : (transactions_df, "transaction_id", "transaction_time")
-}
-
-relationships = [("sessions", "session_id", "transactions", "session_id"),
-                ("customers", "customer_id", "sessions", "customer_id")]
-
-feature_matrix_customers, features_defs = ft.dfs(entities=entities,
-                                                 relationships=relationships,
-                                                 target_entity="customers")
-print(feature_matrix_customers)
-print(type(feature_matrix_customers))
-feature_matrix_customers.to_csv('demo_feature_matrix_customers.csv')
-```
-
-
 
 

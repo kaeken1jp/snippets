@@ -1,5 +1,13 @@
 # macos snippets
 
+## check software version
+```bash
+$ sw_vers
+ProductName:  Mac OS X
+ProductVersion:  10.13.5
+BuildVersion:  17F77
+```
+
 ## Show/Hide Hidden Files on macOS
 ```bash
 # Show

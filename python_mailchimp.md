@@ -1,5 +1,6 @@
 # python_mailchimp snippets
 
+https://github.com/charlesthk/python-mailchimp
 https://pypi.org/project/mailchimp3/
 
 ## install
@@ -21,8 +22,8 @@ all_list = client.lists.all(get_all=True, fields="lists.name,lists.id")
 # all list info
 print(all_list)
 
-# list_name
-mc_list_name = 'YOUR_MAILCHIMP_LIST_NAME'
+# list_id
+mc_list_id = 'YOUR_MAILCHIMP_LIST_ID'
 
 
 # init
@@ -39,7 +40,7 @@ user_data['user_last_name'] = sys.argv[3]
 
 print(user_data)
 
-res = client.lists.members.create(mc_list_name, {
+res = client.lists.members.create(mc_list_id, {
     'email_address': user_data['user_mail_address'],
     'status': 'subscribed',
     'merge_fields': {

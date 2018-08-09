@@ -1,5 +1,7 @@
 # python_mailchimp snippets
 
+https://pypi.org/project/mailchimp3/
+
 ## install
 ```bash
 pip install mailchimp3

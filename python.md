@@ -162,4 +162,18 @@ print(nums) #=>[6, 3, 5, 4, 0, 1, 2, 9, 8, 7]
 ```
 
 
+## dict sort by value
+```python
+import operator
+
+dic_list = [{'k1':3, 'k2':2}, {'k1':1, 'k2':1}, {'k1':2, 'k2':3}]
+
+dic_list.sort(key=operator.itemgetter('k1'), reverse=True)
+print(dic_list)
+[{'k1': 3, 'k2': 2}, {'k1': 2, 'k2': 3}, {'k1': 1, 'k2': 1}]
+
+dic_list.sort(key=operator.itemgetter('k2'), reverse=True)
+print(dic_list)
+[{'k1': 2, 'k2': 3}, {'k1': 3, 'k2': 2}, {'k1': 1, 'k2': 1}]
+```
 

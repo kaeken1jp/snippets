@@ -7,6 +7,12 @@
 sys.version_info(major=3, minor=5, micro=2, releaselevel='final', serial=0)
 ```
 
+## make dir
+```python
+import os
+os.makedirs("sample/example/test")
+```
+
 ## upgrade pip
 ```bash
 $ pip install --upgrade pip
@@ -160,6 +166,20 @@ nums = [x for x in range(10)]
 random.shuffle(nums)
 print(nums) #=>[6, 3, 5, 4, 0, 1, 2, 9, 8, 7]
 ```
+
+## random value
+```python
+import random
+
+marks = ['club', 'diamond', 'heart', 'spade']
+numbers = range(1, 14)
+cards = [(m, n) for m in marks for n in numbers]
+print(cards)
+
+res = random.choice(cards)
+print(res)
+```
+
 
 
 ## dict sort by value

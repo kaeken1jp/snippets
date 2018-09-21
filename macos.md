@@ -23,8 +23,35 @@ killall Finder
 
 ```bash
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+$ brew -v
 ```
 cf.https://brew.sh/
+
+
+## how to install nodebrew
+```bash
+$ brew install nodebrew
+$ nodebrew -v
+$ echo 'export PATH=$HOME/.nodebrew/current/bin:$PATH' >> ~/.bash_profile
+$ . ~/.bash_profile
+$ mkdir -p ~/.nodebrew/src
+```
+
+## how to install Node.js
+```bash
+$ nodebrew ls-remote
+$ nodebrew install-binary latest
+$ nodebrew install-binary VERSION
+
+$ nodebrew ls
+$ nodebrew use VERSION
+$ nodebrew use v10.11.0
+$ nodebrew list
+$ node -v
+```
+
+
+
 
 ## how to convert image format
 

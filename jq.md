@@ -1,15 +1,24 @@
+# def
+
+```
+jq is a lightweight and flexible command-line JSON processor.
+```
+
 [jq Manual \(development version\)](https://stedolan.github.io/jq/manual/)
 
 # install(mac)
+
 ```bash
 brew install jq
 ```
 
 # how to use
+
 ```bash
 curl 'https://api.github.com/repos/stedolan/jq/commits?per_page=5' | jq '.'
 ```
-```jq
+
+```json
 [
   {
     "sha": "d25341478381063d1c76e81b3a52e0592a7c997f",

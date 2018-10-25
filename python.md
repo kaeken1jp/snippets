@@ -2,9 +2,15 @@
 
 ## check python version in code
 ```python
->>> import sys
->>> sys.version_info
-sys.version_info(major=3, minor=5, micro=2, releaselevel='final', serial=0)
+import sys
+sys.version_info
+#=> sys.version_info(major=3, minor=5, micro=2, releaselevel='final', serial=0)
+```
+
+## list size
+```python
+lst = [1, 2, 3]
+len(lst) #=> 3
 ```
 
 ## make dir

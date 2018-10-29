@@ -8,7 +8,14 @@ export LANG=ja_JP.UTF-8
 export LESSCHARSET=utf-8
 ```
 
-## .bash_profile or .bashrc
+## .bash_profile
+```bash
+
+# add
+test -r ~/.bashrc && . ~/.bashrc
+```
+
+## .bashrc
 ```bash
 # export
 export PATH=/usr/local:$PATH

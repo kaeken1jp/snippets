@@ -69,18 +69,25 @@ function distinct(fieldNames) {
 }
 
 var data = [ 
-  { keyword: 'hoge', url: 'example.com' },
-  { keyword: 'hoge', url: 'example.net' },
-  { keyword: 'fuga', url: 'example.net' },
-  { keyword: 'hoge', url: 'example.com' } 
+  { keyword: 'hoge', url: 'example.com', ts: 1 },
+  { keyword: 'hoge', url: 'example.net', ts: 2 },
+  { keyword: 'fuga', url: 'example.net', ts: 3 },
+  { keyword: 'hoge', url: 'example.com', ts: 4 } 
 ];
+
 data.filter(distinct(["keyword"]))
-// 0: {keyword: "hoge", url: "example.com"}
-// 1: {keyword: "fuga", url: "example.net"}
+// 0: {keyword: "hoge", url: "example.com", ts: 1}
+// 1: {keyword: "fuga", url: "example.net", ts: 3}
 
 data.filter(distinct(["keyword","url"]))
-// 0: {keyword: "hoge", url: "example.com"}
-// 1: {keyword: "hoge", url: "example.net"}
-// 2: {keyword: "fuga", url: "example.net"}
+// 0: {keyword: "hoge", url: "example.com", ts: 1}
+// 1: {keyword: "hoge", url: "example.net", ts: 2}
+// 2: {keyword: "fuga", url: "example.net", ts: 3}
+
+data.filter(distinct(["keyword","url","ts"]))
+// 0: {keyword: "hoge", url: "example.com", ts: 1}
+// 1: {keyword: "hoge", url: "example.net", ts: 2}
+// 2: {keyword: "fuga", url: "example.net", ts: 3}
+// 3: {keyword: "hoge", url: "example.com", ts: 4}
 
 ```

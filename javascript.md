@@ -43,3 +43,44 @@ $(function(){
 ```javascript
 $("#img_id").attr("src", str);
 ```
+
+## filter distinct object
+```javascript
+function distinct(fieldNames) {
+  var self = this;
+  return function(item, i, arr) {
+    return i == indexOf(arr, item, equalsAllFields)
+  }
+
+  function indexOf(arr, obj, comparator) {
+    for(var index in arr) {
+      if(comparator(obj, arr[index]) == true) return index;
+    }
+    return -1;
+  }
+
+  function equalsAllFields(a, b) {
+    for(var i in fieldNames) {
+      var f = fieldNames[i];
+      if(a[f] !== b[f]) return false;
+    }
+    return true;
+  }
+}
+
+var data = [ 
+  { keyword: 'hoge', url: 'example.com' },
+  { keyword: 'hoge', url: 'example.net' },
+  { keyword: 'fuga', url: 'example.net' },
+  { keyword: 'hoge', url: 'example.com' } 
+];
+data.filter(distinct(["keyword"]))
+// 0: {keyword: "hoge", url: "example.com"}
+// 1: {keyword: "fuga", url: "example.net"}
+
+data.filter(distinct(["keyword","url"]))
+// 0: {keyword: "hoge", url: "example.com"}
+// 1: {keyword: "hoge", url: "example.net"}
+// 2: {keyword: "fuga", url: "example.net"}
+
+```

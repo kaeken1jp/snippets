@@ -147,17 +147,19 @@ post_str = pre_str.replace('pre', 'post')
 
 ## split newline
 ```python
-"""some
+s = """some
 multi line
-string""".splitlines()
+string"""
+
+s.splitlines()
 #=> ['some', 'multi line', 'string']
 
-"""some
-multi line
-string""".split('\n')
+s.split('\n')
 #=> ['some', 'multi line', 'string']
+
+' '.join(s.splitlines())
+#=> some multi line string
 ```
-
 
 ## random number
 https://docs.python.org/3/library/random.html#random.randint

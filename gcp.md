@@ -13,3 +13,22 @@ exec -l $SHELL
 gcloud version
 ```
 
+# auth
+```bash
+gcloud auth login
+
+gcloud auth list
+
+```
+
+# config
+```bash
+gcloud config list
+```
+
+# set project
+```bash
+gcloud config set project <project name>
+```
+
+

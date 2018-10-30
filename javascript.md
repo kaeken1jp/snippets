@@ -91,3 +91,26 @@ data.filter(distinct(["keyword","url","ts"]))
 // 3: {keyword: "hoge", url: "example.com", ts: 4}
 
 ```
+
+
+## search object
+```javascript
+var pre_obj = [ 
+  { keyword: 'hoge', url: 'example.com', ts: 1 },
+  { keyword: 'hoge', url: 'example.net', ts: 2 },
+  { keyword: 'fuga', url: 'example.net', ts: 3 },
+  { keyword: 'hoge', url: 'example.com', ts: 4 } 
+];
+var post_obj = pre_obj.filter(function(item, index) {
+  if ((item.keyword).indexOf('hoge') >= 0) {
+    return true;
+  }
+});
+//post_obj
+//0: {keyword: "hoge", url: "example.com", ts: 1}
+//1: {keyword: "hoge", url: "example.net", ts: 2}
+//2: {keyword: "hoge", url: "example.com", ts: 4}
+
+```
+
+

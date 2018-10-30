@@ -31,6 +31,17 @@ os.makedirs("sample/example/test")
 $ pip install --upgrade pip
 ```
 
+## pip install & ignore SSL errors
+```
+$ pip install google-cloud
+...
+... There was a problem confirming the ssl certificate ...
+...
+
+$ pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org google-cloud
+```
+
+
 ## how to install from file
 ```bash
 $ cat requirements.txt

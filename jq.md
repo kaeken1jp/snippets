@@ -40,3 +40,19 @@ curl 'https://api.github.com/repos/stedolan/jq/commits?per_page=5' | jq '.'
       },
       ...
 ```
+
+
+
+# how to replace escape sign
+
+```bash
+$ echo '"foo\nbar\nbaz"' | jq '.'
+"foo\nbar\nbaz"
+
+$ echo '"foo\nbar\nbaz"' | jq -r '.'
+foo
+bar
+baz
+```
+
+

@@ -6,3 +6,8 @@
 
 [Try jQuery Selector](https://www.w3schools.com/jquery/trysel.asp)
 
+## important
+
+```javascript
+$('SELECTOR').css({'cssText': 'text-transform: lowercase !important;'});
+```

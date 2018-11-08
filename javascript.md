@@ -165,8 +165,10 @@ var endTime = Date.now();
 console.log(endTime - startTime);
 // => 2389
 
-```javascript
+```
+
 cf. 
+
 [パフォーマンスまわりのAPIについて \- Qiita](https://qiita.com/makotot/items/70bd392a62afd43d3189)
 
 

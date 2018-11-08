@@ -114,3 +114,13 @@ var post_obj = pre_obj.filter(function(item, index) {
 ```
 
 
+
+## scroll window
+```javascript
+window.scrollTo(x, y) // pixel
+
+ex)
+window.scrollTo(0, 400); 
+```
+
+

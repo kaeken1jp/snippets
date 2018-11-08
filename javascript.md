@@ -114,7 +114,6 @@ var post_obj = pre_obj.filter(function(item, index) {
 ```
 
 
-
 ## scroll window
 ```javascript
 window.scrollTo(x, y) // pixel
@@ -122,5 +121,53 @@ window.scrollTo(x, y) // pixel
 ex)
 window.scrollTo(0, 400); 
 ```
+
+
+## check speed
+```javascript
+// console.time
+console.time("loop time");
+for(var i =0; i < 1000000000; i++){}
+console.timeEnd("loop time");
+// => loop time: 2409.7939453125ms
+
+//performance.now()
+var startTime = performance.now();
+for(var i =0; i < 1000000000; i++){}
+var endTime = performance.now();
+console.log(endTime - startTime);
+// => 2406.4999999827705
+
+//performance.mark(), performance.measure()
+performance.mark('myPerformanceStart')
+for(var i =0; i < 1000000000; i++){}
+performance.mark('myPerformanceEnd')
+
+performance.measure(
+    'myPerformance', // 計測名
+    'myPerformanceStart', // 計測開始点
+    'myPerformanceEnd' // 計測終了点
+);
+
+const results = performance.getEntriesByName('myPerformance');
+console.log(results[0]);
+/* => duration: 2411.8000000016764
+entryType: "measure"
+name: "myPerformance"
+startTime: 1011144.2999999854
+*/
+
+
+//(deprecated)Date.now()
+var startTime = Date.now();
+for(var i =0; i < 1000000000; i++){}
+var endTime = Date.now();
+console.log(endTime - startTime);
+// => 2389
+
+```javascript
+cf. 
+[パフォーマンスまわりのAPIについて \- Qiita](https://qiita.com/makotot/items/70bd392a62afd43d3189)
+
 
 

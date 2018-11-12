@@ -14,8 +14,6 @@ SELECT
 ```sql
 #standardSQL
 SELECT
-SELECT
-  '今日からN日前' AS sample,
   FORMAT_DATE("%Y%m%d", DATE_SUB(CURRENT_DATE('Asia/Tokyo'), INTERVAL 7 DAY)) AS SEVEN_DAYS_AGO, -- 過去 7 日前
   FORMAT_DATE("%Y%m%d", DATE_SUB(CURRENT_DATE('Asia/Tokyo'), INTERVAL 1 DAY)) AS YESTERDAY, -- 過去 1 日前
   

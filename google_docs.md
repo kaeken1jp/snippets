@@ -1,5 +1,13 @@
 # google_docs snippets
 
+## double quote
+```
+//CHAR(34)
+=CONCATENATE(CHAR(34), "id", CHAR(34), ": ", 100)
+// => "id": 100
+```
+
+
 ## regexreplace
 ```
 =REGEXREPLACE(A1, "^[0-9]+? (.+)$", "$1")

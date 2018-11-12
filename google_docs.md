@@ -2,8 +2,13 @@
 
 ## double quote
 ```
-//CHAR(34)
+// ""
+="""id"": 100"
+
+// CHAR(34)
+=CHAR(34)&"id"&CHAR(34)&": 100"
 =CONCATENATE(CHAR(34), "id", CHAR(34), ": ", 100)
+
 // => "id": 100
 ```
 

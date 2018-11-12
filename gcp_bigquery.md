@@ -1,6 +1,6 @@
 
-# timezone
-
+# time
+## timezone
 ```sql
 #standardSQL
 SELECT
@@ -10,6 +10,15 @@ SELECT
   STRING(CURRENT_TIMESTAMP(), '-8') AS PST  -- Pacific Standard Time
 ```
 
+## time diff
+```sql
+#standardSQL
+SELECT
+  DATE_SUB(CURRENT_DATE('Asia/Tokyo'), INTERVAL 1 DAY) AS YESTERDAY,
+  DATE_SUB(CURRENT_DATE('Asia/Tokyo'), INTERVAL 7 DAY) AS SEVEN_DAYS_AGO,
+  FORMAT_DATE("%Y%m01", DATE_SUB(CURRENT_DATE('Asia/Tokyo'), INTERVAL 1 MONTH)) AS LAST_MONTH_START_DAY,
+  FORMAT_DATE("%Y%m31", DATE_SUB(CURRENT_DATE('Asia/Tokyo'), INTERVAL 1 MONTH)) AS LAST_MONTH_LAST_DAY -- 常に31で月末取得
+```
 
 # aggregate-functions
 ## link

@@ -97,3 +97,22 @@ https://help.github.com/articles/changing-a-commit-message/
 git commit --amend
 ```
 
+# branch
+
+## show branch
+```bash
+git branch
+```
+
+## create branch
+```bash
+git checkout -b BRANCH_NAME
+
+git branch
+```
+
+
+
+
+
+

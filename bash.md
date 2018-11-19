@@ -166,3 +166,13 @@ cp -rp "$src_dir" "$dst_dir"
 ```bash
 n=1; for l in $(cat file);do echo $n$l; mkdir "$n$l" ; n=$(($n+1)) ;done
 ```
+
+
+## (mac) watch command alternative
+```bash
+while : ; do date; COMMAND1 ; COMMAND2 ; ... ; COMMANDn ; sleep 1 ; done
+```
+
+
+
+

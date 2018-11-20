@@ -55,4 +55,7 @@ bar
 baz
 ```
 
-
+# merge files
+```bash
+f=''; for i in `seq 1 100`; do f=${f}" ./*_output$i.json"; done; jq -s add $f > merged.json
+```

@@ -172,4 +172,19 @@ cf.
 [パフォーマンスまわりのAPIについて \- Qiita](https://qiita.com/makotot/items/70bd392a62afd43d3189)
 
 
+# Promise
 
+## Promise.all()
+```js
+var p1 = Promise.resolve(3);
+var p2 = 1337;
+var p3 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("foo");
+  }, 100);
+}); 
+
+Promise.all([p1, p2, p3]).then(values => { 
+  console.log(values); // [3, 1337, "foo"] 
+});
+```

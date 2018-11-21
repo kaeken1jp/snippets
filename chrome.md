@@ -6,7 +6,7 @@ https://developers.google.com/web/tools/chrome-devtools/shortcuts?hl=en
 
 ## (Mac)Opens the Search tab in the Drawer, which lets you search for text across all loaded resources
 ```
-Control+Shift+F
+Command+Option+F
 ```
 
 # config

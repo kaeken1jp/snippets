@@ -173,6 +173,16 @@ n=1; for l in $(cat file);do echo $n$l; mkdir "$n$l" ; n=$(($n+1)) ;done
 while : ; do date; COMMAND1 ; COMMAND2 ; ... ; COMMANDn ; sleep 1 ; done
 ```
 
+## how to delete a file whose name begins with “-” (hyphen a.k.a. dash or minus)
+```
+$ ls -l
+---hyphen-file
+
+# Use "--" to make rm stop parsing command line options, like this:
+$ rm -- ---hyphen-file
+remove ---hyphen-file ?  y
+```
+
 
 
 

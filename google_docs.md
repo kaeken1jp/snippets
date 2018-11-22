@@ -42,7 +42,21 @@ after: "foo" "bar baz"
 
 # pronouncation
 =IMPORTXML("https://ejje.weblio.jp/content/"&$A1,"//*[@id='phoneticEjjeNavi']")
-
-
-
 ```
+
+
+
+
+## convert UNIX TIME to date
+```
+// A2:1539183683
+// A3:1539183693
+
+// B2
+=ARRAYFORMULA(A2:A/86400+date(1970,1,1))
+
+// B2:2018年10月10日水曜日 15時01分23秒
+// C3:2018年10月10日水曜日 15時01分33秒
+```
+
+

@@ -184,5 +184,26 @@ remove ---hyphen-file ?  y
 ```
 
 
+# curl
+
+## set user-agent
+```bash
+curl -H 'User-Agent: USER_AGENT_STRING' URL
+
+ex)
+curl -H 'User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1' http://mysys-check.com/
+```
+
+
+## check redirect
+```bash
+curl -s -I -L "$URL" | grep ^Location
+
+ex)
+$ URL=http://yahoo.jp/ ; curl -s -I -L "$URL" | grep ^Location | cut -d" " -f2-
+http://www.yahoo.co.jp
+https://www.yahoo.co.jp:443/
+
+```
 
 

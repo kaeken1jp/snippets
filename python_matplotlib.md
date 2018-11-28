@@ -37,7 +37,7 @@ plt.title("A colored bubble plot")
 plt.show()
 ```
 
-## japanize
+## Japanese localization
 
 uehara1414/japanize-matplotlib: pip install して import するだけで matplotlib を日本語表示対応させる https://github.com/uehara1414/japanize-matplotlib
 

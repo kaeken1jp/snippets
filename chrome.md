@@ -12,6 +12,8 @@ Command+Option+F
 ## (Mac)Toggle Device Mode
 ```
 Command+Shift+M
+
+このショートカットを使用するには、マウスのフォーカスが DevTools ウィンドウにある必要があります
 ```
 
 

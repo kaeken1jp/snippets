@@ -188,3 +188,16 @@ Promise.all([p1, p2, p3]).then(values => {
   console.log(values); // [3, 1337, "foo"] 
 });
 ```
+
+# encrypto
+
+js暗号化/復号化
+
+wwwtyro/cryptico: An easy-to-use encryption system utilizing RSA and AES for javascript. https://github.com/wwwtyro/cryptico
+
+JavaScriptで RSA 公開鍵による暗号化、復号化が出来るライブラリ「cryptico.js」 | Web活メモ帳 https://blog.verygoodtown.com/2011/09/generating-an-rsa-key-pair-public-key-string/
+
+crypticoでPure JavaScriptによる公開鍵暗号を用いるメモ - Qiita https://qiita.com/miyanaga/items/8692d0742a49fb37a6da
+
+Node.jsで公開鍵暗号方式を使う - Qiita https://qiita.com/wf9a5m75/items/07a9794c9c569c10cfab
+

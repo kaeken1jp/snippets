@@ -9,6 +9,13 @@ https://developers.google.com/web/tools/chrome-devtools/shortcuts?hl=en
 Command+Option+F
 ```
 
+## (Mac)Toggle Device Mode
+```
+Command+Shift+M
+```
+
+
+
 # config
 
 # how to make extension

@@ -14,7 +14,21 @@ gs://<bucket name>/ has no CORS configuration.
 
 # update
 $ cat updateCORS.json
-[]
+[
+  {
+    "maxAgeSeconds": 3600,
+    "method": [
+      "GET",
+      "HEAD"
+    ],
+    "origin": [
+      "https://domain.com"
+    ],
+    "responseHeader": [
+      "Content-Type"
+    ]
+  }
+]
 
 $ gsutil cors set updateCORS.json gs://<bucket name>
 Setting CORS on gs://<bucket name>/...

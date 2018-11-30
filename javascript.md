@@ -201,3 +201,12 @@ crypticoでPure JavaScriptによる公開鍵暗号を用いるメモ - Qiita htt
 
 Node.jsで公開鍵暗号方式を使う - Qiita https://qiita.com/wf9a5m75/items/07a9794c9c569c10cfab
 
+
+
+## object 空判定
+```js
+return !Object.keys(obj).length;
+```
+ 
+ 
+ 

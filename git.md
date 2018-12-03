@@ -104,9 +104,11 @@ git commit --amend
 git branch
 ```
 
-## create branch
+## create new local branch
 ```bash
 git checkout -b BRANCH_NAME
+# from remote branch
+git checkout -b BRANCH_NAME origin/REMOTE_BRANCH_NAME
 
 git branch
 ```

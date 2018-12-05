@@ -20,6 +20,8 @@ port = window.location.port;
 alert(port);
 host_port = window.location.host;
 alert(host_port);
+href = window.location.href;
+alert(href);
 </script>
 ```
 

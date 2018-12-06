@@ -1,5 +1,37 @@
 # google_docs snippets
 
+
+## AND / OR / NOT
+```
+AND(TRUE,FALSE,TRUE)
+
+AND(A1:A10,B1:B10)
+
+AND(0,1,2,3)
+
+OR(TRUE,FALSE,TRUE)
+
+OR(A1:A10,B1:B10)
+
+OR(0,1,2,3)
+
+NOT(A2)
+
+NOT(ISERR(A2))
+```
+
+
+## JOIN
+```
+A1=a
+B1=b
+C1=c
+
+=JOIN(",", A1:C1) #=> a,b,c
+```
+
+
+
 ## double quote
 ```
 // ""

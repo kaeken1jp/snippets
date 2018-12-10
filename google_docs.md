@@ -28,6 +28,16 @@ B1=b
 C1=c
 
 =JOIN(",", A1:C1) #=> a,b,c
+
+="AND col IN ('"&JOIN("','", A1, B1, C1)&"')"
+#=> AND col IN ('a','b','c')
+
+A1=a1
+A2=a2
+A3=a3
+
+="AND col IN ('"&JOIN("','", A1:A3)&"')"
+#=> AND col IN ('a1','a2','a3')
 ```
 
 

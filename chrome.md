@@ -17,6 +17,30 @@ Command+Shift+M
 ```
 
 
+# Console API
+http://anti-code.com/devtools-cheatsheet/#console-api
+
+## console.log()
+```js
+var str = "string";
+var num = 123;
+var flo = 9.87;
+console.log('String: %s', str);
+console.log('Number: %d', num);
+console.log('Float: %f', flo);
+
+var url = "http://example.com/"
+var sty = 'color:#fff;background:#000;';
+console.log('Link: %o', url);
+console.log('%c: stylish output', sty);
+```
+
+## console.table()
+```js
+console.table([{a:1, b:2, c:3}, {a:"foo", b:false, c:undefined}]);
+console.table([[1,2,3], [2,3,4]]);
+```
+<img src="https://i.gyazo.com/e4cc362643535a26f61ec8cb511455cc.png">
 
 # config
 

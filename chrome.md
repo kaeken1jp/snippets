@@ -42,6 +42,29 @@ console.table([[1,2,3], [2,3,4]]);
 ```
 <img src="https://i.gyazo.com/e4cc362643535a26f61ec8cb511455cc.png">
 
+
+# Command Line API
+
+## $$
+```js
+# all form input attribute dump
+console.log(
+  $$('input').map(
+    x=>'input'
+    + ',type=' + x.type
+    + ',name=' + x.name
+    + ',id=' + x.id
+    + ',class=' + x.class
+    + ',value=' + x.value
+    + ',style=' + x.style
+    + ',placeholder=' + x.placeholder
+  ).join('\n')
+)
+```
+
+
+
+
 # config
 
 # how to make extension

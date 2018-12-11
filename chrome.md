@@ -51,6 +51,11 @@ http://anti-code.com/devtools-cheatsheet/#command-line-api
 # all body innerText
 $$('body').map(x=>x.innerText).join('\n')
 
+# all link href
+$$('a').map(x=>x.href).join('\n')
+
+
+
 # all form input attribute dump
 console.log(
   $$('input').map(

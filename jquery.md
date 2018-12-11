@@ -21,3 +21,8 @@ $$('a').map(x=>x.href).join('\n')
 ```js
 $$('span').map(x=>x.innerText).join('\n')
 ```
+
+## Chrome console form element dump
+```js
+console.log($$('input').map(x=>'type=' + x.type + ',name=' + x.name + ',id=' + x.id + ',value=' + x.value).join('\n'))
+```

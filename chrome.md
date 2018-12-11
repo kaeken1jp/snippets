@@ -44,9 +44,13 @@ console.table([[1,2,3], [2,3,4]]);
 
 
 # Command Line API
+http://anti-code.com/devtools-cheatsheet/#command-line-api
 
-## $$
+## $$ (Returns an array of elements that match the given CSS selector.)
 ```js
+# all body innerText
+$$('body').map(x=>x.innerText).join('\n')
+
 # all form input attribute dump
 console.log(
   $$('input').map(
@@ -62,6 +66,25 @@ console.log(
 )
 ```
 
+## $0 (The currently-selected object in the inspector.)
+## $_ (The previously evaluated statement)
+## $1 (The previously-selected object in the inspector.)
+## $n(index) (Access to an array of last 5 inspected elements.)
+## dir(object) (Prints an interactive listing of all properties of the object. This looks identical to the view that you would see in the DOM tab.)
+## dirxml(node) (Prints the XML source tree of an HTML or XML element. This looks identical to the view that you would see in the HTML tab. You can click on any node to inspect it in the HTML tab.)
+## clear() (Clears the console.)
+## copy() (Copies everything passed to it to the clipboard.)
+## inspect(object[, tabName]) (Inspects an object in the most suitable tab, or the tab identified by the optional argument tabName.)
+## keys(object) (Returns an array containing the names of all properties of the object.)
+## values(object) (Returns an array containing the values of all properties of the object.)
+## monitorEvents(object[, types]) (Turns on logging for all events dispatched to an object. The optional argument types may specify a specific family of events to log. The most commonly used values for types are "mouse" and "key". The full list of available types includes "composition", "contextmenu", "drag", "focus", "form", "key", "load", "mouse", "mutation", "paint", "scroll", "text", "ui", and "xul".)
+## unmonitorEvents(object[, types]) (Turns off logging for all events dispatched to an object.)
+## performance
+## performance.timing
+## performance.memory
+## performance.navigation
+## profile([title]) (Turns on the JavaScript profiler. The optional argument title would contain the text to be printed in the header of the profile report.)
+## profileEnd() (Turns off the JavaScript profiler and prints its report.)
 
 
 

@@ -11,3 +11,13 @@
 ```javascript
 $('SELECTOR').css({'cssText': 'text-transform: lowercase !important;'});
 ```
+
+## Chrome console a href list up
+```js
+$$('a').map(x=>x.href).join('\n')
+```
+
+## Chrome console span innerText list up
+```js
+$$('span').map(x=>x.innerText).join('\n')
+```

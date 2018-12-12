@@ -51,6 +51,13 @@ SELECT
   FORMAT_DATE("%Y%m%d", DATE_SUB(DATE_TRUNC(CURRENT_DATE('Asia/Tokyo'), MONTH), INTERVAL 1 DAY)) AS LAST_MONTH_LAST_DAY 
 ```
 
+## CAST UNNEST
+```sql
+SELECT SUM(CAST(number_string AS INT64))
+FROM UNNEST(['1', '2', NULL, '4'])
+  AS number_string
+```
+
 # aggregate-functions
 ## link
 [標準 SQL 関数と演算子  \|  BigQuery  \|  Google Cloud](https://cloud.google.com/bigquery/docs/reference/standard-sql/functions-and-operators#array_agg)

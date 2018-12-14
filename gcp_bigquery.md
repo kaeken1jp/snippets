@@ -98,3 +98,23 @@ FROM UNNEST([NULL, 1, -2, 3, -2, 1, NULL]) AS x
 3	
 [1, -2, 3, -2, 1]
 ```
+
+
+# Window function
+
+## first_value
+
+https://cloud.google.com/bigquery/query-reference?hl=ja#first_value
+
+```sql
+# ウィンドウ内の <field_name> の最初の値を返します
+FIRST_VALUE(value) OVER (PARTITION BY key_col ORDER BY value DESC RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS first_value
+```
+
+
+
+
+
+
+
+

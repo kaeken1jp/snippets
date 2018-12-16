@@ -37,3 +37,25 @@ V(X) = \frac{(b - a)^2}{12}
 ```
 <img src=https://latex.codecogs.com/gif.latex?V%28X%29%20%3D%20%5Cfrac%7B%28b%20-%20a%29%5E2%7D%7B12%7D>
 
+
+### 二項分布 binominal distribution
+
+```tex
+1回の試行に対して2種類の結果A、Bが生じ、Aが起こる確率をpとする。
+さらに、n回の試行においてAが生じる回数を確率変数Xとする。
+このときがある値となる確率は、以下の式で表される。
+
+P(X = x) = {}_n\mathrm{C}_xp^x(1 - p)^{n - x}
+```
+<img src=https://latex.codecogs.com/gif.latex?P%28X%20%3D%20x%29%20%3D%20%7B%7D_n%5Cmathrm%7BC%7D_xp%5Ex%281%20-%20p%29%5E%7Bn%20-%20x%7D>
+
+
+```tex
+E(X) = np
+```
+<img src=https://latex.codecogs.com/gif.latex?E%28X%29%20%3D%20np>
+
+```tex
+V(X) = np(1 - p)
+```
+<img src=https://latex.codecogs.com/gif.latex?V%28X%29%20%3D%20np%281%20-%20p%29>

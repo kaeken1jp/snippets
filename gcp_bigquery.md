@@ -14,6 +14,36 @@ ORDER BY
   time
 ```
 
+# without using table
+```sql
+SELECT
+  id,
+  position,
+  ['a', 'b', 'c'][OFFSET(position)] AS name
+FROM
+ UNNEST([1, 2, 3]) AS id WITH OFFSET AS position
+```
+
+```
+[
+  {
+    "id": "1",
+    "position": "0",
+    "name": "a"
+  },
+  {
+    "id": "2",
+    "position": "1",
+    "name": "b"
+  },
+  {
+    "id": "3",
+    "position": "2",
+    "name": "c"
+  }
+]
+```
+
 
 # time
 ## timezone

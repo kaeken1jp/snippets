@@ -46,6 +46,12 @@ FROM
 
 
 # time
+
+## now
+```sql
+SELECT CURRENT_DATETIME() as now;
+```
+
 ## timezone
 ```sql
 #standardSQL

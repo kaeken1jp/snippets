@@ -49,7 +49,7 @@ FROM
 
 ## now
 ```sql
-SELECT CURRENT_DATETIME() as now;
+SELECT CURRENT_DATETIME("Asia/Tokyo") as now;
 ```
 
 ## timezone

@@ -51,6 +51,38 @@ FROM
 ```sql
 SELECT CURRENT_DATETIME("Asia/Tokyo") as now;
 ```
+## time format
+```sql
+# FORMAT_DATE(format, 日付)
+# 指定したフォーマットに、日付の形式を変更する
+# %a:省略した曜日名
+# %b:省略した月名
+# %F:YYYY-MM-DD
+# %Y:西暦４桁
+# %m:月
+# %d:日
+
+SELECT 
+  FORMAT_DATE("%A", DATE "2017-12-22"), 
+  FORMAT_DATE("%a", DATE "2017-12-22"),
+  FORMAT_DATE("%B", DATE "2017-12-22"),
+  FORMAT_DATE("%b", DATE "2017-12-22"),
+  FORMAT_DATE("%F", DATE "2017-12-22"),
+  FORMAT_DATE("%Y", DATE "2017-12-22"),
+  FORMAT_DATE("%d", DATE "2017-12-22")
+
+/*
+=>
+  Friday
+  Fri
+  December
+  Dec
+  2017-12-22
+  2017
+  12
+  22
+  */
+```
 
 ## timezone
 ```sql

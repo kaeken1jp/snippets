@@ -89,6 +89,7 @@ SELECT
 #standardSQL
 SELECT
   FORMAT_TIMESTAMP('%Y-%m-%d %H:%M:%S', CURRENT_TIMESTAMP()) AS UTC,
+  FORMAT_TIMESTAMP('%Y/%m/%d %a', TIMESTAMP_SECONDS(time), 'Asia/Tokyo') AS date,
   CURRENT_DATETIME('Asia/Tokyo') AS JST,
   STRING(CURRENT_TIMESTAMP(), 'Asia/Tokyo') AS JST2, -- 日本(+9H)
   STRING(CURRENT_TIMESTAMP(), '-8') AS PST  -- Pacific Standard Time

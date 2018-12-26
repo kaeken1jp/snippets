@@ -136,7 +136,52 @@ SELECT
   FORMAT_DATE("%Y%m%d", DATE_SUB(DATE_TRUNC(CURRENT_DATE('Asia/Tokyo'), MONTH), INTERVAL 1 DAY)) AS LAST_MONTH_LAST_DAY 
 ```
 
-## CAST UNNEST
+
+# GROUP BY
+
+https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax?hl=ja#group-by-clause
+
+## GROUP BY ROLLUP
+```sql
+
+WITH Sales AS (
+  SELECT 123 AS sku, 1 AS day, 9.99 AS price UNION ALL
+  SELECT 123, 1, 8.99 UNION ALL
+  SELECT 456, 1, 4.56 UNION ALL
+  SELECT 123, 2, 9.99 UNION ALL
+  SELECT 789, 3, 1.00 UNION ALL
+  SELECT 456, 3, 4.25 UNION ALL
+  SELECT 789, 3, 0.99
+)
+SELECT
+  sku,
+  day,
+  SUM(price) AS total
+FROM Sales
+GROUP BY ROLLUP(sku, day)
+ORDER BY sku, day;
+
+
++------+------+-------+
+| sku  | day  | total |
++------+------+-------+
+| NULL | NULL | 39.77 |
+|  123 | NULL | 28.97 |
+|  123 |    1 | 18.98 |
+|  123 |    2 |  9.99 |
+|  456 | NULL |  8.81 |
+|  456 |    1 |  4.56 |
+|  456 |    3 |  4.25 |
+|  789 |    3 |  1.99 |
+|  789 | NULL |  1.99 |
++------+------+-------+
+```
+
+
+
+
+
+# CAST UNNEST
 ```sql
 SELECT SUM(CAST(number_string AS INT64))
 FROM UNNEST(['1', '2', NULL, '4'])

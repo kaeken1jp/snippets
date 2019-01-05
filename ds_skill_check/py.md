@@ -1,4 +1,4 @@
-# DS
+# データサイエンス(以下DS)
 
 ## 1 統計数理基礎
 
@@ -59,3 +59,35 @@ len(list(itertools.combinations(seq,2)))
 #=> 6
 
 ```
+
+
+### DS/4-4統計数理基礎(統計数理基礎)Lv1「条件付き確率の意味を説明できる」*
+
+```
+条件付き確率 (conditional porbability) とは:
+ある事象Aが起こるという条件下での別の事象Bの確率
+```
+
+<img src=https://latex.codecogs.com/gif.latex?P%28B%20%7C%20A%29%20%3D%20%5Cfrac%7BP%28A%20%5Ccap%20B%29%7D%7BP%28A%29%7D>
+
+```
+例題:
+事象A「さいころを2回投げて1回目に出た目が4」の条件下で、
+事象B「さいころを2回投げて出た目の和が8以上」となる確率は?
+```
+
+- 事象Aの確率
+<img src=https://latex.codecogs.com/gif.latex?P%28A%29%20%3D%20%5Cfrac%7B1%7D%7B6%7D>
+
+- 事象Bの確率(目の組み合わせは（4, 4）（4, 5）（4, 6）の3通り)
+<img src=https://latex.codecogs.com/gif.latex?P%28A%5Ccap%20B%29%20%3D%20%5Cfrac%7B3%7D%7B36%7D>
+
+- 答え
+<img src=https://latex.codecogs.com/gif.latex?P%28B%20%7C%20A%29%20%3D%20%5Cfrac%7B%5Cfrac%7B3%7D%7B36%7D%7D%7B%5Cfrac%7B1%7D%7B6%7D%7D%20%3D%20%5Cfrac%7B1%7D%7B2%7D>
+
+```py
+
+```
+
+
+

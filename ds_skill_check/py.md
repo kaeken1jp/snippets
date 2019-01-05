@@ -86,7 +86,11 @@ len(list(itertools.combinations(seq,2)))
 <img src=https://latex.codecogs.com/gif.latex?P%28B%20%7C%20A%29%20%3D%20%5Cfrac%7B%5Cfrac%7B3%7D%7B36%7D%7D%7B%5Cfrac%7B1%7D%7B6%7D%7D%20%3D%20%5Cfrac%7B1%7D%7B2%7D>
 
 ```py
-
+import sympy as sym
+P_AandB = sym.Rational(3, 36)
+P_A = sym.Rational(1, 6)
+P_BcondA = P_AandB / P_A
+#=> 1/2
 ```
 
 

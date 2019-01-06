@@ -94,4 +94,36 @@ P_BcondA = P_AandB / P_A
 ```
 
 
+### DS/5-5統計数理基礎(統計数理基礎)Lv1「平均（相加平均）、中央値、最頻値の算出方法の違いを説明できる」*
+
+```py
+from statistics import mean,median,variance,stdev,mode
+
+data = [100,200,300,400,500,500,600,700,800,800,800]
+
+m = mean(data)
+median = median(data)
+variance = variance(data)
+stdev = stdev(data)
+mode_res = mode(data)
+print('平均: {0:.2f}'.format(m))
+平均: 518.18
+
+print('中央値: {0:.2f}'.format(median))
+中央値: 500.00
+
+print('分散: {0:.2f}'.format(variance))
+分散: 61636.36
+
+print('標準偏差: {0:.2f}'.format(stdev))
+標準偏差: 248.27
+
+print('最頻値: {0:.2f}'.format(mode_res))
+最頻値: 800.00
+```
+
+
+
+
+
 

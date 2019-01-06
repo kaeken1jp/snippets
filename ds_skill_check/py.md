@@ -106,6 +106,7 @@ median = median(data)
 variance = variance(data)
 stdev = stdev(data)
 mode_res = mode(data)
+
 print('平均: {0:.2f}'.format(m))
 平均: 518.18
 

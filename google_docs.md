@@ -1,5 +1,8 @@
-# google_docs snippets
+# google docs
 
+
+
+# google spreadsheets
 
 ## AND / OR / NOT
 ```
@@ -50,8 +53,11 @@ A3=a3
 // CHAR(34)
 =CHAR(34)&"id"&CHAR(34)&": 100"
 =CONCATENATE(CHAR(34), "id", CHAR(34), ": ", 100)
-
 // => "id": 100
+
+// delete double quote
+// A1 "hoge" => hoge
+=REGEXREPLACE(A1, CHAR(34), "")
 ```
 
 

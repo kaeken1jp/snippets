@@ -95,6 +95,8 @@ P_BcondA = P_AandB / P_A
 
 
 ### DS/5-5統計数理基礎(統計数理基礎)Lv1「平均（相加平均）、中央値、最頻値の算出方法の違いを説明できる」*
+### DS/6-6統計数理基礎(統計数理基礎)Lv1「⺟集団データ（3,4,5,5,7,8）の分散と標準偏差を電卓を用いて計算できる」*
+### DS/7-7統計数理基礎(統計数理基礎)Lv1「⺟（集団）平均が標本平均とは異なることを説明できる」*
 
 ```py
 from statistics import mean,median,variance,stdev,mode
@@ -108,22 +110,30 @@ stdev = stdev(data)
 mode_res = mode(data)
 
 print('平均: {0:.2f}'.format(m))
-平均: 518.18
+#=> 平均: 518.18
 
 print('中央値: {0:.2f}'.format(median))
-中央値: 500.00
+#=> 中央値: 500.00
 
 print('分散: {0:.2f}'.format(variance))
-分散: 61636.36
+#=> 分散: 61636.36
 
 print('標準偏差: {0:.2f}'.format(stdev))
-標準偏差: 248.27
+#=> 標準偏差: 248.27
 
 print('最頻値: {0:.2f}'.format(mode_res))
-最頻値: 800.00
+#=> 最頻値: 800.00
+
+import random
+
+# dataを母集団とすると、サンプルサイズ5の標本data_sampleを抽出
+data_sample = random.sample(data, 5)
+#=> [600, 800, 400, 200, 500]
+
+# mを母平均とすると、標本平均m_sampleを標本から算出
+m_sample = mean(data_sample);
+#=> 500
 ```
-
-
 
 
 

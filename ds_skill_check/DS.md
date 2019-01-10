@@ -157,7 +157,7 @@ for i in range(len(n)):
 plt.scatter(n, p)
 plt.show()
 ```
-<img src=https://colab.research.google.com/drive/1PAqkCzSgiEE1FWdLlMi0y_CDHxSydXmK>
+<img src=>
 
 
 

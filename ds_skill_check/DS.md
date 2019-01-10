@@ -157,7 +157,7 @@ for i in range(len(n)):
 plt.scatter(n, p)
 plt.show()
 ```
-<img src=>
+<img src=https://i.gyazo.com/e9f75370a5b645f808afec194df4e97c.png>
 
 
 

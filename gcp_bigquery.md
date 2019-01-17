@@ -225,8 +225,19 @@ https://cloud.google.com/bigquery/query-reference?hl=ja#first_value
 FIRST_VALUE(value) OVER (PARTITION BY key_col ORDER BY value DESC RANGE BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS first_value
 ```
 
+# UDF
+https://cloud.google.com/bigquery/docs/reference/standard-sql/user-defined-functions?hl=ja
 
 
+## urlDecode
+
+```sql
+CREATE TEMPORARY FUNCTION urlDecode(url STRING)
+RETURNS STRING
+LANGUAGE js AS """
+  return decodeURI(url);
+""";
+```
 
 
 

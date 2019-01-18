@@ -1,3 +1,16 @@
+# Enabling Standard SQL
+# Standard SQL Data Types
+# Standard SQL Query Syntax
+# Standard SQL Functions & Operators
+# Standard SQL Lexical Structure
+# Standard SQL User-Defined Functions
+# Wildcard Tables in Standard SQL
+# Data Manipulation Language in Standard SQL
+# DML Syntax in Standard SQL
+
+
+
+
 # basic SQL format
 ```sql
 #standardSQL

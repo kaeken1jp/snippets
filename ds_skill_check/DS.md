@@ -165,7 +165,55 @@ plt.show()
 ### DS/9-9統計数理基礎(統計数理基礎)Lv1「相関関係と因果関係の違いを説明できる」*
 ### DS/10-10統計数理基礎(統計数理基礎)Lv1「名義尺度、順序尺度、間隔尺度、⽐例尺度の違いを説明できる」*
 ### DS/11-11統計数理基礎(統計数理基礎)Lv1「⼀般的な相関係数（ピアソン）の分⺟と分⼦を説明できる」*
+
+```py
+# numpy Correlation
+import numpy as np
+
+jp = [5, 73, 29, 63, 68, 28, 45, 78, 70, 93]
+en = [11, 82, 25, 61, 66, 27, 42, 88, 71, 84]
+ch = [19, 22, 15, 81, 76, 37, 12, 78, 91, 24]
+x = np.array([jp, en, ch])
+np.corrcoef(x)
+# array([[1.        , 0.97575106, 0.45156735],
+#      [0.97575106, 1.        , 0.48529081],
+#      [0.45156735, 0.48529081, 1.        ]])
+
+
+
+# pandas Correlation
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame({'A': range(5),
+                   'B': [x**2 for x in range(5)],
+                   'C': [x**3 for x in range(5)]})
+
+# 相関係数を算出
+df_corr = df.corr()
+print(df_corr)
+print(type(df_corr))
+
+sns.heatmap(df_corr, vmax=1, vmin=-1, center=0)
+plt.savefig('seaborn_heatmap_corr_example.png')
+
+```
+
 ### DS/12-12統計数理基礎(統計数理基礎)Lv1「５つ以上の代表的な確率分布を説明できる」*
+
+```py
+# 離散　一様
+# 離散　二項
+# 離散　ポアソン
+
+# 連続　正規
+# 連続
+# 連続
+
+```
+
 ### DS/13-13統計数理基礎(統計数理基礎)Lv1「⼆項分布の事象もサンプル数が増えていくと中⼼極限定理により正規分布に近似されることを知っている」*
 ### DS/14-14統計数理基礎(統計数理基礎)Lv1「変数が量的、質的どちらの場合の関係の強さも算出できる」*
 ### DS/15-15統計数理基礎(統計数理基礎)Lv1「ベイズの定理を説明できる」*

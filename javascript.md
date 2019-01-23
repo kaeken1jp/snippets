@@ -233,10 +233,17 @@ Node.jsで公開鍵暗号方式を使う - Qiita https://qiita.com/wf9a5m75/item
 
 
 
-## object 空判定
+# object 空判定
 ```js
 return !Object.keys(obj).length;
 ```
  
- 
+# array 配列
+## 重複を除外
+```js
+var distinctArrayData = Array.from(new Set(duplicatedArrayData));
+```
+
+
+
  

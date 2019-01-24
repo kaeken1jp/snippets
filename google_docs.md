@@ -2,7 +2,21 @@
 
 
 
-# google spreadsheets
+# google sheets
+
+## cell link
+```
+URL末尾にrangeパラメータを付加してセル番地を指定する
+
+# セル番地D10を選択状態にする
+  __URL__#gid=0123456789&range=D10
+
+# 12行目を選択状態にする
+  #gid=0123456789&range=12:12
+
+# B列目を選択状態にする
+  #gid=0123456789&range=B:B
+```
 
 ## AND / OR / NOT
 ```

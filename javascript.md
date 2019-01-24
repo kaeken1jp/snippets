@@ -143,6 +143,22 @@ var post_obj = pre_obj.filter(function(item, index) {
 
 ```
 
+## clone object
+```js
+var firstObj = ["a", "b", "c"];
+var sameObj = firstObj;
+sameObj.push("d");
+console.log(sameObj); //= ["a", "b", "c", "d"]
+console.log(firstObj); //= ["a", "b", "c", "d"]
+
+var firstObj = ["a", "b", "c"];
+var newObj = firstObj.slice(); // clone object
+newObj.push("d");
+console.log(newObj); //= ["a", "b", "c", "d"]
+console.log(firstObj); //= ["a", "b", "c"]
+```
+
+
 
 ## scroll window
 ```javascript

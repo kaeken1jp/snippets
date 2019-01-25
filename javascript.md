@@ -1,10 +1,10 @@
 # delete falsy elements
 
 ```js
-var arr = [1, "a", true, null, undefined, 0, "", false, NaN];
+var arr = [1, "a", true, null, undefined, 0, "", false];
 
 var new_arr = arr.filter(function(x){
-	return !(x === null || x === undefined || x === false || isNaN(x) || x === ""); 
+	return !(x === null || x === undefined || x === false || x === ""); 
 })
 
 console.log(new_arr); //=> [1, "a", true, 0]

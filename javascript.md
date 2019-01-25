@@ -1,4 +1,20 @@
-# javascript snippets
+# delete falsy elements
+
+```js
+var arr = [1, "a", true, null, undefined, 0, "", false, NaN];
+
+var new_arr = arr.filter(function(x){
+	return !(x === null || x === undefined || x === false || isNaN(x) || x === ""); 
+})
+
+console.log(new_arr); //=> [1, "a", true, 0]
+
+
+// delete falsy elements
+var new_arr2 = arr.filter(Boolean);
+
+console.log(new_arr2); //=> [1, "a", true]
+```
 
 # Cookie read/write
 ```js

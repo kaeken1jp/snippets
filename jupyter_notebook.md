@@ -1,3 +1,15 @@
+# tool tip
+
+```py
+#FUNCTION_NAME[SHIFT + TAB]
+math.sqrt[SHIFT + TAB]
+
+#VARIABLES[SHIFT + TAB]
+var = 1
+var[SHIFT + TAB]
+```
+
+
 # font
 
 ## japanize_matplotlib

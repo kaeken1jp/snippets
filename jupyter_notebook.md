@@ -1,6 +1,18 @@
 # font
 
-## source-han-code-jp
+## japanize_matplotlib
+
+```py
+# jupyter code
+!pip install japanize-matplotlib
+```
+
+```py
+import japanize_matplotlib
+```
+
+
+## [WIP]source-han-code-jp
 
 https://github.com/adobe-fonts/source-han-code-jp
 
@@ -14,11 +26,6 @@ rm -r source-han-code-jp-2.000R
 
 click `SourceHanCodeJP-Regular.otf`
  
-
-```py
-# jupyter code
-!pip install japanize-matplotlib
-```
 
 
 

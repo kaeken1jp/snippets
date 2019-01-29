@@ -44,6 +44,14 @@ var result = arr["key"];
 ```
 
 
+## sessionStorage
+```js
+// convert int to string at sessionStorage
+sessionStorage.setItem("key1", 1);
+var val1 = sessionStorage.getItem("key1");
+console.log(typeof val1);//=> string
+```
+
 ## http/https flag
 ```javascript
   <script>

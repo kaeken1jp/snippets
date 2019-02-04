@@ -9,6 +9,11 @@ var = 1
 var[SHIFT + TAB]
 ```
 
+# exec file
+```bash
+%run -i file.py
+```
+
 
 # font
 

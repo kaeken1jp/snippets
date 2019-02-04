@@ -1,4 +1,14 @@
+# project site
+
+https://www.r-project.org/
+
+# desktop env
+
+https://cran.ism.ac.jp/
+
 # online env
+
+https://rstudio.cloud/
 
 Execute R Online http://www.compileonline.com/execute_r_online.php
 

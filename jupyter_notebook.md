@@ -9,6 +9,11 @@ var = 1
 var[SHIFT + TAB]
 ```
 
+# show image
+```
+%matplotlib inline
+```
+
 # exec file
 ```bash
 %run -i file.py

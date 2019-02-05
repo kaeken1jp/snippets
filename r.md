@@ -133,3 +133,12 @@ var
 
 ```
 
+## install package
+
+```r
+# install package by GUI
+# TODO: command line installation
+
+# use package
+library(sem)
+```

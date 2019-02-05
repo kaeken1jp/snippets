@@ -99,7 +99,7 @@ fnc_name <- function(x) {
 ```
 
 ```r
-# 不偏分散算出
+# 標本分散を算出する関数
 varp <- function(x) {
   ret <- var(x) * ( length(x) - 1 ) / length(x)
   ret
@@ -109,9 +109,11 @@ x <- c(10, 13, 8, 15, 8)
 x
 # [1] 10 13  8 15  8
 
+# 不偏分散
 var(x)
 # [1] 9.7
 
+# 標本分散
 varp(x)
 # [1] 7.76
 ```

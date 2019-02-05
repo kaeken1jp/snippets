@@ -118,6 +118,18 @@ varp(x)
 # [1] 7.76
 ```
 
+## external file
+```r
+# external_file.R
+var <- c(1,2,3,4,5)
+print(var)
+```
 
+```r
+# include file
+source("external_file.R")
 
+var
+
+```
 

@@ -86,3 +86,36 @@ res
 #[5,]   15   25   35
 ```
 
+## read csv
+```r
+contents <- read.csv("file.csv")
+```
+
+## function
+```r
+fnc_name <- function(x) {
+  ret <- something()
+}
+```
+
+```r
+# 不偏分散算出
+varp <- function(x) {
+  ret <- var(x) * ( length(x) - 1 ) / length(x)
+  ret
+}
+
+x <- c(10, 13, 8, 15, 8)
+x
+# [1] 10 13  8 15  8
+
+var(x)
+# [1] 9.7
+
+varp(x)
+# [1] 7.76
+```
+
+
+
+

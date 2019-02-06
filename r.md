@@ -31,8 +31,10 @@ something() -> y
 
 ## comment out
 ```r
-# single line
+# single line1
+# single line2
 
+# multi lines tips
 if(0){
 multi
 lines

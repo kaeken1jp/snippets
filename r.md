@@ -62,6 +62,7 @@ table(x)
 x <- c(1, 9, 2, 3, 4, 9, 2, 8, 5, 4, 3, 8, 4, 5, 1, 9, 5, 6, 3, 4)
 hist(x)
 ```
+![result](https://i.gyazo.com/757c7fe79e03169699be18249ec1cf5a.png)
 
 ## summary
 ```r

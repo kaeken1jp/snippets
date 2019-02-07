@@ -142,6 +142,33 @@ res
 #[5,]   15   25   35
 ```
 
+## sample
+```r
+# replace=F
+> sample(1:10, 6, replace=F)
+[1] 6 4 7 5 1 8
+> sample(1:10, 6, replace=F)
+[1] 10  9  7  6  4  8
+> sample(1:10, 6, replace=F)
+[1] 3 6 8 1 2 4
+> sample(1:10, 6, replace=F)
+[1]  9  6  4  3 10  1
+> sample(1:10, 6, replace=F)
+[1]  4  8  9  6 10  3
+
+# replace=T
+> sample(1:10, 6, replace=T)
+[1] 10  5  7  5 10  7
+> sample(1:10, 6, replace=T)
+[1]  8 10  6  5  2  8
+> sample(1:10, 6, replace=T)
+[1] 2 8 9 2 3 4
+> sample(1:10, 6, replace=T)
+[1] 3 7 2 7 6 3
+> sample(1:10, 6, replace=T)
+[1] 10  1  7  2 10 10
+```
+
 ## read csv
 ```r
 contents <- read.csv("file.csv")

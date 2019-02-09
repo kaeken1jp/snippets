@@ -1,4 +1,4 @@
-# html5 tag list
+# html4 & 5 tag list
 
 <table class="w3-table-all notranslate">
 <tbody><tr>

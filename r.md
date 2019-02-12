@@ -136,7 +136,7 @@ res = 9 %% 2
 res # 1
 ```
 
-## matrix
+## matrix()
 
 ```r
 res = matrix(c(11,12,13,14,15,21,22,23,24,25,31,32,33,34,35),5,3)
@@ -149,7 +149,7 @@ res
 #[5,]   15   25   35
 ```
 
-## sample
+## sample()
 ```r
 # replace=F
 > sample(1:10, 6, replace=F)
@@ -176,12 +176,12 @@ res
 [1] 10  1  7  2 10 10
 ```
 
-## read csv
+## read.csv()
 ```r
 contents <- read.csv("file.csv")
 ```
 
-## function
+## function()
 ```r
 fnc_name <- function(x) {
   ret <- something()
@@ -189,7 +189,7 @@ fnc_name <- function(x) {
 ```
 
 
-## external file
+## source()
 ```r
 # external_file.R
 var <- c(1,2,3,4,5)
@@ -199,12 +199,9 @@ print(var)
 ```r
 # include file
 source("external_file.R")
-
-var
-
 ```
 
-## install package
+## library() // use package
 
 ```r
 # install package by GUI
@@ -353,3 +350,7 @@ attr(,"scaled:scale")
 > sd(standard_score)
 [1] 10
 ```
+
+
+
+

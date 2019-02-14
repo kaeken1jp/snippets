@@ -12,3 +12,6 @@ https://zoom.us/
 ・相手がこれを承認すれば、リモートコントロールが出来る状態になる
 ```
 
+## ブラウザ用Zoom拡張機能
+ブラウザ用Zoom拡張機能を使えば、お使いのブラウザから、またはGoogleカレンダー内で1回クリックするだけで、Zoomミーティングの開始や日程の設定を実行できるようになります。
+https://chrome.google.com/webstore/detail/zoom-scheduler/kgjfgplpablkjnlkjmjdecgdpfankdle?hl=en&gl=US&authuser=1

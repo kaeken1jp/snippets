@@ -252,7 +252,25 @@ LANGUAGE js AS """
 """;
 ```
 
+## const tips
+```
+#standardSQL
+----------
+-- 定数定義
+----------
+WITH
+sdt_tbl AS (SELECT '20190201' AS sdt) -- データ期間の開始日
+,edt_tbl AS (SELECT '20190207' AS edt) -- データ期間の終了日
 
+----------
+-- 処理
+----------
+SELECT FORMAT_TIMESTAMP('%Y/%m/%d %a', TIMESTAMP_SECONDS(time), 'Asia/Tokyo') AS date,COUNT(*)
+FROM ...
+WHERE _TABLE_SUFFIX BETWEEN (SELECT * FROM sdt_tbl) AND (SELECT * FROM edt_tbl)
+GROUP BY date
+ORDER BY date
+```
 
 
 

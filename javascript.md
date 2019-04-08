@@ -284,6 +284,20 @@ return !Object.keys(obj).length;
 var distinctArrayData = Array.from(new Set(duplicatedArrayData));
 ```
 
+# get Last N day
 
+```js
+function getLastNDay(n) {
+  var date = new Date();
+  date.setDate(date.getDate() - n);
+  var y = date.getFullYear();
+  var m = date.getMonth() + 1;
+  var d = date.getDate();
+  m = ('0' + m).slice(-2);
+  d = ('0' + d).slice(-2);
+  return y + m + d;
+}
+getLastNDay(1); // 20190101
+```
 
  

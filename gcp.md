@@ -31,4 +31,18 @@ gcloud config list
 gcloud config set project <project name>
 ```
 
+# check components list
+```bash
+$ gcloud components list
+```
+
+# update components list
+```bash
+$ gcloud components update
+```
+
+# update components list
+```bash
+$ gcloud components update
+```
 

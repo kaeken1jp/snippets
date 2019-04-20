@@ -31,18 +31,20 @@ gcloud config list
 gcloud config set project <project name>
 ```
 
-# check components list
+# show components list
 ```bash
 $ gcloud components list
 ```
 
-# update components list
+# install components
 ```bash
-$ gcloud components update
+$ gcloud components install <name>
+$ gcloud components install kubectl
 ```
 
-# update components list
+# update components
 ```bash
 $ gcloud components update
+
 ```
 

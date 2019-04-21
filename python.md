@@ -7,6 +7,19 @@ sys.version_info
 #=> sys.version_info(major=3, minor=5, micro=2, releaselevel='final', serial=0)
 ```
 
+## variable declaration
+
+
+```py
+var_name :var_type = value
+```
+
+```py
+num :int = 100
+name :str= "Alisa"
+is_ok :bool = True
+```
+
 ## list size
 ```python
 lst = [1, 2, 3]

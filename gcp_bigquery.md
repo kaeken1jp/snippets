@@ -1,5 +1,10 @@
 # CLI
 
+## dry run
+```sh
+bq --dry_run ...
+```
+
 ## bq help
 ```sh
 $ bq help

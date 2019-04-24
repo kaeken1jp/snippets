@@ -5,6 +5,45 @@
 bq --dry_run ...
 ```
 
+## job list
+```sh
+bq ls -j
+```
+
+```
+                         jobId                           Job Type    State      Start Time      Duration
+ ------------------------------------------------------ ---------- --------- ----------------- ----------
+  bquxjob_xxxxxxxx                                       query      SUCCESS   24 Apr 12:06:48   0:00:03
+  scheduled_query_xxxxxxxx                               query      SUCCESS   24 Apr 12:02:13   0:00:06
+  bqjob_xxxxxxxx                                         query      SUCCESS   24 Apr 11:01:46   0:00:00
+  job_xxxxxxxx                                           query      SUCCESS   24 Apr 08:02:37   0:00:07
+```
+
+
+## all job list
+```sh
+bq ls -j -a
+```
+
+## show job
+```sh
+
+```
+
+## show detail job
+```sh
+bq show -j bquxjob_xxxxxxxxxxxxxx
+```
+
+```
+Job project_name:bquxjob_xxxxxxxxxxxxxx
+
+  Job Type    State      Start Time      Duration              User Email               Bytes Processed   Bytes Billed   Billing Tier   Labels
+ ---------- --------- ----------------- ---------- ----------------------------------- ----------------- -------------- -------------- --------
+  query      SUCCESS   24 Apr 12:06:48   0:00:03    user@email.com                       18179402405       18180210688    1
+```
+
+
 ## bq help
 ```sh
 $ bq help

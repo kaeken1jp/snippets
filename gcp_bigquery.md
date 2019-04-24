@@ -27,11 +27,6 @@ bq ls -j -a
 
 ## show job
 ```sh
-
-```
-
-## show detail job
-```sh
 bq show -j bquxjob_xxxxxxxxxxxxxx
 ```
 
@@ -41,6 +36,26 @@ Job project_name:bquxjob_xxxxxxxxxxxxxx
   Job Type    State      Start Time      Duration              User Email               Bytes Processed   Bytes Billed   Billing Tier   Labels
  ---------- --------- ----------------- ---------- ----------------------------------- ----------------- -------------- -------------- --------
   query      SUCCESS   24 Apr 12:06:48   0:00:03    user@email.com                       18179402405       18180210688    1
+```
+
+## show detail job
+```sh
+bq --format prettyjson show -j bquxjob_xxxxxxxxxxxxxx
+```
+
+```
+{
+  "configuration": {
+    "jobType": "QUERY",
+    "query": {
+      "allowLargeResults": false,
+      "createDisposition": "CREATE_IF_NEEDED",
+      "destinationTable": {
+        "datasetId": "_2d481df0xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "projectId": "pjt_id",
+        "tableId": "xxxxxxxxxx_xxxxxxxxxx_xxxxxxxx"
+      },
+...
 ```
 
 

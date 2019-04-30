@@ -1,8 +1,17 @@
 
+# version
+```sh
+$ firebase -V
+6.7.2
+```
+
 
 # help
 
 ```sh
+$ firebase -V
+6.7.2
+
 $ firebase --help
 Usage: firebase [options] [command]
 

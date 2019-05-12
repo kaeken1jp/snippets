@@ -3,6 +3,13 @@
 
 ## 購入済み
 
+### Web解析士
+
+- [ウェブ解析士認定試験公式テキスト2019 | 守口 剛, 守口 剛;一般社団法人ウェブ解析士協会 | オンラインマーケティング | Kindleストア | Amazon](https://www.amazon.co.jp/gp/product/B07MGV1GDF/ref=ppx_yo_dt_b_d_asin_title_o06?ie=UTF8&psc=1)
+
+- [ウェブ解析士認定試験2019問題集 | ウェブ解析士協会 カリキュラム委員会 | オンラインマーケティング | Kindleストア | Amazon](https://www.amazon.co.jp/gp/product/B07NHTL82S/ref=ppx_yo_dt_b_d_asin_title_o05?ie=UTF8&psc=1)
+
+
 ### Webアクセス解析/マーケティングツール
 
 - [いちばんやさしいGoogleアナリティクスの教本 人気講師が教えるWeb解析と広告計測の基本 「いちばんやさしい教本」シリーズ | 山浦 直宏, 村山 佑介, コガン ポリーナ, 高田 和資 | 工学 | Kindleストア | Amazon](https://www.amazon.co.jp/gp/product/B07DXG4KXV/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)

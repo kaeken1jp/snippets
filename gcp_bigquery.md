@@ -678,3 +678,19 @@ ORDER BY date
 
 
 
+# SAFE_CAST
+```
+CAST を使用したときに、BigQuery がキャストできない場合はクエリが失敗します。たとえば、次のクエリはエラーとなります。
+
+SELECT CAST("apple" AS INT64) AS not_a_number;
+このタイプのエラーからクエリを守るには、SAFE_CAST を使用します。SAFE_CAST は CAST と同じですが、エラーの代わりに NULL を返します。
+
+SELECT SAFE_CAST("apple" AS INT64) AS not_a_number;
+
++--------------+
+| not_a_number |
++--------------+
+| NULL         |
++--------------+
+```
+

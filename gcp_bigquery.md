@@ -5,6 +5,22 @@
 bq --dry_run ...
 ```
 
+## project list
+```sh
+bq ls
+```
+
+## dataset list
+```sh
+bq ls <project_id>:
+```
+
+## table list
+```sh
+bq ls <project_id>:<dataset>
+```
+
+
 ## job list
 ```sh
 bq ls -j

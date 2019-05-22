@@ -4,6 +4,16 @@
 var ts = Math.round((new Date()).getTime() / 1000);
 ```
 
+# URI encode / decode
+
+```js
+// encodeURI は、「:」、「/」、「;」、「?」の各文字はエンコードせず
+encodeURI(string) / decodeURI(string) 
+
+// encodeURIComponent は、「:」、「/」、「;」、「?」の各文字はエンコードする
+encodeURIComponent(string) / decodeURIComponent(string)
+```
+
 
 # delete falsy elements
 

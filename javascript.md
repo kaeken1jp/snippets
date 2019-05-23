@@ -78,36 +78,18 @@ console.log(typeof val1);//=> string
   </script>
 ```
 
-## location hostname, port
-```javascript
-<script>
-domain = document.domain;
-alert(domain);
-hostname = window.location.hostname;
-alert(hostname);
-port = window.location.port;
-alert(port);
-host_port = window.location.host;
-alert(host_port);
-href = window.location.href;
-alert(href);
-</script>
+## location data
 ```
-
-## location hash
-```javascript
-<script src="./jquery-3.3.1.min.js"></script>
-<script>
-$(function(){
-  var params={};
-  window.location.search
-    .replace(/[?&]+([^=&]+)=([^&]*)/gi, function(str,key,value) {
-      params[key] = value;
-    }
-  );
-
-});
-</script>
+http://www.htmq.com:8000/js/index.php?q=javascript#link
+↓↓↓
+location.hrefは「http://www.htmq.com:8000/js/index.php?q=javascript#link」
+location.protocolは「http:」
+location.hostnameは「www.htmq.com」
+location.hostは「www.htmq.com:8000」
+location.portは「8000」
+location.pathnameは「/js/index.php」
+location.searchは「?q=javascript」
+location.hashは「#link」
 ```
 
 ## replace src

@@ -67,6 +67,13 @@ Commands:
   use [options] [alias_or_project_id]             set an active Firebase project for your working directory
 ```
 
+# Cloud Firestore
+
+## export & import
+
+ref. https://firebase.google.com/docs/firestore/manage-data/export-import
+
+
 
 # Firebase Hosting
 

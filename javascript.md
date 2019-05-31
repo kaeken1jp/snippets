@@ -4,6 +4,22 @@
 var ts = Math.round((new Date()).getTime() / 1000);
 ```
 
+# ts format
+```
+var timestamp = 1301090400,
+date = new Date(timestamp * 1000),
+datevalues = [
+   date.getFullYear(),
+   date.getMonth()+1,
+   date.getDate(),
+   date.getHours(),
+   date.getMinutes(),
+   date.getSeconds(),
+];
+alert(datevalues); //=> [2011, 3, 25, 23, 0, 0]
+```
+
+
 # URI encode / decode
 
 ```js

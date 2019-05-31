@@ -55,6 +55,28 @@ $ pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org goog
 ```
 
 
+## read json url
+```py
+import urllib.request
+import json
+
+url = 'http://ip.jsontest.com/'
+response = urllib.request.urlopen(url)
+content = json.loads(response.read().decode('utf8'))
+#=> json str
+
+str = 'string'
+
+for e in content:
+  for key,val in e.items():
+    if val in str:
+      print(key, "=>", val)
+
+for e in content:
+  if e['key1'] in str:
+    print(e['key2'])
+```
+
 ## how to install from file
 ```bash
 $ cat requirements.txt

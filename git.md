@@ -34,6 +34,7 @@ $ git config --global --unset KEY_NAME
 ## how to skip password
 
 ```bash
+$ mkdir ~/.ssh
 
 $ cd ~/.ssh
 

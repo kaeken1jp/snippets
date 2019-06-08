@@ -6,6 +6,22 @@ $ firebase -V
 ```
 
 
+# firestore
+
+## js client
+
+## py client
+
+```sh
+pip install --upgrade firebase-admin
+```
+
+
+
+
+
+
+
 # help
 
 ```sh

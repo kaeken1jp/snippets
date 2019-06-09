@@ -47,10 +47,11 @@ Enter same passphrase again:
 
 # copy pub file
 $ cat ~/.ssh/id_git_rsa.pub
+```
+paste in GitHub
+https://github.com/settings/ssh
 
-# paste to GitHub
-# https://github.com/settings/ssh
-
+```bash
 # set ssh config
 $ vi ~/.ssh/config
 Host github github.com

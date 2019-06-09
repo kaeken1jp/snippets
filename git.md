@@ -49,7 +49,7 @@ Enter same passphrase again:
 $ cat ~/.ssh/id_git_rsa.pub
 ```
 paste in GitHub
-https://github.com/settings/ssh
+[SSH and GPG keys](https://github.com/settings/keys)
 
 ```bash
 # set ssh config

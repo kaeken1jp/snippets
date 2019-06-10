@@ -1,5 +1,17 @@
+# set PS
+```bash
+echo "$PS1"
+[\u@\h \W]\$
+```
 
-# bash snippets
+```
+\u : ユーザー名
+\h : ホスト名
+\W : 今いるディレクトリ名
+$ : 一般ユーザーの時$,rootの時#を表示
+```
+[Bashプロンプトの変更 - Qiita](https://qiita.com/zaburo/items/9194cd9eb841dea897a0)
+
 
 ## set locale
 ```bash

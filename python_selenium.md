@@ -46,4 +46,20 @@ search_box.submit()
 print(driver.title)
 ```
 
+# 特定の要素（もっと見るボタンなど）　を延々クリック
+```py
+elem = driver.find_element_by_id(elem_name)
+actions = webdriver.ActionChains(driver)
+actions.move_to_element(elem)
+elem.click()
+
+#要素が無くなったら、try ... except で 例外処理
+```
+
+# 無限コンテンツ表示
+```py
+# 自動的にページ末尾にスクロールする処理を追加
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+```
+
 

@@ -62,4 +62,34 @@ elem.click()
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 ```
 
+## sample
+```py
+import time
+from selenium import webdriver
+
+driver_path = './chromedriver75'
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')
+driver = webdriver.Chrome(driver_path, options=options)
+
+url = 'https://infinite-scroll.com/demo/full-page/page4.html'
+print(url);time.sleep(1)
+driver.get(url)
+print(driver.title);time.sleep(1)
+
+max_num = 5
+for e in range(1,max_num + 1):
+  try:
+    print('try:')
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+  except:
+    print('except:')
+    import traceback
+    traceback.print_exc()
+    break
+
+driver.save_screenshot('screenshot.png')
+driver.quit()
+```
+
 

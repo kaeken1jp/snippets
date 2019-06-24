@@ -8,12 +8,27 @@ ProductVersion:  10.13.5
 BuildVersion:  17F77
 ```
 
+## Hide desktop Icon
+```
+defaults write com.apple.finder CreateDesktop -boolean FALSE
+killall Finder
+```
+
+## Show desktop Icon
+```bash
+defaults write com.apple.finder CreateDesktop -boolean TRUE
+killall Finder
+```
+
 ## Show/Hide Hidden Files on macOS
 ```bash
 # Show
 defaults write com.apple.finder AppleShowAllFiles TRUE
 killall Finder
+```
 
+```bash
+## Hide Hidden Files on macOS
 # Hide
 defaults write com.apple.finder AppleShowAllFiles FALSE
 killall Finder

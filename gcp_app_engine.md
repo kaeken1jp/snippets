@@ -8,3 +8,10 @@ python3
 ```bash
 gcloud auth list
 ```
+
+# update components
+```sh
+gcloud components update
+```
+
+

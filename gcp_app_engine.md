@@ -14,4 +14,7 @@ gcloud auth list
 gcloud components update
 ```
 
-
+# deploy app
+```sh
+gcloud app deploy
+```

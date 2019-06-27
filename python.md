@@ -165,12 +165,13 @@ time.sleep(10)
 
 ```
 
-## datetime
+## datetime & timezone
 ```python
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
+JST = timezone(timedelta(hours=+9), 'JST')
 
 # now
-now = datetime.now()
+now = datetime.now(JST)
 
 # format
 now.strftime("%Y%m%d")
@@ -186,8 +187,9 @@ dt_formatted = str(dt.year) + '-' + str(dt.month) + '-' + str(dt.day)
 ```
 
 ```python
-from datetime import datetime
-"{:%Y-%m-%d}".format(datetime.now())
+from datetime import date, datetime, timedelta, timezone
+JST = timezone(timedelta(hours=+9), 'JST')
+"{:%Y-%m-%d}".format(datetime.now(JST))
 ```
 
 

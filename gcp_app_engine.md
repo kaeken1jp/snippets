@@ -18,3 +18,8 @@ gcloud components update
 ```sh
 gcloud app deploy
 ```
+
+# open app page
+```sh
+gcloud app browse -s helloworldflexible
+```

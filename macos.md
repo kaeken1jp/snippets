@@ -105,3 +105,14 @@ killall SystemUIServer
 defaults write com.apple.screencapture location "~/Library/Mobile\ Documents/com~apple~CloudDocs"
 killall SystemUIServer
 ```
+
+## get screenshot image
+```sh
+$ screencapture -s <filename>
+
+# seleted area
+$ screencapture -s <filename>
+
+# loop / each n seconds 
+$ while :;do screencapture ~/Desktop/$(date +%y%m%d%H%M%S).png ; sleep 1 ; done
+```

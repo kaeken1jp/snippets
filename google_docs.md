@@ -191,5 +191,9 @@ SUBTOTAL 関数は、フィルタ領域の上に小計ダッシュボードを�
 SUBTOTAL 関数を使用すると、単純な SUM 数式による二重集計を防ぐことができます。
 ```
 
+## google search 
+```
+="https://www.google.com/search?q="&JOIN("+", SPLIT(A2, " "))
+```
 
 

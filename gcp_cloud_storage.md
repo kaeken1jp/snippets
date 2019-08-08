@@ -1,5 +1,8 @@
 
 # setting CORS
+
+[cors - Get or set a CORS JSON document for one or more buckets  |  Cloud Storage  |  Google Cloud](https://cloud.google.com/storage/docs/gsutil/commands/cors)
+
 ```bash
 # initialize
 $ cat blank.json

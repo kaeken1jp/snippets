@@ -218,4 +218,13 @@ https://www.yahoo.co.jp:443/
 
 ```
 
+## set sym link
+```bash
+ln -s {/path/to/file-name} {link-name}
+
+ex)
+ln -s realfilename.txt symlinkname
+```
+
+
 

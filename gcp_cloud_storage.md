@@ -18,7 +18,7 @@ $ gsutil cors get gs://<bucket name>
 gs://<bucket name>/ has no CORS configuration.
 
 # update
-$ cat updateCORS.json
+$ cat CORS.json
 [
   {
     "maxAgeSeconds": 3600,
@@ -35,7 +35,7 @@ $ cat updateCORS.json
   }
 ]
 
-$ gsutil cors set updateCORS.json gs://<bucket name>
+$ gsutil cors set CORS.json gs://<bucket name>
 Setting CORS on gs://<bucket name>/...
 
 # check

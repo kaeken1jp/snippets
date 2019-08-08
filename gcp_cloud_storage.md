@@ -3,6 +3,8 @@
 
 [cors - Get or set a CORS JSON document for one or more buckets  |  Cloud Storage  |  Google Cloud](https://cloud.google.com/storage/docs/gsutil/commands/cors)
 
+Gets or sets the Cross-Origin Resource Sharing (CORS) configuration on one or more buckets. This command is supported for buckets only, not objects. An example CORS JSON document looks like the following:
+
 ```bash
 # initialize
 $ cat blank.json

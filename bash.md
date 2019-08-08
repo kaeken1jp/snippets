@@ -218,13 +218,22 @@ https://www.yahoo.co.jp:443/
 
 ```
 
-## set sym link
+## UNIX create a symbolic link command
 ```bash
 ln -s {/path/to/file-name} {link-name}
 
 ex)
 ln -s realfilename.txt symlinkname
 ```
+
+## delete a symbolic link
+```bash
+rm {link-name}
+
+ex)
+rm symlinkname
+```
+
 
 
 

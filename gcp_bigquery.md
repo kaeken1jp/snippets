@@ -710,3 +710,23 @@ SELECT SAFE_CAST("apple" AS INT64) AS not_a_number;
 +--------------+
 ```
 
+
+# partitioned-tables
+
+[取り込み時間パーティション分割テーブルの作成と使用  |  BigQuery  |  Google Cloud](https://cloud.google.com/bigquery/docs/creating-partitioned-tables?hl=ja)
+
+```
+
+```
+
+
+
+
+
+
+
+
+
+
+
+

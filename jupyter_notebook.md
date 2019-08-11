@@ -1,3 +1,23 @@
+# config
+
+```
+~/.jupyter/nbconfig/notebook.json
+```
+
+
+## 2 space indent
+
+```
+{
+  "CodeCell": {
+    "cm_config": {
+      "indentUnit": 2
+    }
+  }
+}
+```
+
+
 # tool tip
 
 ```py

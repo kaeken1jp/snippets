@@ -92,6 +92,20 @@ git rm FILE_NAME
 git rm -r DIR_NAME
 ```
 
+## How to list all the files in a commit?
+```bash
+$ git diff-tree --no-commit-id --name-only -r bd61ad98
+index.html
+javascript/application.js
+javascript/ie6.js
+
+or
+
+$ git show --pretty="" --name-only bd61ad98    
+index.html
+javascript/application.js
+javascript/ie6.js
+```
 
 ## Changing a commit message
 https://help.github.com/articles/changing-a-commit-message/

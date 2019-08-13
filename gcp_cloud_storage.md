@@ -1,3 +1,11 @@
+# auth
+
+[gcloud auth application-default login  |  Cloud SDK  |  Google Cloud](https://cloud.google.com/sdk/gcloud/reference/auth/application-default/login)
+
+```bash
+gcloud auth application-default login
+```
+
 
 # setting CORS
 

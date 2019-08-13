@@ -19,6 +19,7 @@ gcloud auth login
 
 gcloud auth list
 
+gcloud auth application-default login
 ```
 
 # config

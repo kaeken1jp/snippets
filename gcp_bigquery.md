@@ -719,7 +719,15 @@ SELECT SAFE_CAST("apple" AS INT64) AS not_a_number;
 
 ```
 
+## check partition infomation
 
+```bash
+$ bq query --use_legacy_sql=true '
+SELECT
+  *
+FROM
+  [yoshimoto_16655.partition_test$__PARTITIONS_SUMMARY__]'
+```
 
 
 

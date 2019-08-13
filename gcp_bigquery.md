@@ -737,10 +737,19 @@ ORDER BY _PARTITIONTIME'
 
 ## INSERT
 
+[Data Manipulation Language Syntax  |  BigQuery  |  Google Cloud](https://cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax#insert_statement)
+
 ## DELETE
+
+[Data Manipulation Language Syntax  |  BigQuery  |  Google Cloud](https://cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax#delete_statement)
 
 ## UPDATE
 
+[Data Manipulation Language Syntax  |  BigQuery  |  Google Cloud](https://cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax#update_statement)
+
+## MERGE
+
+[Data Manipulation Language Syntax  |  BigQuery  |  Google Cloud](https://cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax#merge_statement)
 
 
 

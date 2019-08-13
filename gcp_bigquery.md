@@ -726,7 +726,7 @@ $ bq query --use_legacy_sql=true '
 SELECT
   *
 FROM
-  [yoshimoto_16655.partition_test$__PARTITIONS_SUMMARY__]'
+  [dataset.table$__PARTITIONS_SUMMARY__]'
 ```
 
 

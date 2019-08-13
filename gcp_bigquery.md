@@ -742,6 +742,17 @@ ORDER BY _PARTITIONTIME'
 ## DELETE
 
 [Data Manipulation Language Syntax  |  BigQuery  |  Google Cloud](https://cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax#delete_statement)
+```
+Each time you construct a DELETE statement, you must use the WHERE keyword, followed by a condition.
+
+The WHERE keyword is mandatory for any DELETE statement.
+
+To delete all rows in a table, set the WHERE keyword condition to true:
+```
+
+```sql
+DELETE FROM dataset.table WHERE true
+```
 
 ## UPDATE
 

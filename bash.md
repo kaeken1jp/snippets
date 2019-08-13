@@ -65,6 +65,10 @@ $ somecode
 ts=$(date "+%Y%m%d-%H%M%S") #=> 20180606-132421
 
 SEC=$(date +"%S") #=> 31
+
+$ yyyymmdd=$(date '+%Y%m%d')
+$ echo $yyyymmdd
+20190813
 ```
 
 ### convert '%Y-%m-%dT%H:%M:%S' to '%s'

@@ -22,6 +22,9 @@ gcloud auth list
 gcloud auth application-default login
 ```
 
+[gcloud auth application-default login  |  Cloud SDK  |  Google Cloud](https://cloud.google.com/sdk/gcloud/reference/auth/application-default/login)
+
+
 # config
 ```bash
 gcloud config list

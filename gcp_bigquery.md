@@ -722,12 +722,14 @@ SELECT SAFE_CAST("apple" AS INT64) AS not_a_number;
 ## check partition infomation
 
 ```bash
-$ bq query --use_legacy_sql=true '
+bq query --nouse_legacy_sql '
 SELECT
-  *
-FROM
-  [dataset.table$__PARTITIONS_SUMMARY__]'
+  FORMAT_TIMESTAMP("%Y%m%d", _PARTITIONTIME) as partition_id
+FROM `project.dataset.table`
+GROUP BY _PARTITIONTIME
+ORDER BY _PARTITIONTIME'
 ```
+
 
 
 

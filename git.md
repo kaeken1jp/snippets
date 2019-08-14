@@ -129,7 +129,19 @@ git checkout -b BRANCH_NAME origin/REMOTE_BRANCH_NAME
 git branch
 ```
 
+# Symbolic links in Git
 
+```
+シンボリックリンクの実体ファイルも
+コミット対象に含める必要あり
+
+#The reference path of the source file should be relative to the repository
+# Not good for Git repositories
+ln -s /Users/gio/repo/foo.md ./bar/foo.md
+
+# Good for Git repositories
+cd ./bar && ln -s ../foo.md foo.md
+```
 
 
 

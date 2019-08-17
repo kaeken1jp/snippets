@@ -5,6 +5,11 @@
 bq --dry_run ...
 ```
 
+## query
+```sh
+bq query 'select * from dataset.table'
+```
+
 ## project list
 ```sh
 bq ls

@@ -79,6 +79,13 @@ bq --format prettyjson show -j bquxjob_xxxxxxxxxxxxxx
 gcloud config set project <projectid>
 ```
 
+## Displays rows in a table
+```sh
+bq head ddataset.table
+```
+
+
+
 ## bq help
 ```sh
 $ bq help

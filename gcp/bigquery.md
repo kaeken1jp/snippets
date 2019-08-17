@@ -74,6 +74,10 @@ bq --format prettyjson show -j bquxjob_xxxxxxxxxxxxxx
 ...
 ```
 
+## set project
+```sh
+gcloud config set project <projectid>
+```
 
 ## bq help
 ```sh

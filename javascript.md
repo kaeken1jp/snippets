@@ -352,7 +352,8 @@ new Promise(function(res, rej) {
 
 
 # isJSON()
-```
+```js
+
 var isJSON = function(arg) {
     arg = (typeof arg === "function") ? arg() : arg;
     if (typeof arg  !== "string") {

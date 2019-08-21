@@ -1,6 +1,3 @@
-# google docs
-
-
 
 # google sheets
 

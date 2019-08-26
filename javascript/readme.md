@@ -380,3 +380,12 @@ var obj = { name: "John", age: 30, city: "New York" };
 var json_str = JSON.stringify(obj);
 ```
 
+# foreach / object
+```
+$.each(object, function(index, value) {
+    console.log(value);
+}); 
+```
+
+
+

@@ -260,3 +260,34 @@ print(dic_list)
 [{'k1': 2, 'k2': 3}, {'k1': 3, 'k2': 2}, {'k1': 1, 'k2': 1}]
 ```
 
+## dict to json
+```python
+>>> dict_sample = {"k1":"v1","k2":"v2"}
+>>> dict_sample
+{'k1': 'v1', 'k2': 'v2'}
+>>> type(dict_sample)
+<class 'dict'>
+```
+
+```python
+import json
+json_str = json.dumps(di) #=> '{"k1":"v1","k2":"v2"}'
+```
+
+## json to dict
+
+```python
+>>> json_str = '{"k1":"v1","k2":"v2"}'
+>>> type(json_str)
+<class 'str'>
+```
+
+```python
+import json
+dict_sample = json.loads(json_str) #=> {'k1': 'v1', 'k2': 'v2'}
+type(dict_sample) #=> <class 'dict'>
+```
+
+
+
+

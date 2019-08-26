@@ -368,3 +368,15 @@ var isJSON = function(arg) {
 };
 ```
 
+# json str to obj
+```js
+var json_str = '{ "name":"John", "age":30, "city":"New York"}';
+var obj = JSON.parse(json_str);
+```
+
+# obj to json str
+```js
+var obj = { name: "John", age: 30, city: "New York" };
+var json_str = JSON.stringify(obj);
+```
+

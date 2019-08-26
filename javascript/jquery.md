@@ -1,4 +1,9 @@
-# jquery snippets
+
+
+## post()
+
+[jQuery.post() | jQuery API Documentation](https://api.jquery.com/jQuery.post/)
+
 
 ## selector
 

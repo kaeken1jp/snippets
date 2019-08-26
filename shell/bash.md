@@ -224,10 +224,17 @@ https://www.yahoo.co.jp:443/
 
 ## UNIX create a symbolic link command
 ```bash
-ln -s {/path/to/file-name} {link-name}
+$ ln -s {source-filename} {symbolic-filename}
+$ ln -s file1 link1
 
-ex)
-ln -s realfilename.txt symlinkname
+To verify new soft link run:
+$ ls -l file1 link1
+
+Sample outputs:
+
+-rw-r--r--  1 veryv  wheel  0 Mar  7 22:01 file1
+lrwxr-xr-x  1 veryv  wheel  5 Mar  7 22:01 link1 -> file1
+
 ```
 
 ## delete a symbolic link

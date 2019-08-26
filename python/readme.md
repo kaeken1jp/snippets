@@ -288,6 +288,24 @@ dict_sample = json.loads(json_str) #=> {'k1': 'v1', 'k2': 'v2'}
 type(dict_sample) #=> <class 'dict'>
 ```
 
+## str to bytes
 
+```python
+>>> res = 'あいう'.encode('utf-8')
+>>> res
+b'\xe3\x81\x82\xe3\x81\x84\xe3\x81\x86'
+>>> type(res)
+<class 'bytes'>
+```
+
+## bytes to str
+
+```python
+>>> res = b'\xe3\x81\x82\xe3\x81\x84\xe3\x81\x86'.decode('utf-8')
+>>> res
+'あいう'
+>>> type(res)
+<class 'str'>
+```
 
 

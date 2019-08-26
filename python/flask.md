@@ -7,6 +7,7 @@
 
 [flask.Request — Flask API](https://tedboy.github.io/flask/generated/generated/flask.Request.html)
 
+### Request.get_data()
 ```
 Request.get_data(cache=True, as_text=False, parse_form_data=False)
 This reads the buffered incoming data from the client into one bytestring. By default this is cached but that behavior can be changed by setting cache to False.

@@ -12,4 +12,6 @@ Shift押しながら、開始行と終了行をクリック
 アドレスバーのURL末尾に「#L(開始行数)-L(終了行数)」が付与される
 ```
 
+# api
 
+[GitHub Developer | GitHub Developer Guide](https://developer.github.com/)

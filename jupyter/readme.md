@@ -53,6 +53,13 @@ var[SHIFT + TAB]
 import japanize_matplotlib
 ```
 
+# df.style
+
+[Styling — pandas 0.25.1 documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html)
+```
+df.style
+```
+
 
 ## [WIP]source-han-code-jp
 

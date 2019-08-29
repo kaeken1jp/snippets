@@ -314,3 +314,13 @@ for k, v in dict.items():
   print(k,v)
 ```
 
+## Error Message "DeprecationWarning: invalid escape sequence"
+```py
+# those strings should be r'...' raw strings to avoid exactly such warnings
+
+# NG
+re.split('[\[\]]+', str)
+
+# OK
+re.split(r'[\[\]]+', str)
+```

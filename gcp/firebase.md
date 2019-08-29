@@ -16,9 +16,30 @@ $ firebase -V
 pip install --upgrade firebase-admin
 ```
 
+## login / logout
+```sh
+firebase login
 
+firebase logout
+```
 
+## init
+```sh
+firebase init
+```
 
+## Test locally then deploy to your site
+
+[Test locally then deploy to your site  |  Firebase](https://firebase.google.com/docs/hosting/deploying)
+
+```sh
+firebase serve --only hosting
+```
+
+## deploy
+```sh
+firebase deploy
+```
 
 
 

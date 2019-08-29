@@ -59,3 +59,14 @@ baz
 ```bash
 f=''; for i in `seq 1 100`; do f=${f}" ./*_output$i.json"; done; jq -s add $f > merged.json
 ```
+
+# Object Identifier-Index
+```
+$ curl 'https://api.github.com/repos/stedolan/jq/commits?per_page=5' | jq .[] | jq .url
+
+"https://api.github.com/repos/stedolan/jq/commits/37b2d2129e5ff5d79c0f4ef08b031fa257b0bf28"
+"https://api.github.com/repos/stedolan/jq/commits/78774647e10414bcff2e1ea52074003dec024dfc"
+"https://api.github.com/repos/stedolan/jq/commits/a97638713ad30653d424f136018098c4b0e5c71b"
+"https://api.github.com/repos/stedolan/jq/commits/8d9817d2f7349b6db758783ace4c0c644d5dd7c0"
+"https://api.github.com/repos/stedolan/jq/commits/e944fe843651b3044e5387c69b28b28f4999e9ea"
+```

@@ -41,6 +41,10 @@ firebase serve --only hosting
 firebase deploy
 ```
 
+## rules
+
+[Fixing insecure rules  |  Cloud Firestore  |  Google Cloud](https://cloud.google.com/firestore/docs/security/insecure-rules)
+
 
 
 # help

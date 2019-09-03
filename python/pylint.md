@@ -2,7 +2,7 @@
 
 # install
 
-```py
+```sh
 $ pip install pylint
 $ pip show pylint
 
@@ -17,4 +17,6 @@ Location: /anaconda3/lib/python3.6/site-packages
 Requires: astroid, isort, mccabe
 Required-by: spyder
 ```
+
+
 

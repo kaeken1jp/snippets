@@ -381,11 +381,17 @@ var json_str = JSON.stringify(obj);
 ```
 
 # foreach / object
-```
+```js
 $.each(object, function(index, value) {
     console.log(value);
 }); 
 ```
 
+# trim
+```js
+function trim(s){ 
+  return ( s || '' ).replace( /^\s+|\s+$/g, '' ); 
+}
+```
 
 

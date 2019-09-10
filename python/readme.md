@@ -20,6 +20,47 @@ name :str= "Alisa"
 is_ok :bool = True
 ```
 
+## Falsy data
+```py
+
+if 0:
+    print('True')
+else:
+    print('False') # False
+     
+if 0.0:
+    print('True')
+else:
+    print('False') # False
+     
+if 0.1:
+    print('True') # True
+else:
+    print('False')
+ 
+if []:
+    print('True')
+else:
+    print('False') # False
+ 
+if ():
+    print('True')
+else:
+    print('False') # False
+ 
+if None:
+    print('True')
+else:
+    print('False') # False
+ 
+if "":
+     print('True')
+else:
+    print('False') # False
+
+```
+
+
 ## list size
 ```python
 lst = [1, 2, 3]

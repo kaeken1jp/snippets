@@ -8,3 +8,5 @@ pip install igramscraper
 
 # sample
 
+[instagram-scraper/examples at master · realsirjoe/instagram-scraper](https://github.com/realsirjoe/instagram-scraper/tree/master/examples)
+

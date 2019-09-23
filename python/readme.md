@@ -365,3 +365,22 @@ re.split('[\[\]]+', str)
 # OK
 re.split(r'[\[\]]+', str)
 ```
+
+
+## Reserved Keywords List
+```py
+import keyword
+import pprint
+
+print(type(keyword.kwlist))
+# <class 'list'>
+
+print(len(keyword.kwlist))
+# 35
+
+pprint.pprint(keyword.kwlist, compact=True)
+# ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break',
+#  'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for',
+#  'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not',
+#  'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+```

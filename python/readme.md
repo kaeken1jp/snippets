@@ -74,6 +74,28 @@ list(set(l))
 #=> [1, 2, 3, 4, 5]
 ```
 
+## set 
+```py
+>>> s1 = {1,2,3}
+>>> s2 = {1,3,6}
+
+>>> type(s1)
+<class 'set'>
+>>> type(s2)
+<class 'set'>
+
+>>> s1 & s2
+{1, 3}
+>>> s1 ^ s2
+{2, 6}
+```
+
+## tab join
+```py
+'\t'.join([data1, data2, data3])
+```
+
+
 ## make dir
 ```python
 import os

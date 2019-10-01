@@ -406,3 +406,25 @@ pprint.pprint(keyword.kwlist, compact=True)
 #  'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not',
 #  'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
 ```
+
+## multiline
+```py
+import re
+string = "LINE0\nLINE1\nLINE2\nLINE3"
+print(string)
+"""
+LINE0
+LINE1
+LINE2
+LINE3
+"""
+
+pattern = r'LINE1.*$'
+res = re.sub(pattern, ' ', string, flags=(re.MULTILINE | re.DOTALL))
+print(res)
+"""
+LINE0
+
+"""
+```
+    

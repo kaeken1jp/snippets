@@ -1,6 +1,30 @@
 # python_mecab snippets
 
-## how to install MeCab
+## install on Google Colab
+```sh
+!apt install aptitude swig
+!aptitude install mecab libmecab-dev mecab-ipadic-utf8 git make curl xz-utils file -y
+!pip install mecab-python3
+
+!git clone --depth 1 https://github.com/neologd/mecab-ipadic-neologd.git
+!echo yes | mecab-ipadic-neologd/bin/install-mecab-ipadic-neologd -n -a
+```
+
+## sample code on Google Colab
+```
+import MeCab
+import subprocess
+
+cmd='echo `mecab-config --dicdir`"/mecab-ipadic-neologd"'
+path = (subprocess.Popen(cmd, stdout=subprocess.PIPE,
+                           shell=True).communicate()[0]).decode('utf-8')
+m=MeCab.Tagger("-d {0}".format(path))
+
+print(m.parse("すもももももももものうち"))
+```
+
+
+## how to install MeCab (Mac)
 
 ```bash
 brew install mecab

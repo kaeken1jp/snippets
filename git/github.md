@@ -1,5 +1,10 @@
 # github tips
 
+## public URL for the Github public keys
+```sh
+curl https://github.com/<username>.keys
+```
+cf. https://stackoverflow.com/questions/16158158/what-is-the-public-url-for-the-github-public-keys
 
 # command
 

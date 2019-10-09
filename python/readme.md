@@ -176,6 +176,17 @@ $ pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org goog
 ```
 
 
+
+## write csv
+```py
+import csv
+
+with open(output_filename, 'w') as f:
+  writer = csv.writer(f, lineterminator='\n')
+  writer.writerow(array1d)     # one list
+  writer.writerows(array2d)    # multi list
+```
+
 ## read json url
 ```py
 import urllib.request

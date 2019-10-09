@@ -57,4 +57,51 @@ while node:
     node = node.next
 ```
 
+## make user-dict.csv
+```
+import json
+import jaconv
+import csv
+
+def readJson(path_r):
+  data = ''
+  with open(path_r) as json_file:
+    data = json.load(json_file)
+  return data
+
+f = "file.json"
+data = readJson(f)
+
+mecab_csv_data = []
+# コストは「1」を設定した単語が最優先
+# 登録したい名詞,ID,ID,重み,品詞,品詞の説明,*,*,*,*,登録したい名詞,カタカナ表示,カタカナ表記
+
+for e in data:
+  data_buffer = []
+  data_buffer.append(e['title'])
+  data_buffer.append('99999999')
+  data_buffer.append('99999999')
+  data_buffer.append('1')
+  data_buffer.append('名詞')
+  data_buffer.append('固有名詞')
+  data_buffer.append('*')
+  data_buffer.append('*')
+  data_buffer.append('*')
+  data_buffer.append('*')
+  data_buffer.append(e['title'])
+  kata = jaconv.hira2kata(e['title_kana'])
+  data_buffer.append(kata)
+  data_buffer.append(kata)
+  mecab_csv_data.append(data_buffer)
+
+with open(output_csv_file, 'w') as f:
+  writer = csv.writer(f, lineterminator='\n')
+  writer.writerows(mecab_csv_data)
+```
+
+
+
+
+
+
 

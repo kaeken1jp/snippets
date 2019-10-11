@@ -264,12 +264,7 @@ num_zero_padding = str(num).zfill(4)
 #=>0012
 ```
 
-## string replace
-```python
-some_string = 'foo bar'
-some_string.replace(" ", "_")
-#=> 'foo_bar'
-```
+
 
 ## url parse
 ```python
@@ -326,11 +321,18 @@ JST = timezone(timedelta(hours=+9), 'JST')
 
 
 
-
-## str
+## string replace
 ```python
-post_str = pre_str.replace('pre', 'post')
+some_string = 'foo bar'
+some_string.replace(" ", "_")
+#=> 'foo_bar'
 ```
+
+## string delete newline 
+```py
+re.sub('[\r\n]+$', '', text)
+```
+
 
 ## split newline
 ```python

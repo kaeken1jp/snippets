@@ -14,13 +14,21 @@
 ```
 import MeCab
 import subprocess
+import re
 
 cmd='echo `mecab-config --dicdir`"/mecab-ipadic-neologd"'
 path = (subprocess.Popen(cmd, stdout=subprocess.PIPE,
                            shell=True).communicate()[0]).decode('utf-8')
 m=MeCab.Tagger("-d {0}".format(path))
 
-print(m.parse("すもももももももものうち"))
+text = """
+mecab-ipadic-NEologd は形態素解析エンジン MeCab と共に使う単語分かち書き辞書で、
+週2回以上更新更新され、新語・固有表現に強く、語彙数が多く、しかもオープンソース・ソフトウェアである という特徴があります。
+"""
+
+line = re.sub('[\r\n]+$', '', text)
+
+print(m.parse(line))
 ```
 
 

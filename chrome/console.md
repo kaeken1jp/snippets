@@ -69,6 +69,9 @@ console.log(
     + ',placeholder=' + x.placeholder
   ).join('\n')
 )
+
+# extract all href link
+$$('.class_name > a').map(x=>x.href).join('\n')
 ```
 
 ## $0 (The currently-selected object in the inspector.)

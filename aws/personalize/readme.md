@@ -9,6 +9,8 @@
 [MovieLens 20M Dataset | GroupLens](https://grouplens.org/datasets/movielens/20m/)
 
 ```sh
+mkdir personalize_tutorial
+cd personalize_tutorial
 curl -o ml-20m.zip http://files.grouplens.org/datasets/movielens/ml-20m.zip
 unzip ml-20m.zip
 rm ml-20m.zip

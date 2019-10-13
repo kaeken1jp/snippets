@@ -4,6 +4,40 @@
 
 [Amazon Personalize – Real-Time Personalization and Recommendation for Everyone | AWS News Blog](https://aws.amazon.com/jp/blogs/aws/amazon-personalize-real-time-personalization-and-recommendation-for-everyone/)
 
+## step0: select AMI
+```
+AMI 
+Anaconda with Python 3
+ (1)| Anaconda3 2019.07 20190724 Previous versions | By Anaconda
+```
+
+```sh
+$ pip show boto
+Name: boto
+Version: 2.49.0
+Summary: Amazon Web Services Library
+Home-page: https://github.com/boto/boto/
+Author: Mitch Garnaat
+Author-email: mitch@garnaat.com
+License: MIT
+Location: /opt/conda/lib/python3.7/site-packages
+Requires: 
+Required-by: 
+
+$ pip show pandas
+Name: pandas
+Version: 0.24.2
+Summary: Powerful data structures for data analysis, time series, and statistics
+Home-page: http://pandas.pydata.org
+Author: None
+Author-email: None
+License: BSD
+Location: /opt/conda/lib/python3.7/site-packages
+Requires: numpy, python-dateutil, pytz
+Required-by: statsmodels, seaborn
+```
+
+
 ## step1: download
 
 [MovieLens 20M Dataset | GroupLens](https://grouplens.org/datasets/movielens/20m/)
@@ -14,6 +48,20 @@ cd personalize_tutorial
 curl -o ml-20m.zip http://files.grouplens.org/datasets/movielens/ml-20m.zip
 unzip ml-20m.zip
 rm ml-20m.zip
+```
+
+```sh
+$ head ml-20m/ratings.csv
+userId,movieId,rating,timestamp
+1,2,3.5,1112486027
+1,29,3.5,1112484676
+1,32,3.5,1112484819
+1,47,3.5,1112484727
+1,50,3.5,1112484580
+1,112,3.5,1094785740
+1,151,4.0,1094785734
+1,223,4.0,1112485573
+1,253,4.0,1112484940
 ```
 
 ## step2: Data pre-processing

@@ -88,3 +88,6 @@ s3.upload_file('ratings.processed.csv','jsimon-ml20m','ratings.processed.csv')
 ```
 
 
+```sh
+$ python pre_processing.py
+```

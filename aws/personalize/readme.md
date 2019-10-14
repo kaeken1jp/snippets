@@ -66,6 +66,12 @@ userId,movieId,rating,timestamp
 
 ## step2: Data pre-processing
 
+```sh
+cd personalize_tutorial/ml-20m
+vi pre_processing.py
+cat pre_processing.py
+```
+
 ```py
 import pandas, boto3 
 from sklearn.utils import shuffle

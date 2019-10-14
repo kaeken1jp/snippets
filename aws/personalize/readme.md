@@ -12,16 +12,17 @@ Anaconda with Python 3
 ```
 
 ```sh
-$ pip show boto
-Name: boto
-Version: 2.49.0
-Summary: Amazon Web Services Library
-Home-page: https://github.com/boto/boto/
-Author: Mitch Garnaat
-Author-email: mitch@garnaat.com
-License: MIT
+$ pip install boto3
+$ pip show boto3
+Name: boto3
+Version: 1.9.248
+Summary: The AWS SDK for Python
+Home-page: https://github.com/boto/boto3
+Author: Amazon Web Services
+Author-email: UNKNOWN
+License: Apache License 2.0
 Location: /opt/conda/lib/python3.7/site-packages
-Requires: 
+Requires: jmespath, botocore, s3transfer
 Required-by: 
 
 $ pip show pandas

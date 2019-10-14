@@ -246,4 +246,8 @@ rm symlinkname
 ```
 
 
+## to read random line from a file
+```sh
+shuf -n 1 $FILE
+```
 

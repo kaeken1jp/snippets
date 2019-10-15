@@ -136,3 +136,36 @@ def get_recommend(campaign_arn,user_id):
  
 get_recommend(campaign_arn,user_id)
 ```
+
+```sh
+$ python get_recommend.py 
+```
+
+```
+Recommended items
+527
+296
+356
+260
+593
+318
+110
+2571
+1198
+1
+50
+4993
+5952
+32
+858
+457
+608
+480
+150
+4226
+588
+589
+1210
+47
+1196
+```

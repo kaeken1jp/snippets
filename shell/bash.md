@@ -251,3 +251,13 @@ rm symlinkname
 shuf -n 1 $FILE
 ```
 
+```sh
+$ cat file_line_sampling.sh 
+#!/bin/bash
+
+basefile=file.csv
+outfile=100k_${basefile}
+head -n 1 ${basefile} > ${outfile} 
+shuf -n 100000 ${basefile} >> ${outfile}
+```
+

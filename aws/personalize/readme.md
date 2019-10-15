@@ -102,3 +102,37 @@ s3.upload_file('ratings.processed.csv','jsimon-ml20m','ratings.processed.csv')
 ```sh
 $ python pre_processing.py
 ```
+
+## step3: Creating the dataset group
+
+## step4: Importing datasets
+
+## step5: Putting it all together: creating a solution
+
+
+## step6: Recommending new items in real-time
+
+```sh
+$ cat get_recommend.py 
+```
+
+```py
+import boto3
+ 
+campaign_arn = "arn:aws:personalize:ap-northeast-1:xxxxxxxxxx:campaign/__CAMPAIGN_NAME__"
+user_id = '1'
+ 
+ 
+def get_recommend(campaign_arn,user_id):
+    personalizeRt = boto3.client('personalize-runtime')
+ 
+    response = personalizeRt.get_recommendations(
+        campaignArn = campaign_arn,
+        userId = user_id)
+ 
+    print("Recommended items")
+    for item in response['itemList']:
+        print (item['itemId'])
+ 
+get_recommend(campaign_arn,user_id)
+```

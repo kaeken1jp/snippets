@@ -71,6 +71,11 @@ userId,movieId,rating,timestamp
 
 https://console.aws.amazon.com/s3
 
+- set bucket policy
+
+[Uploading to an S3 Bucket - Amazon Personalize](https://docs.aws.amazon.com/personalize/latest/dg/data-prep-upload-s3.html)
+
+
 - pre processing file
 
 ```sh

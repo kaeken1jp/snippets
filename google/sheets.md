@@ -193,4 +193,22 @@ SUBTOTAL 関数を使用すると、単純な SUM 数式による二重集計を
 ="https://www.google.com/search?q="&JOIN("+", SPLIT(A2, " "))
 ```
 
+## dup search
+```
+=COUNTIF(B:B,B:B)>1
+```
+
+```
+A1=a
+A2=b
+A3=c
+A4=a
+
+then
+
+A1=a COUNTIF(A:A,A:A)>1 #=> TRUE
+A2=b COUNTIF(A:A,A:A)>1 #=> FALSE
+A3=c COUNTIF(A:A,A:A)>1 #=> FALSE
+A4=a COUNTIF(A:A,A:A)>1 #=> TRUE
+```
 

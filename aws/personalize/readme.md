@@ -65,7 +65,13 @@ userId,movieId,rating,timestamp
 1,253,4.0,1112484940
 ```
 
-## step2: Data pre-processing
+## step2: Data pre-processing & upload
+
+- make a public bucket at S3
+
+https://console.aws.amazon.com/s3
+
+- pre processing file
 
 ```sh
 cd personalize_tutorial/ml-20m

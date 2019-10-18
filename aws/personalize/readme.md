@@ -98,10 +98,37 @@ s3 = boto3.client('s3')
 s3.upload_file('ratings.processed.csv','jsimon-ml20m','ratings.processed.csv')
 ```
 
-
 ```sh
 $ python pre_processing.py
 ```
+
+### memory shortage
+
+- You should prepare small size data.
+
+```py
+$ cat file_line_sampling.sh
+#!/bin/bash
+
+basefile=ratings.csv
+outfile=100k_${basefile}
+head -n 1 ${basefile} > ${outfile} 
+shuf -n 100000 ${basefile} >> ${outfile}
+```
+
+```py
+$ cat pre_processing.py
+import pandas, boto3 
+ratings = pandas.read_csv('100k_ratings.csv', dtype={'userId':int, 'movieId':int})
+ratings = ratings[ratings['rating']>3.6]
+ratings = ratings.drop(columns='rating')
+ratings.columns = ['USER_ID','ITEM_ID','TIMESTAMP']
+ratings.to_csv('ratings.processed.csv',index=False)
+s3 = boto3.client('s3')
+bucket_name = '__UNIQUE_BUCKET_NAME__'
+s3.upload_file('ratings.processed.csv', bucket_name, 'ratings.processed.csv')
+```
+
 
 ## step3: Creating the dataset group
 

@@ -1,5 +1,7 @@
 [Serverless - The Serverless Application Framework powered by AWS Lambda, API Gateway, and more](https://serverless.com/)
 
+[Serverless Framework Documentation](https://serverless.com/framework/docs/)
+
 # install
 
 ```sh

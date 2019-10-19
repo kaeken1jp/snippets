@@ -2,6 +2,15 @@
 
 [Amazon Web Services (AWS) - Cloud Computing Services](https://aws.amazon.com/)
 
+# ARN
+
+[Amazon Resource Names (ARNs) - AWS General Reference](https://docs.aws.amazon.com/en_pv/general/latest/gr/aws-arns-and-namespaces.html)
+
+- Amazon Resource Names (ARNs) uniquely identify AWS resources. We require an ARN when you need to specify a resource unambiguously across all of AWS, such as in IAM policies, Amazon Relational Database Service (Amazon RDS) tags, and API calls.
+
+
+
+
 # all service (2019.08)
 
 ```js

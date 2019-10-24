@@ -274,6 +274,28 @@ Promise.all([p1, p2, p3]).then(values => {
 });
 ```
 
+## Promise loop
+```js
+function doSomething(elem) {
+  console.log(elem);
+}
+
+function loopPromise(arr) {
+  return arr.reduce(function(promise, elem) {
+      return promise.then(function() {
+          return doSomething(elem);
+      });
+  }, Promise.resolve());
+}
+
+var ary = [1,2,3];
+
+loopPromise(ary).then(function() {
+    console.log('all done');
+});
+```
+
+
 # encrypto
 
 js暗号化/復号化

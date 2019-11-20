@@ -517,4 +517,16 @@ LINE0
 
 """
 ```
-    
+
+
+## get key / value from dict
+
+```py
+l = [{'Name': 'Alice', 'Age': 40, 'Point': 80}, 
+     {'Name': 'Bob', 'Age': 20},
+     {'Name': 'Charlie', 'Age': 30, 'Point': 70}]
+
+l_name = [d.get('Name') for d in l]
+print(l_name)
+# ['Alice', 'Bob', 'Charlie']
+```

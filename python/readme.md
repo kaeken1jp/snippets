@@ -444,7 +444,7 @@ b'\xe3\x81\x82\xe3\x81\x84\xe3\x81\x86'
 
 ## dict loop
 ```python
-for k, v in dict.items():
+for k, v in dict_data.items():
   print(k,v)
 ```
 

@@ -175,7 +175,26 @@ $ pip install google-cloud
 $ pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org google-cloud
 ```
 
+## array append / extend
+```py
+a = [1,2,3]
+b = [4, 5]
 
+# append list & number(str)
+a1 = a
+a1.append(4)
+print(a1) # [1, 2, 3, 4]
+
+# append list & list
+a1 = a
+a1.append(b)
+print(a1) # [1, 2, 3, [4, 5]] 
+
+# extend list & list
+a1 = a
+a1.extend(b)
+print(a1) # [1, 2, 3, 4, 5]
+```
 
 ## write csv
 ```py

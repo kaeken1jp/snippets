@@ -9,6 +9,14 @@ https://nodejs.org/en/docs/
 https://gist.github.com/LeCoupa/985b82968d8285987dc3
 
 
+# console.log
+```sh
+$ cat console_log.js
+console.log("Hello world!");
+
+$ node console_log.js
+Hello world!
+```
 
 # args
 

@@ -1,4 +1,15 @@
-# css3 snippets
+# link
+
+[CSS3 - Archive of obsolete content | MDN](https://developer.mozilla.org/en-US/docs/Archive/CSS3)
+
+[CSS Tutorial](https://www.w3schools.com/css/default.asp)
+
+# add text
+```css
+SELECTOR {font-size:0;}
+SELECTOR:before {font-size: 12px; content: "text....";}
+```
+
 
 ## text-transform
 [text\-transform \- CSS: カスケーディングスタイルシート \| MDN](https://developer.mozilla.org/ja/docs/Web/CSS/text-transform)

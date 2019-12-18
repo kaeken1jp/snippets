@@ -11,6 +11,13 @@
 
 [Try jQuery Selector](https://www.w3schools.com/jquery/trysel.asp)
 
+
+## change link
+
+```js
+$("SELECTOR").attr("href", "http://example.com/")
+```
+
 ## important
 
 ```javascript

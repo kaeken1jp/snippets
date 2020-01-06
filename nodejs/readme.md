@@ -33,13 +33,43 @@ undefined
 ```
 
 
-# console.log
+# exec node.js file
 ```sh
 $ cat console_log.js
 console.log("Hello world!");
 
 $ node console_log.js
 Hello world!
+```
+
+# non blocking process
+```js
+// non blocking
+setTimeout(function() {
+  console.log(1);
+}, 1000);
+console.log(2);
+```
+
+## result
+```
+2
+1
+```
+
+# blocking process
+```js
+// blocking
+var start = new Date().getTime();
+console.log(1);
+while (new Date().getTime() < start + 1000);
+console.log(2);
+```
+
+## result
+```
+1
+2
 ```
 
 # args

@@ -85,6 +85,37 @@ server.listen(1337, 'localhost'); // http://localhost:1377
 console.log("server listening ...");
 ```
 
+# settings
+
+## setting file
+```sh
+$ cat settings.js
+```
+
+```js
+exports.port = 1337;
+exports.host = 'localhost';
+```
+
+## road setting file
+```sh
+$ cat http_and_settings.js
+```
+
+```js
+var http = require('http');
+var settings = require('./settings'); // load setting file
+console.log(settings);
+var server = http.createServer();
+server.on('request', function(req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.write('hello world');
+  res.end();
+});
+server.listen(settings.port, settings.host); // use setting data
+console.log("server listening ...");
+```
+
 # args
 
 ```sh

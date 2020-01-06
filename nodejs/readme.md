@@ -97,7 +97,7 @@ exports.port = 1337;
 exports.host = 'localhost';
 ```
 
-## road setting file
+## load setting file
 ```sh
 $ cat http_and_settings.js
 ```
@@ -115,6 +115,34 @@ server.on('request', function(req, res) {
 server.listen(settings.port, settings.host); // use setting data
 console.log("server listening ...");
 ```
+
+## control req.url
+
+```js
+var http = require('http');
+var settings = require('./settings');
+console.log(settings);
+var server = http.createServer();
+server.on('request', function(req, res) {
+  switch (req.url) {
+    case '/about':
+      msg = "about this page";
+      break;
+    case  '/profile':
+      msg = "about me";
+      break;
+    default:
+      msg = "wrong page";
+      break;
+  }
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.write(msg);
+  res.end();
+});
+server.listen(settings.port, settings.host);
+console.log("server listening ...");
+```
+
 
 # args
 

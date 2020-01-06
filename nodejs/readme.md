@@ -8,6 +8,30 @@ https://nodejs.org/en/docs/
 
 https://gist.github.com/LeCoupa/985b82968d8285987dc3
 
+# cli
+```js
+$ node
+
+> console.log(1)
+1
+undefined
+
+> console.log('abc')
+abc
+undefined
+
+> .help
+.break    Sometimes you get stuck, this gets you out
+.clear    Alias for .break
+.editor   Enter editor mode
+.exit     Exit the repl
+.help     Print this help message
+.load     Load JS from a file into the REPL session
+.save     Save all evaluated commands in this REPL session to a file
+
+> .exit
+```
+
 
 # console.log
 ```sh

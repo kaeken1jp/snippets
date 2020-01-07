@@ -174,9 +174,39 @@ console.log("server listening ...");
 
 [snippets/npm.md at master · kaeken1jp/snippets](https://github.com/kaeken1jp/snippets/blob/master/nodejs/npm.md#ejs-embedded-javascript-templates)
 
-## code
+## template code
 
+```html
+$ cat public/index.ejs
+<h1><%= title %></h1>
+<p><%- content %></p>
+<p><%= n %> views</p>
+```
 
+## node code
+
+```js
+var http = require('http'),
+    fs = require('fs'),
+    ejs = require('ejs');
+var settings = require('./settings');
+var server = http.createServer();
+var template = fs.readFileSync(__dirname + '/public/index.ejs', 'utf-8');
+var n = 0;
+server.on('request', function(req, res) {
+  n++;
+  var data = ejs.render(template, {
+    title: "hello",
+    content: "<strong>world</strong>",
+    n: n
+  });
+  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.write(data);
+  res.end();
+});
+server.listen(settings.port, settings.host);
+console.log("server listening ...");
+```
 
 
 

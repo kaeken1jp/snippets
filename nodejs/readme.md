@@ -116,7 +116,7 @@ server.listen(settings.port, settings.host); // use setting data
 console.log("server listening ...");
 ```
 
-## control req.url
+# control req.url
 
 ```js
 var http = require('http');
@@ -138,6 +138,31 @@ server.on('request', function(req, res) {
   res.writeHead(200, {'Content-Type': 'text/plain'});
   res.write(msg);
   res.end();
+});
+server.listen(settings.port, settings.host);
+console.log("server listening ...");
+```
+
+
+# read html file
+```js
+var http = require('http');
+var fs = require('fs'); // fs module
+var settings = require('./settings');
+console.log(settings);
+var server = http.createServer();
+server.on('request', function(req, res) {
+  // read file
+  fs.readFile(__dirname + '/public/index.html', 'utf-8', function(err, data) {
+    if (err) {
+      res.writeHead(404, {'Content-Type': 'text/plain'});
+      res.write('not found');
+      return res.end();
+    }
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    res.end();
+  });
 });
 server.listen(settings.port, settings.host);
 console.log("server listening ...");

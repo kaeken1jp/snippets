@@ -168,6 +168,17 @@ server.listen(settings.port, settings.host);
 console.log("server listening ...");
 ```
 
+# use template
+
+## install ejs
+
+[snippets/npm.md at master · kaeken1jp/snippets](https://github.com/kaeken1jp/snippets/blob/master/nodejs/npm.md#ejs-embedded-javascript-templates)
+
+## code
+
+
+
+
 
 # args
 

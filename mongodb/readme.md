@@ -1,6 +1,10 @@
 [The most popular database for modern apps | MongoDB](https://www.mongodb.com/)
 
 
+# concept
+
+![](https://i.gyazo.com/0faa8222efd17ed826895dcad8c4fbd0.png)
+
 # install(Mac/HomeBrew)
 
 ```sh

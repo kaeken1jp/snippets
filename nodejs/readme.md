@@ -209,6 +209,67 @@ console.log("server listening ...");
 ```
 
 
+# form
+```html
+$ cat public/form.ejs
+<!doctype html>
+<html lang="ja">
+<head>
+    <title>BBS</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <form method="post">
+    <input type="text" name="name">
+    <input type="submit" value="Post!">
+    <ul>
+        <% for (var i = 0; i < posts.length; i++ ) { %>
+        <li><%= posts[i] %></li>
+        <% } %>
+    </ul>
+</body>
+</html>
+```
+
+```js
+var http = require('http'),
+    fs = require('fs'),
+    ejs = require('ejs'),
+    qs = require('querystring');
+var settings = require('./settings');
+var server = http.createServer();
+var template = fs.readFileSync(__dirname + '/public/form.ejs', 'utf-8');
+var posts = [];
+function renderForm(posts, res) {
+    var data = ejs.render(template, {
+        posts: posts
+    });
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+    res.end();
+}
+server.on('request', function(req, res) {
+    if (req.method === 'POST') {
+        req.data = "";
+        req.on("data", function(chunk) {
+            // コールバック関数の引数を結合していく
+            req.data += chunk;
+        });
+        req.on("end", function() {
+            var query = qs.parse(req.data);
+            posts.push(query.name);
+            renderForm(posts, res);
+        });
+    } else {
+        renderForm(posts, res);
+    }
+});
+server.listen(settings.port, settings.host);
+console.log("server listening ...");
+```
+
+
+
 
 # args
 

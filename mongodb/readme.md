@@ -237,5 +237,40 @@ WriteResult({ "nInserted" : 1 })
 
 ```
 
+# select field
+```
+> db.users.find({}, {name: true, score: 1});
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b1"), "name" : "hogeta", "score" : 52 }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b2"), "name" : "fugao", "score" : 82 }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b3"), "name" : "tapiyo", "score" : 66 }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b4"), "name" : "tofoo", "score" : 26 }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b5"), "name" : "barri", "score" : 29 }
+{ "_id" : ObjectId("5e172e1da3b01a7b8d4f41b6"), "name" : "tanaka", "score" : 52 }
+>
+> db.users.find({}, {score: 0});
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b1"), "name" : "hogeta", "team" : "team-1" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b2"), "name" : "fugao", "team" : "team-2" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b3"), "name" : "tapiyo", "team" : "team-3" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b4"), "name" : "tofoo", "team" : "team-1" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b5"), "name" : "barri", "team" : "team-2" }
+{ "_id" : ObjectId("5e172e1da3b01a7b8d4f41b6"), "name" : "tanaka", "age" : 23 }
+>
+> db.users.find({}, {score: 0, name: 1});
+Error: error: {
+	"ok" : 0,
+	"errmsg" : "Projection cannot have a mix of inclusion and exclusion.",
+	"code" : 2,
+	"codeName" : "BadValue"
+}
+>
+> db.users.find({}, {score: 1, _id: 0});
+{ "score" : 52 }
+{ "score" : 82 }
+{ "score" : 66 }
+{ "score" : 26 }
+{ "score" : 29 }
+{ "score" : 52 }
+```
+
 
 

@@ -43,7 +43,7 @@ config  0.000GB
 local   0.000GB
 ```
 
-# use/create/drop db
+# use/drop db
 ```
 > use mydb;
 switched to db mydb
@@ -87,6 +87,27 @@ admin   0.000GB
 config  0.000GB
 local   0.000GB
 ```
+
+# create/rename/drop collection
+```
+> use mydb;
+switched to db mydb
+
+> db.createCollection("users");
+{ "ok" : 1 }
+> show collections;
+users
+
+> db.users.renameCollection("customers");
+{ "ok" : 1 }
+> show collections;
+customers
+
+> db.customers.drop();
+true
+> show collections;
+```
+
 
 
 

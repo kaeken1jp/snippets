@@ -109,5 +109,54 @@ true
 ```
 
 
+# insert/count/find document
+```
+> use mydb;
+switched to db mydb
+
+> db.users.insert(
+... {
+... name: "hoge",
+... score: 30
+... }
+... );
+WriteResult({ "nInserted" : 1 })
+
+> show collections;
+users
+
+> db.users.insert({ name: "fuga", score: 50, tag: ["web", "mobile"]});
+WriteResult({ "nInserted" : 1 })
+
+> db.users.count();
+2
+
+> db.users.find();
+{ "_id" : ObjectId("5e172a79a3b01a7b8d4f41a5"), "name" : "hoge", "score" : 30 }
+{ "_id" : ObjectId("5e172ab5a3b01a7b8d4f41a6"), "name" : "fuga", "score" : 50, "tag" : [ "web", "mobile" ] }
+
+> for (var i = 0; i < 10; i++) {
+... db.users.insert({score: Math.random()});}
+WriteResult({ "nInserted" : 1 })
+
+> db.users.count();
+12
+
+> db.users.find();
+{ "_id" : ObjectId("5e172a79a3b01a7b8d4f41a5"), "name" : "hoge", "score" : 30 }
+{ "_id" : ObjectId("5e172ab5a3b01a7b8d4f41a6"), "name" : "fuga", "score" : 50, "tag" : [ "web", "mobile" ] }
+{ "_id" : ObjectId("5e172b18a3b01a7b8d4f41a7"), "score" : 0.2898016761772906 }
+{ "_id" : ObjectId("5e172b18a3b01a7b8d4f41a8"), "score" : 0.3749281662647115 }
+{ "_id" : ObjectId("5e172b18a3b01a7b8d4f41a9"), "score" : 0.4215328478896615 }
+{ "_id" : ObjectId("5e172b18a3b01a7b8d4f41aa"), "score" : 0.5305842352556581 }
+{ "_id" : ObjectId("5e172b18a3b01a7b8d4f41ab"), "score" : 0.28976023620569147 }
+{ "_id" : ObjectId("5e172b18a3b01a7b8d4f41ac"), "score" : 0.66404725426431 }
+{ "_id" : ObjectId("5e172b18a3b01a7b8d4f41ad"), "score" : 0.412046409348093 }
+{ "_id" : ObjectId("5e172b18a3b01a7b8d4f41ae"), "score" : 0.4589595417035396 }
+{ "_id" : ObjectId("5e172b18a3b01a7b8d4f41af"), "score" : 0.3417647155688526 }
+{ "_id" : ObjectId("5e172b18a3b01a7b8d4f41b0"), "score" : 0.2724930450442212 }
+```
+
+
 
 

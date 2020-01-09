@@ -109,7 +109,7 @@ true
 ```
 
 
-# insert/count/find document
+# insert/count/find/remove document
 ```
 > use mydb;
 switched to db mydb
@@ -155,6 +155,14 @@ WriteResult({ "nInserted" : 1 })
 { "_id" : ObjectId("5e172b18a3b01a7b8d4f41ae"), "score" : 0.4589595417035396 }
 { "_id" : ObjectId("5e172b18a3b01a7b8d4f41af"), "score" : 0.3417647155688526 }
 { "_id" : ObjectId("5e172b18a3b01a7b8d4f41b0"), "score" : 0.2724930450442212 }
+
+> db.users.remove({});
+WriteResult({ "nRemoved" : 12 })
+
+> db.users.find();
+
+> db.users.count();
+0
 ```
 
 

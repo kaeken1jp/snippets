@@ -215,6 +215,26 @@ WriteResult({ "nInserted" : 1 })
 > db.users.distinct("team");
 [ "team-1", "team-2", "team-3" ]
 
+
+> db.users.find({name:/i/, score:{$gte:50}});
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b3"), "name" : "tapiyo", "score" : 66, "team" : "team-3" }
+>
+> db.users.find({$or: [{name:/i/}, {score:{$gte:50}}]});
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b1"), "name" : "hogeta", "score" : 52, "team" : "team-1" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b2"), "name" : "fugao", "score" : 82, "team" : "team-2" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b3"), "name" : "tapiyo", "score" : 66, "team" : "team-3" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b5"), "name" : "barri", "score" : 29, "team" : "team-2" }
+>
+> db.users.find({score: {$in: [52, 66]}});
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b1"), "name" : "hogeta", "score" : 52, "team" : "team-1" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b3"), "name" : "tapiyo", "score" : 66, "team" : "team-3" }
+>
+> db.users.insert({name:"tanaka", score:52, age:23});
+WriteResult({ "nInserted" : 1 })
+>
+> db.users.find({age: {$exists: true}});
+{ "_id" : ObjectId("5e172e1da3b01a7b8d4f41b6"), "name" : "tanaka", "score" : 52, "age" : 23 }
+
 ```
 
 

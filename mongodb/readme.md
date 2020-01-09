@@ -165,6 +165,57 @@ WriteResult({ "nRemoved" : 12 })
 0
 ```
 
+# search document
+```
+> db.users.insert({name: "hogeta", score: 52, team: "team-1"});
+WriteResult({ "nInserted" : 1 })
+> db.users.insert({name: "fugao", score: 82, team: "team-2"});
+WriteResult({ "nInserted" : 1 })
+> db.users.insert({name: "tapiyo", score: 66, team: "team-3"});
+WriteResult({ "nInserted" : 1 })
+> db.users.insert({name: "tofoo", score: 26, team: "team-1"});
+WriteResult({ "nInserted" : 1 })
+> db.users.insert({name: "barri", score: 29, team: "team-2"});
+WriteResult({ "nInserted" : 1 })
+>
+>
+> db.users.find();
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b1"), "name" : "hogeta", "score" : 52, "team" : "team-1" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b2"), "name" : "fugao", "score" : 82, "team" : "team-2" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b3"), "name" : "tapiyo", "score" : 66, "team" : "team-3" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b4"), "name" : "tofoo", "score" : 26, "team" : "team-1" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b5"), "name" : "barri", "score" : 29, "team" : "team-2" }
+
+
+> db.users.find({team: "team-1"});
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b1"), "name" : "hogeta", "score" : 52, "team" : "team-1" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b4"), "name" : "tofoo", "score" : 26, "team" : "team-1" }
+>
+> db.users.find({score: {$gte: 50}});
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b1"), "name" : "hogeta", "score" : 52, "team" : "team-1" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b2"), "name" : "fugao", "score" : 82, "team" : "team-2" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b3"), "name" : "tapiyo", "score" : 66, "team" : "team-3" }
+>
+> // $gte $gt $lte $lt
+> // $eq $ne
+>
+> db.users.find({team: {$eq: "team-1"}});
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b1"), "name" : "hogeta", "score" : 52, "team" : "team-1" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b4"), "name" : "tofoo", "score" : 26, "team" : "team-1" }
+>
+> db.users.find({name: /t/});
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b1"), "name" : "hogeta", "score" : 52, "team" : "team-1" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b3"), "name" : "tapiyo", "score" : 66, "team" : "team-3" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b4"), "name" : "tofoo", "score" : 26, "team" : "team-1" }
+>
+> db.users.find({name: /^t/});
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b3"), "name" : "tapiyo", "score" : 66, "team" : "team-3" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b4"), "name" : "tofoo", "score" : 26, "team" : "team-1" }
+>
+> db.users.distinct("team");
+[ "team-1", "team-2", "team-3" ]
+
+```
 
 
 

@@ -272,5 +272,52 @@ Error: error: {
 { "score" : 52 }
 ```
 
+# sort/limit/skip document
+```
+> db.users.find({}, {_id: 0}).sort({score: 1});
+{ "name" : "tofoo", "score" : 26, "team" : "team-1" }
+{ "name" : "barri", "score" : 29, "team" : "team-2" }
+{ "name" : "hogeta", "score" : 52, "team" : "team-1" }
+{ "name" : "tanaka", "score" : 52, "age" : 23 }
+{ "name" : "tapiyo", "score" : 66, "team" : "team-3" }
+{ "name" : "fugao", "score" : 82, "team" : "team-2" }
+>
+> db.users.find({}, {_id: 0}).sort({score: -1});
+{ "name" : "fugao", "score" : 82, "team" : "team-2" }
+{ "name" : "tapiyo", "score" : 66, "team" : "team-3" }
+{ "name" : "hogeta", "score" : 52, "team" : "team-1" }
+{ "name" : "tanaka", "score" : 52, "age" : 23 }
+{ "name" : "barri", "score" : 29, "team" : "team-2" }
+{ "name" : "tofoo", "score" : 26, "team" : "team-1" }
+>
+> db.users.find({}, {_id: 0}).limit(3);
+{ "name" : "hogeta", "score" : 52, "team" : "team-1" }
+{ "name" : "fugao", "score" : 82, "team" : "team-2" }
+{ "name" : "tapiyo", "score" : 66, "team" : "team-3" }
+>
+> db.users.find({}, {_id: 0}).sort({score: -1}).limit(3);
+{ "name" : "fugao", "score" : 82, "team" : "team-2" }
+{ "name" : "tapiyo", "score" : 66, "team" : "team-3" }
+{ "name" : "hogeta", "score" : 52, "team" : "team-1" }
+>
+> db.users.findOne({}, {_id: 0});
+{ "name" : "hogeta", "score" : 52, "team" : "team-1" }
+>
+> db.users.find({}, {_id: 0});
+{ "name" : "hogeta", "score" : 52, "team" : "team-1" }
+{ "name" : "fugao", "score" : 82, "team" : "team-2" }
+{ "name" : "tapiyo", "score" : 66, "team" : "team-3" }
+{ "name" : "tofoo", "score" : 26, "team" : "team-1" }
+{ "name" : "barri", "score" : 29, "team" : "team-2" }
+{ "name" : "tanaka", "score" : 52, "age" : 23 }
+>
+> db.users.find({}, {_id: 0}).skip(2);
+{ "name" : "tapiyo", "score" : 66, "team" : "team-3" }
+{ "name" : "tofoo", "score" : 26, "team" : "team-1" }
+{ "name" : "barri", "score" : 29, "team" : "team-2" }
+{ "name" : "tanaka", "score" : 52, "age" : 23 }
+```
+
+
 
 

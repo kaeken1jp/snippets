@@ -534,3 +534,169 @@ WriteResult({
 })
 ```
 
+# dump & restore
+```
+> show dbs;
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+mydb    0.000GB
+> exit
+bye
+
+
+$ mongodump -d mydb
+2020-01-10T21:45:08.164+0700	writing mydb.users to
+2020-01-10T21:45:08.179+0700	done dumping mydb.users (6 documents)
+
+$ ls
+dump
+
+$ ls dump/
+mydb
+
+$ mongo mydb
+MongoDB shell version v4.2.2
+...
+
+> db.users.find();
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b1"), "name" : "hogeta", "point" : 90 }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b2"), "name" : "fugao", "score" : 0, "team" : "team-2" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b3"), "name" : "tapiyo", "score" : 66, "team" : "team-3" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b4"), "name" : "tofoo", "score" : 26, "team" : "team-1" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b5"), "name" : "barri", "score" : 0, "team" : "team-2" }
+{ "_id" : ObjectId("5e172e1da3b01a7b8d4f41b6"), "name" : "tanaka", "score" : 52, "age" : 23 }
+
+> db.users.remove({name: "hogeta"});
+WriteResult({ "nRemoved" : 1 })
+> db.users.find();
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b2"), "name" : "fugao", "score" : 0, "team" : "team-2" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b3"), "name" : "tapiyo", "score" : 66, "team" : "team-3" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b4"), "name" : "tofoo", "score" : 26, "team" : "team-1" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b5"), "name" : "barri", "score" : 0, "team" : "team-2" }
+{ "_id" : ObjectId("5e172e1da3b01a7b8d4f41b6"), "name" : "tanaka", "score" : 52, "age" : 23 }
+
+> exit
+$ mongorestore --drop
+2020-01-10T21:45:50.002+0700	using default 'dump' directory
+2020-01-10T21:45:50.002+0700	preparing collections to restore from
+2020-01-10T21:45:50.026+0700	reading metadata for mydb.users from dump/mydb/users.metadata.json
+2020-01-10T21:45:50.049+0700	restoring mydb.users from dump/mydb/users.bson
+2020-01-10T21:45:50.050+0700	restoring indexes for collection mydb.users from metadata
+2020-01-10T21:45:50.101+0700	finished restoring mydb.users (6 documents, 0 failures)
+2020-01-10T21:45:50.101+0700	6 document(s) restored successfully. 0 document(s) failed to restore.
+
+$ mongo mydb
+MongoDB shell version v4.2.2
+...
+
+> db.users.find();
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b1"), "name" : "hogeta", "point" : 90 }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b2"), "name" : "fugao", "score" : 0, "team" : "team-2" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b3"), "name" : "tapiyo", "score" : 66, "team" : "team-3" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b4"), "name" : "tofoo", "score" : 26, "team" : "team-1" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b5"), "name" : "barri", "score" : 0, "team" : "team-2" }
+{ "_id" : ObjectId("5e172e1da3b01a7b8d4f41b6"), "name" : "tanaka", "score" : 52, "age" : 23 }
+> exit
+bye
+```
+
+# mongodump help
+```
+$ mongodump --help
+Usage:
+  mongodump <options>
+
+Export the content of a running server into .bson files.
+
+Specify a database with -d and a collection with -c to only dump that database or collection.
+
+See http://docs.mongodb.org/manual/reference/program/mongodump/ for more information.
+
+general options:
+      --help                                                print usage
+      --version                                             print the tool version and exit
+
+verbosity options:
+  -v, --verbose=<level>                                     more detailed log output (include multiple times
+                                                            for more verbosity, e.g. -vvvvv, or specify a
+                                                            numeric value, e.g. --verbose=N)
+      --quiet                                               hide all log output
+
+connection options:
+  -h, --host=<hostname>                                     mongodb host to connect to (setname/host1,host2
+                                                            for replica sets)
+      --port=<port>                                         server port (can also use --host hostname:port)
+
+ssl options:
+      --ssl                                                 connect to a mongod or mongos that has ssl
+                                                            enabled
+      --sslCAFile=<filename>                                the .pem file containing the root certificate
+                                                            chain from the certificate authority
+      --sslPEMKeyFile=<filename>                            the .pem file containing the certificate and key
+      --sslPEMKeyPassword=<password>                        the password to decrypt the sslPEMKeyFile, if
+                                                            necessary
+      --sslCRLFile=<filename>                               the .pem file containing the certificate
+                                                            revocation list
+      --sslAllowInvalidCertificates                         bypass the validation for server certificates
+      --sslAllowInvalidHostnames                            bypass the validation for server name
+      --sslFIPSMode                                         use FIPS mode of the installed openssl library
+
+authentication options:
+  -u, --username=<username>                                 username for authentication
+  -p, --password=<password>                                 password for authentication
+      --authenticationDatabase=<database-name>              database that holds the user's credentials
+      --authenticationMechanism=<mechanism>                 authentication mechanism to use
+
+kerberos options:
+      --gssapiServiceName=<service-name>                    service name to use when authenticating using
+                                                            GSSAPI/Kerberos (default: mongodb)
+      --gssapiHostName=<host-name>                          hostname to use when authenticating using
+                                                            GSSAPI/Kerberos (default: <remote server's
+                                                            address>)
+
+namespace options:
+  -d, --db=<database-name>                                  database to use
+  -c, --collection=<collection-name>                        collection to use
+
+uri options:
+      --uri=mongodb-uri                                     mongodb uri connection string
+
+query options:
+  -q, --query=                                              query filter, as a v2 Extended JSON string,
+                                                            e.g., '{"x":{"$gt":1}}'
+      --queryFile=                                          path to a file containing a query filter (v2
+                                                            Extended JSON)
+      --readPreference=<string>|<json>                      specify either a preference mode (e.g.
+                                                            'nearest') or a preference json object (e.g.
+                                                            '{mode: "nearest", tagSets: [{a: "b"}],
+                                                            maxStalenessSeconds: 123}')
+      --forceTableScan                                      force a table scan
+
+output options:
+  -o, --out=<directory-path>                                output directory, or '-' for stdout (defaults to
+                                                            'dump')
+      --gzip                                                compress archive our collection output with Gzip
+      --oplog                                               use oplog for taking a point-in-time snapshot
+      --archive=<file-path>                                 dump as an archive to the specified path. If
+                                                            flag is specified without a value, archive is
+                                                            written to stdout
+      --dumpDbUsersAndRoles                                 dump user and role definitions for the specified
+                                                            database
+      --excludeCollection=<collection-name>                 collection to exclude from the dump (may be
+                                                            specified multiple times to exclude additional
+                                                            collections)
+      --excludeCollectionsWithPrefix=<collection-prefix>    exclude all collections from the dump that have
+                                                            the given prefix (may be specified multiple
+                                                            times to exclude additional prefixes)
+  -j, --numParallelCollections=                             number of collections to dump in parallel (4 by
+                                                            default) (default: 4)
+      --viewsAsCollections                                  dump views as normal collections with their
+                                                            produced data, omitting standard collections
+```
+
+
+
+```
+
+

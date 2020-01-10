@@ -695,8 +695,3 @@ output options:
                                                             produced data, omitting standard collections
 ```
 
-
-
-```
-
-

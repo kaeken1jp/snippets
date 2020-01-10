@@ -443,3 +443,94 @@ WriteResult({ "nRemoved" : 1 })
 { "_id" : ObjectId("5e172e1da3b01a7b8d4f41b6"), "name" : "tanaka", "score" : 52, "age" : 23 }
 ```
 
+# index
+```
+> db.users.getIndexes();
+[
+	{
+		"v" : 2,
+		"key" : {
+			"_id" : 1
+		},
+		"name" : "_id_",
+		"ns" : "mydb.users"
+	}
+]
+> db.users.createIndex({score: -1});
+{
+	"createdCollectionAutomatically" : false,
+	"numIndexesBefore" : 1,
+	"numIndexesAfter" : 2,
+	"ok" : 1
+}
+> db.users.getIndexes();
+[
+	{
+		"v" : 2,
+		"key" : {
+			"_id" : 1
+		},
+		"name" : "_id_",
+		"ns" : "mydb.users"
+	},
+	{
+		"v" : 2,
+		"key" : {
+			"score" : -1
+		},
+		"name" : "score_-1",
+		"ns" : "mydb.users"
+	}
+]
+>
+> db.users.dropIndex("score_-1");
+{ "nIndexesWas" : 2, "ok" : 1 }
+> db.users.getIndexes();
+[
+	{
+		"v" : 2,
+		"key" : {
+			"_id" : 1
+		},
+		"name" : "_id_",
+		"ns" : "mydb.users"
+	}
+]
+>
+> db.users.createIndex({name: 1}, {unique: true});
+{
+	"createdCollectionAutomatically" : false,
+	"numIndexesBefore" : 1,
+	"numIndexesAfter" : 2,
+	"ok" : 1
+}
+> db.users.getIndexes();
+[
+	{
+		"v" : 2,
+		"key" : {
+			"_id" : 1
+		},
+		"name" : "_id_",
+		"ns" : "mydb.users"
+	},
+	{
+		"v" : 2,
+		"unique" : true,
+		"key" : {
+			"name" : 1
+		},
+		"name" : "name_1",
+		"ns" : "mydb.users"
+	}
+]
+> db.users.insert({name: "hogeta"});
+WriteResult({
+	"nInserted" : 0,
+	"writeError" : {
+		"code" : 11000,
+		"errmsg" : "E11000 duplicate key error collection: mydb.users index: name_1 dup key: { name: \"hogeta\" }"
+	}
+})
+```
+

@@ -318,6 +318,53 @@ Error: error: {
 { "name" : "tanaka", "score" : 52, "age" : 23 }
 ```
 
+# update document
 
+```
+> db.users.find();
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b1"), "name" : "hogeta", "score" : 52, "team" : "team-1" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b2"), "name" : "fugao", "score" : 82, "team" : "team-2" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b3"), "name" : "tapiyo", "score" : 66, "team" : "team-3" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b4"), "name" : "tofoo", "score" : 26, "team" : "team-1" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b5"), "name" : "barri", "score" : 29, "team" : "team-2" }
+{ "_id" : ObjectId("5e172e1da3b01a7b8d4f41b6"), "name" : "tanaka", "score" : 52, "age" : 23 }
+
+> db.users.find({name:"hogeta"}, {_id:0});
+{ "name" : "hogeta", "score" : 52, "team" : "team-1" }
+
+> db.users.update({name:"hogeta"}, {$set: {score: 80}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.users.find({name:"hogeta"}, {_id:0});
+{ "name" : "hogeta", "score" : 80, "team" : "team-1" }
+
+> db.users.update({name:"hogeta"}, {$set: {score: 90, team:"team-2"}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.users.find({name:"hogeta"}, {_id:0});
+{ "name" : "hogeta", "score" : 90, "team" : "team-2" }
+
+
+> db.users.update({name:"hogeta"}, {name:"hogeta",score: 40});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.users.find({name:"hogeta"}, {_id:0});
+{ "name" : "hogeta", "score" : 40 }
+
+> db.users.find();
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b1"), "name" : "hogeta", "score" : 40 }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b2"), "name" : "fugao", "score" : 82, "team" : "team-2" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b3"), "name" : "tapiyo", "score" : 66, "team" : "team-3" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b4"), "name" : "tofoo", "score" : 26, "team" : "team-1" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b5"), "name" : "barri", "score" : 29, "team" : "team-2" }
+{ "_id" : ObjectId("5e172e1da3b01a7b8d4f41b6"), "name" : "tanaka", "score" : 52, "age" : 23 }
+
+> db.users.update({team:"team-2"}, {$set: {score: 0}}, {multi: true});
+WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2 })
+> db.users.find();
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b1"), "name" : "hogeta", "score" : 40 }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b2"), "name" : "fugao", "score" : 0, "team" : "team-2" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b3"), "name" : "tapiyo", "score" : 66, "team" : "team-3" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b4"), "name" : "tofoo", "score" : 26, "team" : "team-1" }
+{ "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b5"), "name" : "barri", "score" : 0, "team" : "team-2" }
+{ "_id" : ObjectId("5e172e1da3b01a7b8d4f41b6"), "name" : "tanaka", "score" : 52, "age" : 23 }
+```
 
 

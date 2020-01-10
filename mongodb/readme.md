@@ -365,6 +365,34 @@ WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 2 })
 { "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b4"), "name" : "tofoo", "score" : 26, "team" : "team-1" }
 { "_id" : ObjectId("5e172c5ca3b01a7b8d4f41b5"), "name" : "barri", "score" : 0, "team" : "team-2" }
 { "_id" : ObjectId("5e172e1da3b01a7b8d4f41b6"), "name" : "tanaka", "score" : 52, "age" : 23 }
+
+> db.users.find({name:"hogeta"}, {_id:0});
+{ "name" : "hogeta", "score" : 40 }
+>
+> db.users.update({name: "hogeta"}, {$inc: {score: 5}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.users.find({name:"hogeta"}, {_id:0});
+{ "name" : "hogeta", "score" : 45 }
+>
+> db.users.update({name: "hogeta"}, {$mul: {score: 2}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.users.find({name:"hogeta"}, {_id:0});
+{ "name" : "hogeta", "score" : 90 }
+>
+> db.users.update({name: "hogeta"}, {$rename: {score: "point"}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.users.find({name:"hogeta"}, {_id:0});
+{ "name" : "hogeta", "point" : 90 }
+>
+> db.users.update({name: "hogeta"}, {$set: {team: "team-4"}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.users.find({name:"hogeta"}, {_id:0});
+{ "name" : "hogeta", "point" : 90, "team" : "team-4" }
+>
+> db.users.update({name: "hogeta"}, {$unset: {team: ""}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.users.find({name:"hogeta"}, {_id:0});
+{ "name" : "hogeta", "point" : 90 }
 ```
 
 

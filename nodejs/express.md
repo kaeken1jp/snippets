@@ -80,6 +80,11 @@ $ node app & open http://localhost:3000/
 server starting...
 ```
 
+# cf. Error: listen EADDRINUSE :::
+
+```sh
+killall -9 node
+```
 
 # req.params
 

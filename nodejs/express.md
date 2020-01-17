@@ -88,7 +88,7 @@ killall -9 node
 
 # req.params
 
-```sh
+```js
 var express = require('express'),
     app = express();
 
@@ -107,5 +107,10 @@ app.listen(3000);
 console.log("server starting...");
 ```
 
+# restart
+
+```sh
+$ killall -9 node ; node app & open http://localhost:3000/users/hoge
+```
 
 

@@ -114,3 +114,21 @@ $ killall -9 node ; node app & open http://localhost:3000/users/hoge
 ```
 
 
+# res.sendfile / express.static
+
+```js
+var express = require('express'),
+    app = express();
+
+// multi files
+app.use(express.static(__dirname + '/public'));
+
+// one file
+app.get('/hello.txt', function(req, res) {
+    res.sendfile(__dirname + '/public/hello.txt');
+});
+
+app.listen(3000);
+console.log("server starting...");
+```
+

@@ -154,3 +154,21 @@ app.listen(3000);
 console.log("server starting...");
 ```
 
+# logger (express.logger)
+
+http://expressjs.com/en/guide/migrating-4.html
+
+```sh
+npm install morgan
+```
+
+
+```js
+var logger = require('morgan');
+app.use(logger('dev'));
+```
+
+
+
+
+

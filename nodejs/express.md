@@ -140,7 +140,6 @@ var express = require('express'),
 
 // middleware
 app.use(express.logger('dev'));
-app.use(app.router);
 app.use(express.static(__dirname + '/public'));
 app.use(function(req, res, next) {
     console.log('my custom middleware !');

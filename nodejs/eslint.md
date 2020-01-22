@@ -11,8 +11,16 @@ v6.8.0
 
 # config
 
-```sh
-./node_modules/.bin/eslint --init
+```
+$ cat .eslintrc.json
+{
+    "extends": ["eslint:recommended"],
+    "plugins": [],
+    "parserOptions": {},
+    "env": {"browser": true},
+    "globals": {},
+    "rules": {}
+}
 ```
 
 # exec

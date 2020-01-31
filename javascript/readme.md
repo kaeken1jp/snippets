@@ -5,7 +5,8 @@ var ts = Math.round((new Date()).getTime() / 1000);
 ```
 
 # ts format
-```
+
+```js
 var timestamp = 1301090400,
 date = new Date(timestamp * 1000),
 datevalues = [
@@ -78,6 +79,7 @@ var result = arr["key"];
 
 
 ## sessionStorage
+
 ```js
 // convert int to string at sessionStorage
 sessionStorage.setItem("key1", 1);
@@ -86,15 +88,15 @@ console.log(typeof val1);//=> string
 ```
 
 ## http/https flag
-```javascript
-  <script>
+
+```js
   if( (window.location.hostname == '__DOMAIN_NAME__') & (window.location.protocol != 'https:') ) {
     location.href = location.href.replace("http://", "https://");
   }
-  </script>
 ```
 
 ## location data
+
 ```
 http://www.htmq.com:8000/js/index.php?q=javascript#link
 ↓↓↓
@@ -109,12 +111,14 @@ location.hashは「#link」
 ```
 
 ## replace src
-```javascript
+
+```js
 $("#img_id").attr("src", str);
 ```
 
 ## filter distinct object
-```javascript
+
+```js
 function distinct(fieldNames) {
   var self = this;
   return function(item, i, arr) {
@@ -163,7 +167,8 @@ data.filter(distinct(["keyword","url","ts"]))
 
 
 ## search object
-```javascript
+
+```js
 var pre_obj = [ 
   { keyword: 'hoge', url: 'example.com', ts: 1 },
   { keyword: 'hoge', url: 'example.net', ts: 2 },
@@ -183,6 +188,7 @@ var post_obj = pre_obj.filter(function(item, index) {
 ```
 
 ## clone object
+
 ```js
 var firstObj = ["a", "b", "c"];
 var sameObj = firstObj;
@@ -200,7 +206,8 @@ console.log(firstObj); //= ["a", "b", "c"]
 
 
 ## scroll window
-```javascript
+
+```js
 window.scrollTo(x, y) // pixel
 
 ex)
@@ -209,7 +216,8 @@ window.scrollTo(0, 400);
 
 
 ## check speed
-```javascript
+
+```js
 // console.time
 console.time("loop time");
 for(var i =0; i < 1000000000; i++){}
@@ -260,6 +268,7 @@ cf.
 # Promise
 
 ## Promise.all()
+
 ```js
 var p1 = Promise.resolve(3);
 var p2 = 1337;
@@ -275,6 +284,7 @@ Promise.all([p1, p2, p3]).then(values => {
 ```
 
 ## Promise loop
+
 ```js
 function doSomething(elem) {
   console.log(elem);
@@ -311,12 +321,14 @@ Node.jsで公開鍵暗号方式を使う - Qiita https://qiita.com/wf9a5m75/item
 
 
 # object 空判定
+
 ```js
 return !Object.keys(obj).length;
 ```
  
 # array 配列
 ## 重複を除外
+
 ```js
 var distinctArrayData = Array.from(new Set(duplicatedArrayData));
 ```
@@ -338,6 +350,7 @@ getLastNDay(1); // 20190101
 ```
 
 # promise & loop
+
 ```js
 // ループ処理の完了を受け取るPromise
 new Promise(function(res, rej) {
@@ -374,6 +387,7 @@ new Promise(function(res, rej) {
 
 
 # isJSON()
+
 ```js
 
 var isJSON = function(arg) {
@@ -391,18 +405,21 @@ var isJSON = function(arg) {
 ```
 
 # json str to obj
+
 ```js
 var json_str = '{ "name":"John", "age":30, "city":"New York"}';
 var obj = JSON.parse(json_str);
 ```
 
 # obj to json str
+
 ```js
 var obj = { name: "John", age: 30, city: "New York" };
 var json_str = JSON.stringify(obj);
 ```
 
 # foreach / object
+
 ```js
 $.each(object, function(index, value) {
     console.log(value);
@@ -410,10 +427,17 @@ $.each(object, function(index, value) {
 ```
 
 # trim
+
 ```js
 function trim(s){ 
   return ( s || '' ).replace( /^\s+|\s+$/g, '' ); 
 }
 ```
 
+# ternary operator
+
+```js
+var flag = 'dev';
+var file_name = 'file' + ((flag == 'dev') ? '_dev' : '') + '.ext';
+```
 

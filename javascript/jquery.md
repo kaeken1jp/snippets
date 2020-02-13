@@ -1,24 +1,34 @@
 
 
-## post()
+# post()
 
 [jQuery.post() | jQuery API Documentation](https://api.jquery.com/jQuery.post/)
 
 
-## selector
+# selector
 
 [jQuery Selectors](https://www.w3schools.com/jquery/jquery_ref_selectors.asp)
 
 [Try jQuery Selector](https://www.w3schools.com/jquery/trysel.asp)
 
+## example
 
-## change link
+```js
+// remove li tag / containing 'abc' string
+$("li:contains('abc')").remove();
+
+// update a tag(href, text) / containing 'abc' string
+$("a:contains('abc')").attr("href", "/foo/bar.png").text('def');
+```
+
+
+# change link
 
 ```js
 $("SELECTOR").attr("href", "http://example.com/")
 ```
 
-## important
+# important
 
 ```javascript
 $('SELECTOR').css({'cssText': 'text-transform: lowercase !important;'});

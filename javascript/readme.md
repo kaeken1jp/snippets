@@ -434,6 +434,40 @@ function trim(s){
 }
 ```
 
+# delete whitespace & newline
+
+## pre
+```js
+$('#q1').text()
+```
+
+- result
+```
+"
+                        Q1
+                        abc?
+                        
+                    
+                    
+                        a1
+			a2
+			a3
+                    
+                "
+```
+
+## post
+
+```js
+$('#q1').text().replace(/\s+/g, '');
+```
+
+- result
+```
+"Q1abc?a1a2a3"
+```
+
+
 # ternary operator
 
 ```js

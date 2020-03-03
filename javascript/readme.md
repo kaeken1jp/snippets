@@ -426,6 +426,25 @@ $.each(object, function(index, value) {
 }); 
 ```
 
+```js
+num_list = ['a','b','c'];
+$.each(num_list, function(i, e) {
+  console.log(i);
+  console.log(e);
+});
+```
+
+```
+0
+a
+1
+b
+2
+c
+```
+
+
+
 # trim
 
 ```js

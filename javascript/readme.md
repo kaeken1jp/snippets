@@ -1,3 +1,26 @@
+# falsy values
+[Falsy - MDN Web Docs Glossary: Definitions of Web-related terms | MDN](https://developer.mozilla.org/en-US/docs/Glossary/Falsy)
+
+```
+There are 7 falsy values in JavaScript.
+
+false	The keyword false
+
+0	The number zero
+
+0n	BigInt, when used as a boolean, follows the same rule as a Number. 0n is falsy.
+
+"", '', ``	
+This is an empty string (the length of the string is zero).
+Strings in JavaScript can be defined with double quotes "", single quotes '', or Template literals ``.
+
+null	null - the absence of any value
+
+undefined	undefined - the primitive value
+
+NaN	NaN - not a number
+```
+
 # timestamp
 
 ```js

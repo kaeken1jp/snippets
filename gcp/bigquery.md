@@ -798,6 +798,8 @@ WHERE t1.col NOT IN (SELECT col from dataset.table2)
 
 # REGEX_REPLACE()
 
+[標準 SQL 関数と演算子  |  BigQuery  |  Google Cloud](https://cloud.google.com/bigquery/docs/reference/standard-sql/functions-and-operators?hl=ja#regexp_replace)
+
 ```sql
 WITH markdown AS
   (SELECT "# Heading" as heading

@@ -796,7 +796,19 @@ WHERE t1.col NOT IN (SELECT col from dataset.table2)
 
 [Data Manipulation Language Syntax  |  BigQuery  |  Google Cloud](https://cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax#merge_statement)
 
+# REGEX_REPLACE()
 
+```sql
+WITH markdown AS
+  (SELECT "# Heading" as heading
+  UNION ALL
+  SELECT "# Another heading" as heading)
+
+SELECT
+  REGEXP_REPLACE(heading, r"^# ([a-zA-Z0-9\s]+$)", "<h1>\\1</h1>")
+  AS html
+FROM markdown;
+```
 
 
 

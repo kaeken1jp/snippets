@@ -812,7 +812,26 @@ SELECT
 FROM markdown;
 ```
 
+# CASE
 
+[Conditional Expressions in Standard SQL  |  BigQuery  |  Google Cloud](https://cloud.google.com/bigquery/docs/reference/standard-sql/conditional_expressions)
+
+```sql
+CASE expr
+  WHEN value THEN result
+  [WHEN ...]
+  [ELSE else_result]
+  END
+```
+
+```sql
+SELECT
+  CASE value
+    WHEN 'foo' THEN 'Value is foo.'
+    WHEN 'bar' THEN 'Value is bar.'
+    ELSE 'other value'
+  END AS col
+```
 
 
 

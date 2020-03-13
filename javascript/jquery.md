@@ -57,3 +57,14 @@ $('a').each(function(i, elem) {
   }
 });
 ```
+
+# change attr href
+
+```html
+<a id="mylink" href="#">example</a>
+```
+
+```js
+$("#mylink").attr("href", "http://example.com/")
+```
+

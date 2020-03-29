@@ -58,14 +58,14 @@ class Person(object):
         self.age += 1
 ```
 
-## check python version in code
+# check python version in code
 ```python
 import sys
 sys.version_info
 #=> sys.version_info(major=3, minor=5, micro=2, releaselevel='final', serial=0)
 ```
 
-## variable declaration
+# variable declaration
 
 
 ```py
@@ -77,6 +77,21 @@ num :int = 100
 name :str= "Alisa"
 is_ok :bool = True
 ```
+
+# fizzbuzz
+
+```py
+for i in range(1, 101):
+    if i % 15 == 0:
+        print("Fizz Buzz!")
+    elif i % 3 == 0:
+        print("Fizz!")
+    elif i % 5 == 0:
+        print("Buzz!")
+    else:
+        print(i)
+```
+
 
 ## Falsy data
 ```py

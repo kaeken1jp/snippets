@@ -1,5 +1,9 @@
 [Continuous Integration and Delivery - CircleCI](https://circleci.com/)
 
+# doc
+[Welcome to CircleCI Documentation - CircleCI](https://circleci.com/docs/)
+
+
 # Sign Up
 
 https://circleci.com/signup/
@@ -24,3 +28,8 @@ jobs:
       - checkout # check out the code in the project directory
       - run: echo "hello world" # run the `echo` command
 ```
+
+# other
+
+[Welcome to CircleCI Documentation - CircleCI](https://circleci.com/docs/)
+

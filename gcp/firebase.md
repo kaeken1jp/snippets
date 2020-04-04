@@ -5,6 +5,32 @@ $ firebase -V
 6.7.2
 ```
 
+# Auth
+
+## Easily add sign-in to your Web app with FirebaseUI
+
+https://firebase.google.com/docs/auth/web/firebaseui
+
+```js
+ui.start('#firebaseui-auth-container', {
+  signInOptions: [
+    firebase.auth.EmailAuthProvider.PROVIDER_ID
+  ],
+  // Other config options...
+});
+
+ui.start('#firebaseui-auth-container', {
+  signInOptions: [
+    // List of OAuth providers supported.
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+    firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+    firebase.auth.GithubAuthProvider.PROVIDER_ID
+  ],
+  // Other config options...
+});
+```
+
 
 # firestore
 

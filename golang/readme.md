@@ -127,3 +127,49 @@ Equal
 ```
 
 
+# math/rand
+
+```go
+package main
+
+import (
+  "fmt"
+  "math/rand"
+  "time"
+)
+
+func main() {
+  rand.Seed(time.Now().UnixNano())
+  answer := rand.Intn(10) + 1
+	var guess int
+	
+	fmt.Print("Your guess? ")
+	fmt.Scanf("%v", &guess)
+	
+	if answer == guess {
+		fmt.Println("Equal")
+	}	else if answer > guess {
+		fmt.Println("higher")
+	} else {
+		fmt.Println("lower")
+	}
+	
+	fmt.Printf("The answer is %v\n", answer)
+}
+```
+
+```
+Your guess? 3
+Equal
+The answer is 3
+
+Your guess? 2
+higher
+The answer is 9
+
+Your guess? 9
+lower
+The answer is 4
+```
+
+

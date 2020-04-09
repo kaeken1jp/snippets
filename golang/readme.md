@@ -85,5 +85,37 @@ Your guess? 2
 Your guess is 2
 ```
 
+# if
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	answer := 6
+	var guess int
+	
+	fmt.Print("Your guess? ")
+	fmt.Scanf("%v", &guess)
+	
+	if answer == guess {
+		fmt.Println("OK")
+	} else {
+		fmt.Println("NG")
+	}
+}
+```
+
+```
+
+Your guess? 3
+NG
+
+Your guess? 6
+OK
+```
 
 

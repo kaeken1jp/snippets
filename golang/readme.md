@@ -39,3 +39,29 @@ str2
 str3
 ```
 
+# variable
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var1 := "str1"
+	
+	fmt.Printf("hello %v\n", var1)
+	fmt.Printf("hello %v\n", var1)
+}
+```
+
+```
+hello str1
+hello str1
+```
+
+
+
+
+

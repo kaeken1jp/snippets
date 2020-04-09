@@ -102,20 +102,24 @@ func main() {
 	fmt.Scanf("%v", &guess)
 	
 	if answer == guess {
-		fmt.Println("OK")
+		fmt.Println("Equal")
+	}	else if answer > guess {
+		fmt.Println("higher")
 	} else {
-		fmt.Println("NG")
+		fmt.Println("lower")
 	}
 }
 ```
 
 ```
-
 Your guess? 3
-NG
+higher
+
+Your guess? 9
+lower
 
 Your guess? 6
-OK
+Equal
 ```
 
 

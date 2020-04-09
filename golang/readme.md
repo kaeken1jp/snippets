@@ -173,3 +173,48 @@ The answer is 4
 ```
 
 
+# for
+
+```go
+package main
+
+import (
+    "fmt"
+    "math/rand"
+    "time"
+)
+
+func main() {
+    rand.Seed(time.Now().UnixNano())
+    answer := rand.Intn(10) + 1
+
+    for {
+        var guess int
+
+        fmt.Print("Your guess? ")
+        fmt.Scanf("%v", &guess)
+    
+        if answer == guess {
+            fmt.Println("Equal!")
+            break
+        } else if answer > guess {
+            fmt.Println("higher!")
+        } else {
+            fmt.Println("lower!")
+        }
+    }
+}
+```
+
+
+```
+Your guess? 5
+higher!
+Your guess? 6
+Equal!
+
+Your guess? 9
+lower!
+Your guess? 1
+Equal!
+```

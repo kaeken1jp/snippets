@@ -48,6 +48,34 @@ func main() {
 }
 ```
 
+# data type
+
+```go
+/*
+string      "hello"
+int         53
+float64     10.2
+bool        false true
+nil
+
+var s string // ""
+var a int // 0
+var f bool // false
+*/
+
+package main 
+
+import "fmt"
+
+func main() {
+    a := 10
+    b := 12.3
+    c := "foo"
+    var d bool
+    fmt.Printf("a: %d, b:%f, c:%s, d:%t\n", a, b, c, d)
+}
+```
+
 
 # fmt.Println()
 

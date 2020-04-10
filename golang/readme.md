@@ -48,6 +48,29 @@ func main() {
 }
 ```
 
+# const
+
+```go
+package main 
+
+import "fmt"
+
+func main() {
+    const name = "foo"
+    name = "bar"
+    fmt.Println(name) // error
+
+    const (
+        sun = iota // 0
+        mon // 1
+        tue // 2
+    )
+    fmt.Println(sun, mon, tue)
+
+}
+```
+
+
 # data type
 
 ```go

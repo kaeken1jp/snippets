@@ -25,7 +25,31 @@ multi lines
 
 ```
 
-# string
+# variable
+
+```go
+func main() {
+    // var msg string
+    // msg = "hello world"
+    // var msg = "hello world"
+    msg := "hello world"
+    fmt.Println(msg)
+
+    // var a, b int
+    // a, b = 10, 15
+    a, b := 10, 15
+
+    var (
+        c int
+        d string
+    )
+    c = 20
+    d = "foo"
+}
+```
+
+
+# fmt.Println()
 
 ```go
 package main
@@ -43,6 +67,7 @@ func main() {
 	fmt.Println(var2)
 	fmt.Println(var3)
 }
+
 ```
 
 ```
@@ -51,7 +76,7 @@ str2
 str3
 ```
 
-# variable
+# fmt.Printf()
 
 ```go
 package main

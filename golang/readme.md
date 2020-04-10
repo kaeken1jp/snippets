@@ -15,6 +15,14 @@ import (
 func main() {
   fmt.Println("Hello World")
 }
+
+// one line comment
+
+/*
+multi lines
+multi lines
+*/
+
 ```
 
 # string

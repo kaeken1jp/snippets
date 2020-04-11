@@ -132,7 +132,22 @@ func main() {
 }
 ```
 
+# function
 
+```go
+package main 
+
+import "fmt"
+
+func f1(p1 string) string {
+     msg := "param:" + p1
+     return msg
+}
+
+func main() {
+    fmt.Println(f1("param1"))
+}
+```
 
 
 

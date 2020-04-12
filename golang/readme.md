@@ -200,6 +200,7 @@ func main() {
 6
 ```
 
+# map
 
 ```go
 package main 
@@ -381,6 +382,26 @@ lower
 
 Your guess? 6
 Equal
+```
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    if score := 43; score > 80 {
+        fmt.Println("Great!")
+    } else if score > 60 {
+        fmt.Println("Good!")
+    } else {
+        fmt.Println("so so...")
+    }
+}
+```
+
+```
+so so...
 ```
 
 

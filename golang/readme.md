@@ -201,6 +201,34 @@ func main() {
 ```
 
 
+```go
+package main 
+
+import "fmt"
+
+func main() {
+    // m := make(map[string]int)
+    // m["foo"] = 200
+    // m["bar"] = 300
+    m := map[string]int{"foo":100, "bar":200}
+    fmt.Println(m)
+    fmt.Println(len(m))
+    delete(m, "foo")
+    fmt.Println(m)
+    v, ok := m["bar"]
+    fmt.Println(v)
+    fmt.Println(ok)
+}
+```
+
+```
+map[bar:200 foo:100]
+2
+map[bar:200]
+200
+true
+```
+
 
 # function
 

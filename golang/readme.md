@@ -642,3 +642,32 @@ func main() {
     }
 }
 ```
+
+
+# Structs
+
+```go
+package main 
+
+import "fmt"
+
+type user struct {
+    name string
+    score int
+}
+
+func main() {
+    u := new(user)
+    u.name = "foo"
+    u.score = 20
+
+    // or
+    
+    u := user{"foo", 50}
+    
+    // or
+    u := user{name:"foo", score:50}
+    
+    fmt.Println(u)
+}
+```

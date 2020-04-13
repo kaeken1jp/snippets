@@ -619,3 +619,26 @@ Your guess? 6
 Equal! It took 6 guessed!
 ```
 
+# range
+
+```go
+package main 
+
+import "fmt"
+
+func main() {
+    s := []int{2, 3, 8}
+    for i, v := range s {
+        fmt.Println(i, v)
+    }
+    
+    for _, v := range s {
+        fmt.Println(v)
+    }
+    
+    m := map[string]int{"foo":200, "bar":300}
+    for k, v := range m {
+        fmt.Println(k, v)
+    }
+}
+```

@@ -2,6 +2,14 @@
 
 [The Go Programming Language](https://golang.org/)
 
+# install(Mac)
+
+```sh
+$ brew install go
+$ go version
+go version go1.14.2 darwin/amd64
+```
+
 
 # hello world
 

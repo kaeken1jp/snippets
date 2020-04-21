@@ -10,12 +10,36 @@
 3.5.4
 ```
 
-# sample
+# extension
+
+```
+pde
+```
+
+# sample code
 
 ## ellipse()
 
-```pro
+```pde
 ellipse(50, 50, 80, 80);
 ```
 
-![]()
+- [ ] あとで画像
+
+```pde
+void setup() {
+  size(480, 120);
+}
+
+void draw() {
+  if (mousePressed) {
+    fill(0);
+  } else {
+    fill(255);
+  }
+    ellipse(mouseX, mouseY, 80, 80);
+}
+```
+
+- [ ] あとで画像
+

@@ -16,6 +16,13 @@
 pde
 ```
 
+# Sketch
+
+## tips
+
+- shortcut
+  - execute: Ctrl + R (Mac)
+
 # sample code
 
 ## ellipse()

@@ -98,3 +98,9 @@ void draw() {
 ## arc(a, b, c, d, start, stop), arc(a, b, c, d, start, stop, mode)
 
 ![](https://i.gyazo.com/4389d8fe13451479d0b66f64a572a5c1.png)
+
+## QUARTER_PI, HALF_PI, PI, TWO_PI
+
+![](https://i.gyazo.com/50e9222fab37e99db1c6ba108f5ddb4b.png)
+
+

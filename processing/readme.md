@@ -103,4 +103,21 @@ void draw() {
 
 ![](https://i.gyazo.com/50e9222fab37e99db1c6ba108f5ddb4b.png)
 
+## degrees(), radians()
 
+```pde
+float rad = PI/4;
+float deg = degrees(rad);
+println(rad + " radians is " + deg + " degrees");
+
+float deg2 = 45.0;
+float rad2 = radians(deg2);
+println(deg2 + " degrees is " + rad2 + " radians");
+```
+
+```
+0.7853982 radians is 45.0 degrees
+45.0 degrees is 0.7853982 radians
+```
+
+![](https://i.gyazo.com/024b38760345d8c6ee193e83ec561937.png)

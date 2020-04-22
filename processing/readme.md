@@ -69,7 +69,7 @@ point(240, 60);
 ![](https://i.gyazo.com/58052a6d951ac082f7eee658dda7fd25.png)
 
 
-## line()
+## line(x1, y1, x2, y2)
 
 ```pde
 size(480, 120);
@@ -78,3 +78,5 @@ line(20, 50, 420, 110);
 
 ![](https://i.gyazo.com/341147d2963873d71fe2544faf33e7ed.png)
 
+
+## 

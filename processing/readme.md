@@ -25,34 +25,6 @@ pde
 
 # sample code
 
-## ellipse()
-
-```pde
-ellipse(50, 50, 80, 80);
-```
-
-![](https://i.gyazo.com/b933d6818f07599661aa7165aaedc732.png)
-
-
-
-```pde
-void setup() {
-  size(480, 120);
-}
-
-void draw() {
-  if (mousePressed) {
-    fill(0);
-  } else {
-    fill(255);
-  }
-    ellipse(mouseX, mouseY, 80, 80);
-}
-```
-
-![](https://i.gyazo.com/014901c3b38cee796a8ea8e57273589a.png)
-
-
 ## size()
 
 ```pde
@@ -95,5 +67,31 @@ quad(38, 31, 86, 20, 69, 63, 30, 76);
 
 ![](https://i.gyazo.com/6214b07dc730c84959fbf244c9be74a9.png)
 
+## ellipse(a, b, c, d)
+
+```pde
+ellipse(50, 50, 80, 80);
+```
+
+![](https://i.gyazo.com/b933d6818f07599661aa7165aaedc732.png)
+
+
+
+```pde
+void setup() {
+  size(480, 120);
+}
+
+void draw() {
+  if (mousePressed) {
+    fill(0);
+  } else {
+    fill(255);
+  }
+    ellipse(mouseX, mouseY, 80, 80);
+}
+```
+
+![](https://i.gyazo.com/014901c3b38cee796a8ea8e57273589a.png)
 
 

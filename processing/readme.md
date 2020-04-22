@@ -79,4 +79,11 @@ line(20, 50, 420, 110);
 ![](https://i.gyazo.com/341147d2963873d71fe2544faf33e7ed.png)
 
 
-## 
+## quad(x1, y1, x2, y2, x3, y3, x4, y4)
+
+```pde
+quad(38, 31, 86, 20, 69, 63, 30, 76);
+```
+
+![](https://i.gyazo.com/b4b558aad018d478b28951f677ccf055.png)
+

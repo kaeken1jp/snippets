@@ -31,7 +31,9 @@ pde
 ellipse(50, 50, 80, 80);
 ```
 
-- [ ] あとで画像
+![](https://i.gyazo.com/b933d6818f07599661aa7165aaedc732.png)
+
+
 
 ```pde
 void setup() {
@@ -48,7 +50,7 @@ void draw() {
 }
 ```
 
-- [ ] あとで画像
+![](https://i.gyazo.com/014901c3b38cee796a8ea8e57273589a.png)
 
 
 ## size()

@@ -87,3 +87,13 @@ quad(38, 31, 86, 20, 69, 63, 30, 76);
 
 ![](https://i.gyazo.com/b4b558aad018d478b28951f677ccf055.png)
 
+## triangle(x1, y1, x2, y2, x3, y3)
+
+![](https://i.gyazo.com/e9e41c8a59cad4a05430a5471c2f0ab1.png)
+
+## rect(a, b, c, d), rect(a, b, c, d, r), rect(a, b, c, d, tl, tr, br, bl)
+
+![](https://i.gyazo.com/6214b07dc730c84959fbf244c9be74a9.png)
+
+
+

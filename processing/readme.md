@@ -50,3 +50,20 @@ void draw() {
 
 - [ ] あとで画像
 
+
+## size()
+
+```pde
+size(800, 600);
+```
+
+## point()
+
+```pde
+size(480, 120);
+point(240, 60);
+```
+
+![](https://i.gyazo.com/58052a6d951ac082f7eee658dda7fd25.png)
+
+

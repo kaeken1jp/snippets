@@ -95,3 +95,6 @@ void draw() {
 ![](https://i.gyazo.com/014901c3b38cee796a8ea8e57273589a.png)
 
 
+## arc(a, b, c, d, start, stop), arc(a, b, c, d, start, stop, mode)
+
+![](https://i.gyazo.com/4389d8fe13451479d0b66f64a572a5c1.png)

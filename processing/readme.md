@@ -121,3 +121,23 @@ println(deg2 + " degrees is " + rad2 + " radians");
 ```
 
 ![](https://i.gyazo.com/024b38760345d8c6ee193e83ec561937.png)
+
+
+## drawing order
+
+## attribute
+
+## mode
+
+## color
+
+## shape
+
+## comment
+
+```pde
+// comment
+```
+
+## 
+

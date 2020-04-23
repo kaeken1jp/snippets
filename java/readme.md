@@ -41,3 +41,17 @@ $ java Hello
 Hello World
 ```
 
+# variables
+
+```java
+class MyApp {
+  public static void main(String[] args) {
+    String name = "foo";
+    
+    System.out.println("hello " + name);
+    System.out.println("hello " + name +  " again!");
+  }
+}
+```
+
+

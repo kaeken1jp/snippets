@@ -137,6 +137,26 @@ public class MyApp {
 ```
 
 
+# cast
+
+```java
+public class MyApp {
+
+  public static void main(String[] args) {
+    // double d = 52343.231;
+    // int i = (int)d;
+    // System.out.println(i);
+
+    int i = 10;
+    double d = (double)i / 4;
+    System.out.println(d);
+  }
+
+}
+```
+
+
+
 
 # Scanner & next()
 

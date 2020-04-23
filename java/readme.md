@@ -280,27 +280,23 @@ class MyApp {
 # while & break
 
 ```java
-import java.util.Scanner;
-import java.util.Random;
+public class MyApp {
 
-class MyApp {
   public static void main(String[] args) {
-    Integer answer = new Random().nextInt(10) + 1;
-    
-    while (true) {
-      System.out.print("Your guess? ");
-      Integer guess = new Scanner(System.in).nextInt();
-      
-      if (answer == guess) {
-        System.out.println("Bingo!");
-        break;
-      } else if (answer > guess ) {
-        System.out.println("The answer is higher!");
-      } else {
-        System.out.println("The answer is lower!");
-      }
+    // while
+    // 0 - 9
+    int i = 100;
+    while (i < 10) {
+      System.out.println(i);
+      i++;
     }
+    
+    do {
+      System.out.println(i);
+      i++;
+    } while (i < 10);
   }
+
 }
 ```
 

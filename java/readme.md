@@ -107,8 +107,10 @@ class MyApp {
     
     if (answer == guess) {
       System.out.println("Bingo!");
+    } else if (answer > guess) {
+      System.out.println("The answer is higher!");
     } else {
-      System.out.println("Boo...");
+      System.out.println("The answer is lower!");
     }
   }
 }

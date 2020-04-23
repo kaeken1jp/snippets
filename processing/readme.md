@@ -280,3 +280,24 @@ vertex( 80, 100);
 endShape(CLOSE);
 ```
 
+## loadImage()
+
+![](https://i.gyazo.com/48eca613b089271546fa9f0904b05aac.png)
+
+```
+Loads an image into a variable of type PImage. Four types of images ( .gif, .jpg, .tga, .png) images may be loaded. To load correctly, images must be located in the data directory of the current sketch.
+```
+
+```pde
+size(200, 200);
+smooth();
+background(255);
+
+PImage img;
+img = loadImage("100shiki.jpg");
+//image(img, 10, 10, 50, 50);
+//tint(#ff0000, 127);
+image(img, 10, 10);
+//filter(GRAY);
+filter(BLUR, 3);
+```

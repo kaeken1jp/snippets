@@ -3,6 +3,11 @@
 [Java | Oracle](https://www.java.com/en/)
 [OpenJDK](https://openjdk.java.net/)
 
+# JDK, JRE, JVM
+
+![](https://i.gyazo.com/f7de79bf9be4da527dacb946f7c135b0.png)
+
+
 # version
 
 ```sh

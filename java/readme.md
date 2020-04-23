@@ -277,7 +277,7 @@ class MyApp {
 }
 ```
 
-# while & break
+# while & do - while
 
 ```java
 public class MyApp {

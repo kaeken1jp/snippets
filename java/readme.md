@@ -74,6 +74,36 @@ class MyApp {
 }
 ```
 
+# type
+
+```java
+public class MyApp {
+
+  public static void main(String[] args) {
+    // char
+    char a = 'a';
+    
+    // byte short int long
+    int x = 10;
+    long y = 5555555555L; // L
+    
+    // float double
+    double d = 23423.344;
+    float f = 32.33F; // F
+    
+    // boolean
+    boolean flag = true; // false
+    
+    // string
+    // \n
+    // \t
+    String msg = "Hello Wo\nrld Again\t!";
+    System.out.println(msg);
+  }
+
+}
+```
+
 # Scanner & next()
 
 ```java

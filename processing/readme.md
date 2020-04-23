@@ -63,9 +63,47 @@ quad(38, 31, 86, 20, 69, 63, 30, 76);
 
 ![](https://i.gyazo.com/e9e41c8a59cad4a05430a5471c2f0ab1.png)
 
+
+
 ## rect(a, b, c, d), rect(a, b, c, d, r), rect(a, b, c, d, tl, tr, br, bl)
 
 ![](https://i.gyazo.com/6214b07dc730c84959fbf244c9be74a9.png)
+
+## rectMode(MODE)
+
+![](https://i.gyazo.com/54a67c84040dfacdf0ddb62751c10475.png)
+
+```
+Modifies the location from which rectangles are drawn by changing the way in which parameters given to rect() are intepreted.
+
+The default mode is rectMode(CORNER), which interprets the first two parameters of rect() as the upper-left corner of the shape, while the third and fourth parameters are its width and height.
+
+rectMode(CORNERS) interprets the first two parameters of rect() as the location of one corner, and the third and fourth parameters as the location of the opposite corner.
+
+rectMode(CENTER) interprets the first two parameters of rect() as the shape's center point, while the third and fourth parameters are its width and height.
+
+rectMode(RADIUS) also uses the first two parameters of rect() as the shape's center point, but uses the third and fourth parameters to specify half of the shapes's width and height.
+
+The parameter must be written in ALL CAPS because Processing is a case-sensitive language.
+```
+
+```pde
+size(200, 200); // width: 200, height: 200
+smooth();
+background(255);
+
+//rectMode(CORNER);
+//rect(50, 50, 80, 30); // x, y, width, height
+
+//rectMode(CORNERS);
+//rect(50, 50, 80, 100); // xy, xy
+
+//rectMode(CENTER);
+//rect(50, 50, 80, 100); // center xy, width, height
+
+rectMode(RADIUS);
+rect(50, 50, 80, 100); // center xy, dist, dist
+```
 
 ## ellipse(a, b, c, d)
 

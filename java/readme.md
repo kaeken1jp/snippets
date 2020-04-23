@@ -69,3 +69,11 @@ class MyApp {
   }
 }
 ```
+
+```
+$ (exec)
+Your name? 
+foo
+hello foo
+hello foo again!
+```

@@ -115,3 +115,30 @@ class MyApp {
   }
 }
 ```
+
+# Random
+
+```java
+import java.util.Scanner;
+import java.util.Random;
+
+class MyApp {
+  public static void main(String[] args) {
+    Integer answer = new Random().nextInt(10) + 1;
+    
+    System.out.print("Your guess? ");
+    Integer guess = new Scanner(System.in).nextInt();
+    
+    if (answer == guess) {
+      System.out.println("Bingo!");
+    } else if (answer > guess ) {
+      System.out.println("The answer is higher!");
+    } else {
+      System.out.println("The answer is lower!");
+    }
+    
+    System.out.println("The answer was " + answer);
+  }
+}
+```
+

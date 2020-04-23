@@ -252,3 +252,31 @@ The background() function sets the color used for the background of the Processi
 
 ![](https://i.gyazo.com/b9b39d9fb4018575b9e10d68cdff3edb.png)
 
+## vertex()
+
+![](https://i.gyazo.com/540ce0e3e43306dc368ecb4989d70127.png)
+
+```
+All shapes are constructed by connecting a series of vertices. vertex() is used to specify the vertex coordinates for points, lines, triangles, quads, and polygons. It is used exclusively within the beginShape() and endShape() functions.
+
+Drawing a vertex in 3D using the z parameter requires the P3D parameter in combination with size, as shown in the above example.
+
+This function is also used to map a texture onto geometry. The texture() function declares the texture to apply to the geometry and the u and v coordinates set define the mapping of this texture to the form. By default, the coordinates used for u and v are specified in relation to the image's size in pixels, but this relation can be changed with textureMode().
+```
+
+```pde
+size(200, 200);
+smooth();
+background(255);
+
+stroke(#333333);
+fill(#999999);
+
+beginShape();
+vertex(100,  20);
+vertex(120, 100);
+vertex(100,  80);
+vertex( 80, 100);
+endShape(CLOSE);
+```
+

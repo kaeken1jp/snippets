@@ -325,3 +325,29 @@ fill(#00ff00);
 
 text("hello world", 100, 100);
 ```
+
+## pushMatrix(), popMatrix()
+
+![](https://i.gyazo.com/accb080a488890b8d26ace579b0cdf5b.png)
+
+
+
+
+```pde
+size(200, 200);
+smooth();
+background(255);
+
+fill(#ff0000, 127);
+noStroke();
+rect(10, 10, 50, 50);
+
+fill(#0000ff, 127);
+noStroke();
+pushMatrix();
+//translate(10, 10);
+//rotate(radians(30));
+scale(2, 0.5);
+rect(10, 10, 50, 50);
+popMatrix();
+```

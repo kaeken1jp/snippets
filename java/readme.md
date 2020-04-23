@@ -49,6 +49,18 @@ $ java Hello
 Hello World
 ```
 
+# comment
+
+```java
+  // comment
+  /*
+    comment
+    comment
+    comment
+    comment
+  */
+```
+
 # variables
 
 ```java

@@ -142,3 +142,30 @@ class MyApp {
 }
 ```
 
+# while & break
+
+```java
+import java.util.Scanner;
+import java.util.Random;
+
+class MyApp {
+  public static void main(String[] args) {
+    Integer answer = new Random().nextInt(10) + 1;
+    
+    while (true) {
+      System.out.print("Your guess? ");
+      Integer guess = new Scanner(System.in).nextInt();
+      
+      if (answer == guess) {
+        System.out.println("Bingo!");
+        break;
+      } else if (answer > guess ) {
+        System.out.println("The answer is higher!");
+      } else {
+        System.out.println("The answer is lower!");
+      }
+    }
+  }
+}
+```
+

@@ -139,5 +139,19 @@ println(deg2 + " degrees is " + rad2 + " radians");
 // comment
 ```
 
-## 
+## others
+
+## smooth()
+
+```
+Draws all geometry with smooth (anti-aliased) edges. This behavior is the default, so smooth() only needs to be used when a program needs to set the smoothing in a different way. The level parameter increases the amount of smoothness. This is the level of over sampling applied to the graphics buffer.
+```
+
+## background()
+
+```
+The background() function sets the color used for the background of the Processing window. The default background is light gray. This function is typically used within draw() to clear the display window at the beginning of each frame, but it can be used inside setup() to set the background on the first frame of animation or if the backgound need only be set once.
+```
+
+![](https://i.gyazo.com/b9b39d9fb4018575b9e10d68cdff3edb.png)
 

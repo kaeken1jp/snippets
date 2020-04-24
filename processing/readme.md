@@ -380,3 +380,31 @@ noStroke();
 sphere(40);
 popMatrix();
 ```
+
+## setup(), draw(), frameRate(), frameCount
+
+![](https://i.gyazo.com/998b3d303fc7819f255ad5ef744aacdc.gif)
+
+```pde
+void setup() {
+  size(200, 200);
+  smooth();
+  background(255);
+  
+  noStroke();
+  fill(#ff0000);
+  
+  frameRate(10);
+}
+
+int x = 0;
+int y = 0;
+
+void draw() {
+  background(255);
+  rect(x, y, 100, 100);
+  x++;
+  y++;
+  println(frameCount);
+}
+```

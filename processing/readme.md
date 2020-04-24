@@ -408,3 +408,34 @@ void draw() {
   println(frameCount);
 }
 ```
+
+
+## mouseX, mouseY, mousePressed, mousePressed()
+
+![](https://i.gyazo.com/b53d73da155dc81072518c5ccf1917d5.gif)
+
+```pde
+void setup() {
+  size(200, 200);
+  smooth();
+  background(255);
+  noStroke();
+  fill(#ff0000);
+}
+
+int r = 100;
+
+void draw() {
+  background(255);
+//  if (mousePressed) {
+//    fill(255);
+//  } else {
+//    fill(#ff0000);
+//  }
+  ellipse(mouseX, mouseY, r, r);
+}
+
+void mousePressed() {
+  r += 5;
+}
+```

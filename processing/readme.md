@@ -351,3 +351,32 @@ scale(2, 0.5);
 rect(10, 10, 50, 50);
 popMatrix();
 ```
+
+## lights(), box(), sphere()
+
+![](https://i.gyazo.com/e7979ea742b9d20da6b05d0176b69aab.png)
+
+```pde
+size(200, 200, P3D);
+smooth();
+background(0);
+lights();
+
+// box
+// sphere
+
+pushMatrix();
+translate(50, 50, 0);
+rotateX(radians(30));
+rotateY(radians(40));
+rotateZ(radians(10));
+noStroke();
+box(40);
+popMatrix();
+
+pushMatrix();
+translate(100, 100, -100);
+noStroke();
+sphere(40);
+popMatrix();
+```

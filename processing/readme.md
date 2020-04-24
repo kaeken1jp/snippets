@@ -439,3 +439,16 @@ void mousePressed() {
   r += 5;
 }
 ```
+
+## ControlP5 library
+
+```
+menu > Sketch > Import Library > Add Library > ControlP5 > Install
+```
+
+![](https://i.gyazo.com/a2844a4cd7d9a0acacc0e2d2e9bc1025.png)
+
+[processing GUI, controlP5](http://www.sojamo.de/libraries/controlP5/#about)
+
+
+

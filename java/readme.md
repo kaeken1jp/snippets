@@ -453,7 +453,7 @@ public class MyApp {
 
   public static void main(String[] args) {
     sayHi();
-    sayHi("Steve"); // 引数
+    sayHi("Steve");
     // System.out.println(name);
     // System.out.println(x);
   }
@@ -462,5 +462,31 @@ public class MyApp {
 ```
 
 
+# class
+
+```java
+class User {
+  String name = "Me!"; // field
+
+  void sayHi() {
+    System.out.println("hi!");
+  }
+}
+
+public class MyApp {
+
+  public static void main(String[] args) {
+    // int x;
+    // String s;
+
+    // Class
+    User tom;
+    tom = new User(); // instance
+    System.out.println(tom.name);
+    tom.sayHi();
+  }
+
+}
+```
 
 

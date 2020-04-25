@@ -579,22 +579,25 @@ public class MyApp {
 ![](https://i.gyazo.com/509a7bfa7aa06679927d9f8abb3800a6.png)
 
 
-# package
+# package, import
 
 - MyApp
 
 ```java
 package com.dotinstall.myapp;
+import com.dotinstall.myapp.model.User;
+import com.dotinstall.myapp.model.AdminUser;
+// import com.dotinstall.myapp.model.*;
 
 public class MyApp {
 
   public static void main(String[] args) {
     User tom = new User("tom");
-    System.out.println(tom.name);
+    // System.out.println(tom.name);
     tom.sayHi();
 
     AdminUser bob = new AdminUser("bob");
-    System.out.println(bob.name);
+    // System.out.println(bob.name);
     bob.sayHi();
     bob.sayHello();
   }
@@ -603,6 +606,24 @@ public class MyApp {
 ```
 
 - AdminUser
+
+```java
+package com.dotinstall.myapp.model;
+
+public class User {
+  protected String name;
+
+  public User(String name) {
+    this.name = name;
+  }
+
+  public void sayHi() {
+    System.out.println("hi! " + this.name);
+  }
+}
+```
+
+- User
 
 ```java
 package com.dotinstall.myapp.model;
@@ -620,24 +641,6 @@ public class AdminUser extends User {
   @Override
   public void sayHi() {
     System.out.println("[admin] hi! " + this.name);
-  }
-}
-```
-
-- User
-
-```java
-package com.dotinstall.myapp.model;
-
-class User {
-  protected String name;
-
-  public User(String name) {
-    this.name = name;
-  }
-
-  public void sayHi() {
-    System.out.println("hi! " + this.name);
   }
 }
 ```

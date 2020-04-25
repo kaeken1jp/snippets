@@ -352,3 +352,28 @@ public class MyApp {
 }
 ```
 
+
+# length
+
+```java
+public class MyApp {
+
+  public static void main(String[] args) {
+    // 配列
+    // sales.length
+    int[] sales = {700, 400, 500};
+
+    // for (int i = 0; i < 3; i++) {
+    // for (int i = 0; i < sales.length; i++) {
+    //   System.out.println(sales[i]);
+    // }
+
+    for (int sale : sales) {
+      System.out.println(sale);
+    }
+  }
+
+}
+```
+
+

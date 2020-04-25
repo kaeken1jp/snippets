@@ -376,4 +376,35 @@ public class MyApp {
 }
 ```
 
+# type
 
+
+![](https://i.gyazo.com/6b1b3c8f53810a610378245a66665da1.png)
+
+![](https://i.gyazo.com/0257900a6158c3e1b54f4fecafac9d48.png)
+
+```java
+public class MyApp {
+
+  public static void main(String[] args) {
+    // int x = 10;
+    // int y = x;
+    // y = 5;
+    // System.out.println(x); // 10
+    // System.out.println(y); // 5
+
+    // int[] a = {3, 5, 7};
+    // int[] b = a;
+    // b[1] = 8;
+    // System.out.println(a[1]); // 8
+    // System.out.println(b[1]); // 8
+
+    String s = "hello";
+    String t = s;
+    t = "world";
+    System.out.println(s); // hello
+    System.out.println(t); // world
+  }
+
+}
+```

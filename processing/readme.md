@@ -227,6 +227,20 @@ fill(127);
 rect(50, 50, 80, 30);
 ```
 
+## noStroke()
+
+![](https://i.gyazo.com/77dbfa3376ac3b52d6902e6b82bec6f0.png)
+
+```pde
+size(300,200);
+noStroke();
+fill(0,154,74);
+rect(0,0,100,200);
+fill(255,255,255);
+rect(100,0,100,200);
+fill(218,0,38);
+rect(200,0,100,200);
+```
 
 ## shape
 

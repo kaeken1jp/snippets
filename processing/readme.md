@@ -133,6 +133,20 @@ void draw() {
 ![](https://i.gyazo.com/014901c3b38cee796a8ea8e57273589a.png)
 
 
+## ellipseMode()
+
+![](https://i.gyazo.com/0059aa515d05bcb918fa941e85929668.png)
+
+```pde
+ellipseMode(RADIUS);  // Set ellipseMode to RADIUS
+ellipseMode(CENTER);  // Set ellipseMode to CENTER
+ellipseMode(CORNER);  // Set ellipseMode is CORNER
+ellipseMode(CORNERS);  // Set ellipseMode to CORNERS
+```
+
+
+
+
 ## arc(a, b, c, d, start, stop), arc(a, b, c, d, start, stop, mode)
 
 ![](https://i.gyazo.com/4389d8fe13451479d0b66f64a572a5c1.png)

@@ -215,6 +215,30 @@ noFill();
 rect(50, 50, 80, 30);
 ```
 
+## noFill()
+
+![](https://i.gyazo.com/6c3d358e40006ebcf37ec891f8030078.png)
+
+```pde
+rect(15, 10, 55, 55);
+noFill();
+rect(30, 20, 55, 55);
+```
+
+## colorMode()
+
+![](https://i.gyazo.com/7dad318774b23324129e835cde87a7b8.png)
+
+```pde
+colorMode(mode)
+colorMode(mode, max)
+colorMode(mode, max1, max2, max3)
+colorMode(mode, max1, max2, max3, maxA)
+```
+
+## background()
+
+
 ## stroke() // border color
 
 ![](https://i.gyazo.com/99f6c523fb040846b30ce3ca82a7542d.png)
@@ -317,6 +341,16 @@ The background() function sets the color used for the background of the Processi
 ```
 
 ![](https://i.gyazo.com/b9b39d9fb4018575b9e10d68cdff3edb.png)
+
+```pde
+background(rgb)
+background(rgb, alpha)
+background(gray)
+background(gray, alpha)
+background(v1, v2, v3)
+background(v1, v2, v3, alpha)
+background(image)
+```
 
 ## vertex()
 

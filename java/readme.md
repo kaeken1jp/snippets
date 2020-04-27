@@ -797,3 +797,45 @@ public class MyApp {
 
 }
 ```
+
+
+# Abstract Classes and Methods
+
+```java
+// Abstract Classes
+abstract class User {
+  public abstract void sayHi(); // Abstract Methods
+}
+
+class JapaneseUser extends User {
+  @Override
+  public void sayHi() {
+    System.out.println("Konnichiwa!");
+  }
+}
+
+class AmericanUser extends User {
+  @Override
+  public void sayHi() {
+    System.out.println("Hi!");
+  }
+}
+
+public class MyApp {
+
+  public static void main(String[] args) {
+    AmericanUser tom = new AmericanUser();
+    JapaneseUser aki = new JapaneseUser();
+    tom.sayHi();
+    aki.sayHi();
+  }
+
+}
+```
+
+```
+Hi!
+Konnichiwa!
+```
+
+

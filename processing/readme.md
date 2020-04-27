@@ -27,8 +27,12 @@ pde
 
 ## size()
 
+![](https://i.gyazo.com/e499b3f5a8d43ca6fe4f7654278fda7b.png)
+
 ```pde
-size(800, 600);
+//size(width, height)
+//size(width, height, renderer)
+size(100, 10);
 ```
 
 ## point()

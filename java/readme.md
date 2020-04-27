@@ -965,3 +965,79 @@ not minus!
  -- end --
 ```
 
+
+# Wrapper Classes
+
+```java
+/*
+Wrapper Class
+int -> Integer
+double -> Double
+*/
+
+public class MyApp {
+
+  public static void main(String[] args) {
+    // Integer i = new Integer(32);
+    // int n = i.intValue();
+
+    Integer i = 32; // auto boxing
+    i = null;
+    int n = i; // auto unboxing
+
+  }
+
+}
+```
+
+```
+Exception in thread "main" java.lang.NullPointerException
+        at MyApp.main(MyApp.java:15)
+```
+
+
+# generics
+
+```java
+// generics
+
+// class MyInteger {
+//   public void getThree(int x) {
+//     System.out.println(x);
+//     System.out.println(x);
+//     System.out.println(x);
+//   }
+// }
+
+class MyData<T> {
+  public void getThree(T x) {
+    System.out.println(x);
+    System.out.println(x);
+    System.out.println(x);
+  }
+}
+
+public class MyApp {
+
+  public static void main(String[] args) {
+    // MyInteger mi = new MyInteger();
+    // mi.getThree(55);
+    MyData<Integer> i = new MyData<>();
+    i.getThree(32);
+    MyData<String> s = new MyData<>();
+    s.getThree("hello");
+  }
+
+}
+```
+
+```
+32
+32
+32
+hello
+hello
+hello
+```
+
+# Thread

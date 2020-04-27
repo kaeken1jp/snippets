@@ -878,3 +878,46 @@ public class MyApp {
 I/F ver. 1.2
 ```
 
+# Enums
+
+```
+An enum is a special "class" that represents a group of constants (unchangeable variables, like final variables).
+
+To create an enum, use the enum keyword (instead of class or interface), and separate the constants with a comma. Note that they should be in uppercase letters:
+```
+
+```java
+// enum
+
+enum Result {
+  SUCCESS, // 0
+  ERROR, // 1
+}
+
+public class MyApp {
+
+  public static void main(String[] args) {
+    Result res;
+
+    res = Result.ERROR;
+
+    switch (res) {
+      case SUCCESS:
+        System.out.println("OK!");
+        System.out.println(res.ordinal()); // 0
+        break;
+      case ERROR:
+        System.out.println("NG!");
+        System.out.println(res.ordinal()); // 1
+        break;
+    }
+
+  }
+
+}
+```
+
+```
+NG!
+1
+```

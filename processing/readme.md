@@ -256,6 +256,29 @@ strokeCap(PROJECT);
 line(20, 70, 80, 70);
 ```
 
+## strokeJoin()
+
+![](https://i.gyazo.com/1358e89fd5d11f44066b3432582c5445.png)
+
+```pde
+strokeJoin(MITER);
+strokeJoin(BEVEL);
+strokeJoin(ROUND);
+```
+
+## strokeWeight()
+
+![](https://i.gyazo.com/067831ce40f6a0c52d972b9c8fb80579.png)
+
+```pde
+strokeWeight(1);  // Default
+line(20, 20, 80, 20);
+strokeWeight(4);  // Thicker
+line(20, 40, 80, 40);
+strokeWeight(10);  // Beastly
+line(20, 70, 80, 70);
+```
+
 
 ## shape
 

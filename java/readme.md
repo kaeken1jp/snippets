@@ -19,6 +19,9 @@ Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)
 
 # Hello World
 
+- ファイル名とクラス名は同名とする
+- 1ファイルに1クラスを記述するようにする
+
 ```sh
 $ cat Hello.java
 ```

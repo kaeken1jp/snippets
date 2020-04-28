@@ -23,7 +23,23 @@ pde
 - shortcut
   - execute: Ctrl + R (Mac)
 
-# sample code
+# Sample code
+
+## variables
+
+```pde
+String s = "str"; // string
+println(s);
+char c = 'a'; // // Declare variable 'c' of type char // Assign 'c' the value "a"
+println(c);
+int i = 23;          // Declare variable 'i' of type int & Assign 'i' the value 23
+println(i);
+float f = 1.5387;           // Declare variable 'f' of type float & Assign 'f' the value 1.5387
+println(f);
+boolean b = false; // 	Datatype for the Boolean values true and false.
+println(b);
+```
+
 
 ## size()
 

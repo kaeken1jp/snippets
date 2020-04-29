@@ -139,6 +139,39 @@ public class MyApp {
 }
 ```
 
+# Shift Operator
+
+![](https://i.gyazo.com/393ce371c378b132a61802078d94caf1.png)
+
+![](https://i.gyazo.com/eca566e2c75d6c180171a7d5bd880ef8.png)
+
+
+```java
+class MyApp{
+  public static void main(String[] args){
+    System.out.println( -8 >> 2 ); // Signed Right shift operator (>>) 
+    System.out.println( -8 >>> 2 ); // Unsigned Right shift operator (>>>)
+    System.out.println( -8 << 2 ); // Left shift operator (<<)
+
+    System.out.println( -8 >> 3 ); // Signed Right shift operator (>>) 
+    System.out.println( -8 >>> 3 ); // Unsigned Right shift operator (>>>)
+    System.out.println( -8 << 3 ); // Left shift operator (<<)
+  }
+}
+```
+
+```
+-2
+1073741822
+-32
+
+-1
+536870911
+-64
+```
+
+
+
 
 # cast
 

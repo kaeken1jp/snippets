@@ -39,6 +39,19 @@ dictionary = {'one': 1, 'two': 2, 'three': 3}
 
 variable_with_zero_data = None
 
+
+scores = [40, 50, 70, 90, 60]
+print(scores[1:4]) # [50, 70, 90]
+print(scores[:2]) # [40, 50]
+print(scores[3:]) # [90, 60]
+print(scores[-3:]) # [70, 90, 60]
+
+s = "hello"
+print(s[1:4]) # ell
+
+
+
+
 # Simple Logging
 print("Printed!")
 
@@ -70,6 +83,10 @@ for x in fruits:
   print(x)
 # => apple
 # => cherry
+
+
+for i, score in enumerate(scores):
+    print("{0}: {1}".format(i, score))
 
 
 while (total < max_val):
@@ -951,3 +968,20 @@ div(10, -3)
 # div(10, 0)
 ```
 
+## set
+
+```py
+a = set([5, 4, 8, 5]) # OR a = {5, 4, 8, 5}
+print(a) # {8, 4, 5}
+print(5 in a) # True
+a.add(2)
+a.remove(8)
+print(a) # {2, 4, 5}
+print(len(a)) # 3
+
+a = {1, 3, 5, 8}
+b = {3, 5, 8, 9}
+print(a | b) # {1, 3, 5, 8, 9}
+print(a & b) # {8, 3, 5}
+print(a - b) # {1}
+```

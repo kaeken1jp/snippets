@@ -254,6 +254,31 @@ public class MyApp {
 }
 ```
 
+# array
+
+```java
+public class ClassName{
+     public static void main(String []args){
+        double array[] = {-0.2, 4.5, 2.0, 10, -5};
+        System.out.println(array[2]);
+        for (double e: array){
+            System.out.println(e);
+        }
+     }
+}
+```
+
+```
+2.0
+-0.2
+4.5
+2.0
+10.0
+-5.0
+```
+
+
+
 # Math,Random
 
 ```java

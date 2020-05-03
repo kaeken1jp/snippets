@@ -1022,3 +1022,14 @@ print(list(map(triple, [1, 2, 3]))) # [3, 6, 9]
 # lambda 引数: 処理
 print(list(map(lambda n: n * 3, [1, 2, 3]))) # [3, 6, 9]
 ```
+
+## filter
+
+```py
+def is_even(n):
+     return n % 2 == 0
+
+print(list(filter(is_even, range(10)))) # [0, 2, 4, 6, 8]
+
+print(list(filter(lambda n: n % 2 == 0, range(10)))) # [0, 2, 4, 6, 8]
+```

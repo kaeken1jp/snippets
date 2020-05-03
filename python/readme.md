@@ -20,11 +20,23 @@ print("answer:  %s again!" %answer)
 
 # Data Types
 boolean = True
+
 number = 1.1
+
 string = "Strings can be declared with single or double quotes."
+
+s = "he\nllo wor\tld"
+
+html = """<html>
+<body></body>
+</html>"""
+
 list = ["Lists can have", 1, 2, 3, 4, "or more types together!"]
+
 tuple = ("Tuples", "can have", "more than", 2, "elements!")
+
 dictionary = {'one': 1, 'two': 2, 'three': 3}
+
 variable_with_zero_data = None
 
 # Simple Logging

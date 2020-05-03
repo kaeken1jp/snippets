@@ -871,3 +871,57 @@ print(bob.name)
 bob.say_hi()
 bob.say_hello()
 ```
+
+## package
+
+```sh
+$ ls mypackage/
+__init__.py	user.py
+
+$ ls
+myapp.py	mypackage
+```
+
+```py
+""" mypackage/user.py """
+class User:
+    def __init__(self, name):
+        self.name = name
+    def say_hi(self):
+        print("hi {0}".format(self.name))
+
+class AdminUser(User):
+    def __init__(self, name, age):
+        super().__init__(name)
+        self.age = age
+    def say_hello(self):
+        print("hello {0} ({1})".format(self.name, self.age))
+    def say_hi(self):
+        print("[admin] hi {0}".format(self.name))
+
+# print("hello")
+```
+
+```py
+""" myapp.py """
+# package
+
+# import mypackage.user
+# import mypackage.user as mymodule
+from mypackage.user import AdminUser
+
+# bob = mypackage.user.AdminUser("bob", 23)
+# bob = mymodule.AdminUser("bob", 23)
+bob = AdminUser("bob", 23)
+
+print(bob.name)
+bob.say_hi()
+bob.say_hello()
+```
+
+```sh
+$ py myapp.py
+bob
+[admin] hi bob
+hello bob (23)
+```

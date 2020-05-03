@@ -727,3 +727,20 @@ x = str("s1") # x will be 's1'
 y = str(2)    # y will be '2'
 z = str(3.0)  # z will be '3.0'
 ```
+
+## Class variables
+
+```py
+class User:
+    count = 0 # <- class variable
+    def __init__(self, name):
+        User.count += 1
+        self.name = name # <- Instance variable
+
+print(User.count) # 0
+tom = User("tom")
+bob = User("bob")
+print(User.count) # 2
+
+print(tom.count) # 2
+```

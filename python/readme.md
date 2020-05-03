@@ -3,6 +3,11 @@
 # Comments
 # This is a one-line Python comment - code blocks are so useful!
 """This type of comment is used to document the purpose of functions and classes."""
+"""
+Comment
+Comment
+Comment
+"""
 
 # Declaration/Initialization
 # Remember values, not variables, have data types.
@@ -69,6 +74,23 @@ class Person(object):
     def birthday(self):
         self.age += 1
 ```
+
+# constant
+
+```py
+""" $ cat constant.py """
+PI = 3.14
+GRAVITY = 9.8
+```
+
+```py
+""" $ cat main.py """
+import constant
+
+print(constant.PI)
+print(constant.GRAVITY)
+```
+
 
 # check python version in code
 ```python

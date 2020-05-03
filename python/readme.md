@@ -10,6 +10,9 @@
 answer = 42
 answer = "The answer is 42."
 
+print("answer: %s" %answer)
+print("answer:  %s again!" %answer)
+
 # Data Types
 boolean = True
 number = 1.1

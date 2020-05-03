@@ -96,6 +96,7 @@ for i in range(1, 101):
 ```
 
 
+
 ## Falsy data
 ```py
 
@@ -135,7 +136,6 @@ else:
     print('False') # False
 
 ```
-
 
 ## list size
 ```python
@@ -547,4 +547,20 @@ l = [{'Name': 'Alice', 'Age': 40, 'Point': 80},
 l_name = [d.get('Name') for d in l]
 print(l_name)
 # ['Alice', 'Bob', 'Charlie']
+```
+
+## input()
+
+```py
+print("Your name? ", end="")
+name = input()
+
+print("hello %s" %name)
+print("hello %s again!" %name)
+```
+
+```
+Your name? abc
+hello abc
+hello abc again!
 ```

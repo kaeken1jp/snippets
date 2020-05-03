@@ -320,6 +320,52 @@ public class MyApp {
 ```
 
 
+# HashSet, TreeSet, LinkedHashSet
+
+```java
+import java.util.*;
+
+public class MyApp {
+
+  public static void main(String[] args) {
+    // HashSet
+    // TreeSet
+    // LinkedHashSet
+
+    // HashSet<Integer> sales = new HashSet<>();
+    Set<Integer> sales = new HashSet<>();
+
+    sales.add(10);
+    sales.add(20);
+    sales.add(30);
+    sales.add(10);
+
+    System.out.println(sales.size()); // 3
+
+    for (Integer sale : sales) {
+      System.out.println(sale);
+    }
+
+    sales.remove(30);
+
+    for (Integer sale : sales) {
+      System.out.println(sale);
+    }
+  }
+
+}
+```
+
+
+```
+3
+20
+10
+30
+20
+10
+```
+
 
 
 # Scanner & next()
@@ -429,34 +475,6 @@ public class MyApp {
 }
 ```
 
-
-
-
-# Random
-
-```java
-import java.util.Scanner;
-import java.util.Random;
-
-class MyApp {
-  public static void main(String[] args) {
-    Integer answer = new Random().nextInt(10) + 1;
-    
-    System.out.print("Your guess? ");
-    Integer guess = new Scanner(System.in).nextInt();
-    
-    if (answer == guess) {
-      System.out.println("Bingo!");
-    } else if (answer > guess ) {
-      System.out.println("The answer is higher!");
-    } else {
-      System.out.println("The answer is lower!");
-    }
-    
-    System.out.println("The answer was " + answer);
-  }
-}
-```
 
 # while & do - while
 

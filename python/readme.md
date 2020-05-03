@@ -1010,3 +1010,15 @@ print(next(g)) # 0
 print(next(g)) # 2
 print(next(g)) # 4
 ```
+
+## map, lambda
+
+```py
+def triple(n):
+     return n * 3
+
+print(list(map(triple, [1, 2, 3]))) # [3, 6, 9]
+
+# lambda 引数: 処理
+print(list(map(lambda n: n * 3, [1, 2, 3]))) # [3, 6, 9]
+```

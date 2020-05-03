@@ -788,5 +788,86 @@ class _Base: # private class
 ```
 
 
+## Inheritance
 
+```py
+class User:
+    def __init__(self, name):
+        self.name = name
+    def say_hi(self):
+        print("hi {0}".format(self.name))
 
+class AdminUser(User):
+    def __init__(self, name, age):
+        super().__init__(name)
+        self.age = age
+    def say_hello(self):
+        print("hello {0} ({1})".format(self.name, self.age))
+    # override
+    def say_hi(self):
+        print("[admin] hi {0}".format(self.name))
+
+bob = AdminUser("bob", 23)
+print(bob.name)
+bob.say_hi()
+bob.say_hello()
+```
+
+```py
+class A:
+    def say_a(self):
+        print("A!")
+    def say_hi(self):
+        print("hi! from A!")
+class B:
+    def say_b(self):
+        print("B!")
+    def say_hi(self):
+        print("hi! from B!")
+
+# class C(A, B):
+class C(B, A):
+    pass
+
+c = C()
+# c.say_a()
+# c.say_b()
+c.say_hi()
+```
+
+## module, import
+
+```py
+""" user.py """
+class User:
+    def __init__(self, name):
+        self.name = name
+    def say_hi(self):
+        print("hi {0}".format(self.name))
+
+class AdminUser(User):
+    def __init__(self, name, age):
+        super().__init__(name)
+        self.age = age
+    def say_hello(self):
+        print("hello {0} ({1})".format(self.name, self.age))
+    def say_hi(self):
+        print("[admin] hi {0}".format(self.name))
+
+# print("hello")
+```
+
+```py
+# import user
+# from user import AdminUser
+from user import AdminUser, User
+
+# bob = user.AdminUser("bob", 23)
+bob = AdminUser("bob", 23)
+
+tom = User("tom")
+
+print(bob.name)
+bob.say_hi()
+bob.say_hello()
+```

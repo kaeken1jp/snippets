@@ -156,7 +156,7 @@ print("hello " + "world")
 print("hello " * 3) # hello hello hello
 ```
 
-# print
+# print, format
 
 ```py
 name = "foo"
@@ -167,6 +167,29 @@ print("name: %-10s, score: %10.2f" % (name, score)) # name: foo       , score:  
 
 print("name: {0}, score: {1}".format(name, score)) # name: foo, score: 52.8
 print("name: {0:>10s}, score: {1:<10.2f}".format(name, score)) # name:        foo, score: 52.80
+
+#named indexes:
+txt1 = "My name is {fname}, I'm {age}".format(fname = "John", age = 36)
+#numbered indexes:
+txt2 = "My name is {0}, I'm {1}".format("John",36)
+#empty placeholders:
+txt3 = "My name is {}, I'm {}".format("John",36)
+
+print(txt1) # => My name is John, I'm 36
+print(txt2) # => My name is John, I'm 36
+print(txt3) # => My name is John, I'm 36
+```
+
+# pass, None
+
+```py
+def myfunction():
+  pass
+
+# having an empty function definition like this, would raise an error without the pass statement
+
+res = myfunction()
+print(res) #=> None
 ```
 
 

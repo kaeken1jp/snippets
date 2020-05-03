@@ -985,3 +985,28 @@ print(a | b) # {1, 3, 5, 8, 9}
 print(a & b) # {8, 3, 5}
 print(a - b) # {1}
 ```
+
+## Iterators & Generators
+
+```py
+scores = [40, 50, 70, 90, 60]
+it = iter(scores) # iterator
+print(next(it)) # 40
+print(next(it)) # 50
+print("hello")
+print(next(it)) # 70
+
+for score in scores:
+    print(score) # 40 50 70 90 60
+
+def get_infinite(): # generator
+    i = 0
+    while True:
+        yield i * 2
+        i += 1
+
+g = get_infinite()
+print(next(g)) # 0
+print(next(g)) # 2
+print(next(g)) # 4
+```

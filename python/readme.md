@@ -54,6 +54,24 @@ else:
 for item in list:
     print item
 
+## break
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  if x == "banana":
+    break
+  print(x) 
+# => apple
+
+## continue
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  if x == "banana":
+    continue
+  print(x)
+# => apple
+# => cherry
+
+
 while (total < max_val):
     total += values[i]
     i += 2
@@ -66,6 +84,15 @@ while i < 6:
         break
     i += 1
 
+## while else
+i = 0
+while i < 10:
+    if i == 5:
+        break
+    print(i)
+    i += 1
+else:
+    print("end")
 
 # Functions
 def divide(dividend, divisor):

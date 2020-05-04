@@ -126,6 +126,12 @@ rect(50, 50, 80, 100); // center xy, dist, dist
 ```
 
 ## ellipse(a, b, c, d)
+```
+a	float: x-coordinate of the ellipse
+b	float: y-coordinate of the ellipse
+c	float: width of the ellipse by default
+d	float: height of the ellipse by default
+```
 
 ```pde
 ellipse(50, 50, 80, 80);

@@ -87,6 +87,13 @@ quad(38, 31, 86, 20, 69, 63, 30, 76);
 
 ## rect(a, b, c, d), rect(a, b, c, d, r), rect(a, b, c, d, tl, tr, br, bl)
 
+```	
+a	float: x-coordinate of the rectangle by default
+b	float: y-coordinate of the rectangle by default
+c	float: width of the rectangle by default
+d	float: height of the rectangle by default
+```
+
 ![](https://i.gyazo.com/6214b07dc730c84959fbf244c9be74a9.png)
 
 ## rectMode(MODE)

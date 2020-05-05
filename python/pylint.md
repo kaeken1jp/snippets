@@ -16,6 +16,11 @@ License: GPL
 Location: /anaconda3/lib/python3.6/site-packages
 Requires: astroid, isort, mccabe
 Required-by: spyder
+
+$ pylint --version
+pylint 2.2.2
+
+
 ```
 
 

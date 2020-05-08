@@ -49,7 +49,12 @@ print(scores[-3:]) # [70, 90, 60]
 s = "hello"
 print(s[1:4]) # ell
 
-
+# regex
+import re
+s = 'http://example.com/?123'
+m = re.match(r'http://example.com/\?\d+', s)
+print(m)
+#<_sre.SRE_Match object; span=(0, 23), match='http://example.com/?123'> 
 
 
 # Simple Logging

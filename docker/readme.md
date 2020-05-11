@@ -10,3 +10,34 @@ https://docs.docker.com/
 
 https://hub.docker.com/
 
+# version
+
+```sh
+$ docker version
+```
+
+# run
+
+```sh
+$ docker run -d -p 80:80 --name webserver nginx
+$ open http://localhost
+```
+
+# stop/start
+```sh
+$ docker container stop webserver
+webserver
+
+$ docker container start webserver
+webserver
+```
+
+# ls
+
+```sh
+$ docker container ls -a
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS               NAMES
+xxxxxxxxxxxx        nginx               "nginx -g 'daemon of…"   2 minutes ago       Exited (0) 58 seconds ago                       webserver
+```
+
+# 

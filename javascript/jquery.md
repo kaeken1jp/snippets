@@ -30,8 +30,9 @@ $("SELECTOR").attr("href", "http://example.com/")
 
 # important
 
-```javascript
-$('SELECTOR').css({'cssText': 'text-transform: lowercase !important;'});
+```js
+//$('SELECTOR').css('text-transform', 'lowercase !important'); // NG
+$('SELECTOR').css({'cssText': 'text-transform: lowercase !important;'}); // OK
 ```
 
 # Ajax

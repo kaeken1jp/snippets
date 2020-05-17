@@ -70,7 +70,7 @@ else:
 
 # Loops
 for item in list:
-    print item
+    print(item)
 
 ## break
 fruits = ["apple", "banana", "cherry"]
@@ -124,7 +124,7 @@ def divide(dividend, divisor):
 
 def calculate_stuff(x, y):
     (q, r) = divide(x,y)
-    print q, r
+    print(q, r)
 
 # Classes
 class Person(object):

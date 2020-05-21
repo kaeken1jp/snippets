@@ -47,11 +47,30 @@ String s1 = "s1";
 String s2 = "s2";
 println(s1 + s2); // s1s2
 
+////////////////
 String na = "";
 String str = "string";
 int i = 1;
 float f = 9.9;
 println(na + i + str + f); // 1string9.9
+
+//////////////////////
+String str1 = "aaa";
+String str2 = "aaa";
+if (str1.equals(str2)){
+  println(str1 + " equals " + str2);
+}else{
+  println(str1 + " doesn't equal " + str2);
+}
+// aaa equals aaa
+
+str2 = "bbb";
+if (str1.equals(str2)){
+  println(str1 + " equals " + str2); 
+}else{
+  println(str1 + " doesn't equal " + str2);
+}
+// aaa doesn't equal bbb
 ```
 
 

@@ -46,6 +46,12 @@ println(b);
 String s1 = "s1";
 String s2 = "s2";
 println(s1 + s2); // s1s2
+
+String na = "";
+String str = "string";
+int i = 1;
+float f = 9.9;
+println(na + i + str + f); // 1string9.9
 ```
 
 

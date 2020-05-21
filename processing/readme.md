@@ -53,7 +53,10 @@ String str = "string";
 int i = 1;
 float f = 9.9;
 println(na + i + str + f); // 1string9.9
+```
 
+## str.equals(str)
+```pde
 //////////////////////
 String str1 = "aaa";
 String str2 = "aaa";

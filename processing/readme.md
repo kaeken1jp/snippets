@@ -40,6 +40,14 @@ boolean b = false; // 	Datatype for the Boolean values true and false.
 println(b);
 ```
 
+## string
+
+```pde
+String s1 = "s1";
+String s2 = "s2";
+println(s1 + s2); // s1s2
+```
+
 
 ## size()
 

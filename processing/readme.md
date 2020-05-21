@@ -56,7 +56,13 @@ println(na + i + str + f); // 1string9.9
 ```
 
 ## str.equals(str)
+
+https://processing.org/reference/String_equals_.html
+
 ```pde
+// 	Compares two strings to see if they are the same. This method is necessary because it's not possible to compare
+// strings using the equality operator (==). Returns true if the strings are the same and false if they are not.
+
 //////////////////////
 String str1 = "aaa";
 String str2 = "aaa";

@@ -3,7 +3,7 @@
 # install
 
 ```sh
-pip install marshmallow
+pip install -U marshmallow
 ```
 
 # usage
@@ -30,3 +30,11 @@ pprint(result, indent=2)
 #   'release_date': '1971-12-17',
 #   'title': 'Hunky Dory'}
 ```
+
+## example
+
+[Examples — marshmallow 3.6.0 documentation](https://marshmallow.readthedocs.io/en/stable/examples.html)
+
+
+
+

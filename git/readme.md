@@ -26,10 +26,42 @@ $ git config --global user.name "Your Name Comes Here"
 $ git config --global user.email you@yourdomain.example.com
 ```
 
+## how to set config (.gitconfig)
+```sh
+$ cat ~/.gitconfig
+[user]
+	email = xxx
+	name = xxx
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[credential]
+	helper = osxkeychain
+[url "git@github.com:"]
+	pushinsteadof = https://github.com/
+[core]
+  excludesfile = /Users/xxx/.gitignore_global
+```
+
+
 ## how to delete config
 ```bash
 $ git config --global --unset KEY_NAME
 ```
+
+## how to set ignore
+```sh
+$ cat ~/.gitconfig
+...
+[core]
+  excludesfile = /Users/xxx/.gitignore_global
+```
+
+check -> .gitignore_global file
+
+
 
 ## how to skip password
 

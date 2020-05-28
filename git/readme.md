@@ -59,7 +59,7 @@ $ cat ~/.gitconfig
   excludesfile = /Users/xxx/.gitignore_global
 ```
 
-check -> .gitignore_global file
+check -> dot_gitignore_global file
 
 
 

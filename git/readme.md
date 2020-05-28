@@ -52,6 +52,9 @@ $ git config --global --unset KEY_NAME
 ```
 
 ## how to set ignore
+
+- set
+
 ```sh
 $ cat ~/.gitconfig
 ...
@@ -59,8 +62,13 @@ $ cat ~/.gitconfig
   excludesfile = /Users/xxx/.gitignore_global
 ```
 
-check -> dot_gitignore_global file
+- check -> dot_gitignore_global file
 
+- reflect
+
+```sh
+git config --global core.excludesfile ~/.gitignore_global
+```
 
 
 ## how to skip password

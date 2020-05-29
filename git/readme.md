@@ -183,6 +183,53 @@ ln -s /Users/gio/repo/foo.md ./bar/foo.md
 cd ./bar && ln -s ../foo.md foo.md
 ```
 
+# git log
+
+```sh
+echo "A" > test1.txt
+git add test1.txt
+git commit -m "1st commit"
+
+echo "B" > test2.txt
+git add test2.txt
+git commit -m "2nd commit"
+
+echo "C" >> test1.txt
+git add test1.txt
+git commit -m "3rd commit"
+
+echo "D" >> test2.txt
+git add test2.txt
+git commit -m "4th commit"
+```
+
+## default
+
+```sh
+commit xxxxxxxxxxxxxxxxxxx (HEAD -> master)
+Author: xxxxxxxxxxxxxx
+Date:   xxxxxxxxxxxx
+
+    4th commit
+
+commit xxxxxxxxxxx
+Author: xxxxxxxxx
+Date:   xxxxxx
+
+    3rd commit
+
+commit xxxxxxxxxxx
+Author: xxxxxxxxx
+Date:   xxxxxx
+
+    2nd commit
+
+commit xxxxxxxxxxx
+Author: xxxxxxxxx
+Date:   xxxxxx
+
+    1st commit
+```
 
 
 

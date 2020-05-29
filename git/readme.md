@@ -250,4 +250,12 @@ Date:   xxxxxx
 ```
 
 
+# git reset
+
+```sh
+
+$ git log # check the hash
+commit abcdef**********
+
+$ git reset --hard abcdef**********
 

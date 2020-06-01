@@ -302,6 +302,8 @@ rect(30, 20, 55, 55);
 
 ## colorMode()
 
+https://processing.org/reference/colorMode_.html
+
 ![](https://i.gyazo.com/7dad318774b23324129e835cde87a7b8.png)
 
 ```pde

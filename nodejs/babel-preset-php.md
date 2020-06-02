@@ -5,6 +5,7 @@
 ## sample
 
 ```php
+// PHP
 define('FOO', max(floatval($c), strlen("foo")));
 $bar['x'][][$b] = json_encode(__FILE__);
 class Foo extends Bar\Baz {
@@ -17,6 +18,7 @@ class Foo extends Bar\Baz {
 ```
 
 ```js
+// JS
 const FOO = Math.max(+c, "foo".length);
 bar.x.push({[b]: JSON.stringify(__filename)});
 class Foo extends Bar.Baz {

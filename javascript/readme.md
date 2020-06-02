@@ -542,3 +542,10 @@ var flag = 'dev';
 var file_name = 'file' + ((flag == 'dev') ? '_dev' : '') + '.ext';
 ```
 
+
+# String.repeat()
+
+```js
+const v = 'abc';
+console.log(`${v.repeat(3)}`); // "abcabcabc"
+```

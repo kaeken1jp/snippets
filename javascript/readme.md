@@ -549,3 +549,18 @@ var file_name = 'file' + ((flag == 'dev') ? '_dev' : '') + '.ext';
 const v = 'abc';
 console.log(`${v.repeat(3)}`); // "abcabcabc"
 ```
+
+# Array.join()
+
+```js
+const elements = ['Fire', 'Air', 'Water'];
+
+console.log(elements.join());
+// expected output: "Fire,Air,Water"
+
+console.log(elements.join(''));
+// expected output: "FireAirWater"
+
+console.log(elements.join('-'));
+// expected output: "Fire-Air-Water"
+```

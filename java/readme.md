@@ -37,6 +37,10 @@ public class Hello {
 
 ```sh
 $ javac Hello.java
+
+or
+
+$ javac -encoding utf8 Hello.java
 ```
 
 ```sh

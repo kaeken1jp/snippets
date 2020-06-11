@@ -1461,3 +1461,67 @@ MAY
 2020-06-30T01:35:32.127370
 2020!05!03!
 ```
+
+
+# jar (Java Archive)
+
+```
+jar-The Java Archive Tool
+jar combines multiple files into a single JAR archive file.
+
+SYNOPSIS
+Create jar file
+jar c[v0M]f jarfile [-C dir] inputfiles [-Joption]
+jar c[v0]mf manifest jarfile [-C dir] inputfiles [-Joption] [-e entrypoint]
+jar c[v0M] [-C dir] inputfiles [-Joption]
+jar c[v0]m manifest [-C dir] inputfiles [-Joption]
+Update jar file
+jar u[v0M]f jarfile [-C dir] inputfiles [-Joption]
+jar u[v0]mf manifest jarfile [-C dir] inputfiles [-Joption] [-e entrypoint]
+jar u[v0M] [-C dir] inputfiles [-Joption]
+jar u[v0]m manifest [-C dir] inputfiles [-Joption]
+Extract jar file
+jar x[v]f jarfile [inputfiles] [-Joption]
+jar x[v] [inputfiles] [-Joption]
+List table of contents of jar file
+jar t[v]f jarfile [inputfiles] [-Joption]
+jar t[v] [inputfiles] [-Joption]
+Add index to jar file
+jar i jarfile [-Joption]
+
+cuxtiv0Mmf
+Options that control the jar command.
+jarfile
+File name of the Jar file to be created (c), updated (u), extracted (x), or have its table of contents viewed (t). The -f option and filename jarfile are a pair -- if either is present, they must both appear. Note that omitting -f and jarfile accepts jar file from standard input (for x and t) or sends jar file to standard output (for c and u).
+inputfiles
+Files or directories separated by spaces, to be combined into jarfile (for c and u), or to be extracted (for x) or listed (for t) from jarfile. All directories are processed recursively. The files are compressed unless option -0 (zero) is used.
+manifest
+Pre-existing manifest file whose name : value pairs are to be included in MANIFEST.MF in the jar file. The -m option and filename manifest are a pair -- if either is present, they must both appear. The letters m and f must appear in the same order that manifest and jarfile appear.
+entrypoint
+The name of the class that set as the application entry point for stand-alone applications bundled into executable jar file. The -e option and entrypoint are a pair -- if either is present, they must both appear. The letters m, f and e must appear in the same order that manifest, jarfile, entrypoint appear.
+-C dir
+Temporarily changes directories to dir while processing the following inputfiles argument. Multiple -C dir inputfiles sets are allowed.
+-Joption
+Option passed into the Java runtime environment. (There must be no space between -J and option).
+```
+
+- make
+
+```sh
+jar cvf <JAR_FILE_NAME> <FILE_NAMES>
+
+jar cvf file.jar *.*
+```
+
+- extract
+
+```sh
+jar -xvf file.jar
+```
+
+- exec
+
+```sh
+java -jar file.jar
+```
+

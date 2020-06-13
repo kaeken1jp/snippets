@@ -195,6 +195,10 @@ public class MyApp {
 }
 ```
 
+```java
+int i = Integer.parseInt(str);
+```
+
 # printf
 
 ```java

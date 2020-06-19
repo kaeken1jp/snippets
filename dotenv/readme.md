@@ -4,11 +4,14 @@
 
 - Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.
 
-
 # Python
 
 [theskumar/python-dotenv: Get and set values in your .env file in local and production servers.](https://github.com/theskumar/python-dotenv)
 
+
+# Ruby
+
+[bkeepers/dotenv: A Ruby gem to load environment variables from `.env`.](https://github.com/bkeepers/dotenv)
 
 # PHP
 

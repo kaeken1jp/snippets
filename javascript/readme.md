@@ -564,3 +564,37 @@ console.log(elements.join(''));
 console.log(elements.join('-'));
 // expected output: "Fire-Air-Water"
 ```
+
+# hankaku to zenkaku
+
+```js
+function hankaku2Zenkaku(str) {
+    return str.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
+        return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
+    });
+}
+
+// 使用例
+hankaku2Zenkaku('１２３ａｂＣ');  // '123abC'
+```
+
+
+# isHankaku
+
+```js
+function isHankaku(str){
+  str = (str==null)?"":str;
+  if(str.match(/^[\x20-\x7e]*$/)){
+    return true;
+  }else{
+    return false;
+  }
+}
+
+var s = "！＠＃";
+if(isHankaku(s)) {
+  alert("OK");
+} else {
+  alert("半角文字ではない文字が含まれます");
+}
+```

@@ -23,3 +23,12 @@ Shift押しながら、開始行と終了行をクリック
 
 
 # error
+
+## Failed to Push Some Refs | Git Error
+
+- To fix this issue, run:
+
+```
+git pull origin <your-branch>
+git push origin <your-branch>
+```

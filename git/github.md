@@ -20,3 +20,6 @@ Shift押しながら、開始行と終了行をクリック
 # api
 
 [GitHub Developer | GitHub Developer Guide](https://developer.github.com/)
+
+
+# error

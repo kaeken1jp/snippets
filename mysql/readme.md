@@ -1,9 +1,21 @@
-# mysql snippets
+# install
+
+- Mac
+
+```sh
+brew install mysql
+```
+
+
+
+# login
 
 ## db login
 ```bash
 mysql -u <DB_USER> -D <DB_NAME>
 ```
+
+# DML
 
 ## Select
 

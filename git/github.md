@@ -1,5 +1,10 @@
 # github tips
 
+## search filename
+
+[Introducing the File Finder - The GitHub Blog](https://github.blog/2011-02-10-introducing-the-file-finder/)
+
+
 ## public URL for the Github public keys
 ```sh
 curl https://github.com/<username>.keys

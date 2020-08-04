@@ -6,6 +6,20 @@
 brew install mysql
 ```
 
+# server
+
+## start
+
+```sh
+$ /usr/local/bin/mysql.server start
+```
+
+## stop
+
+```sh
+$ /usr/local/bin/mysql.server stop
+```
+
 
 
 # login
@@ -13,6 +27,8 @@ brew install mysql
 ## db login
 ```bash
 mysql -u <DB_USER> -D <DB_NAME>
+
+mysql -uroot
 ```
 
 # DML

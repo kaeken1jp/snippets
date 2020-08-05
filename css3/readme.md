@@ -19,4 +19,15 @@ text-transform: lowercase; # 小文字化
 text-transform: capitalize; # 先頭大文字化
 ```
 
+# change text
+
+```css
+#id {
+    font-size:0;
+}
+#id:before {
+    font-size: 14px;
+    content: "String";
+}
+```
 

@@ -69,3 +69,16 @@ $('a').each(function(i, elem) {
 $("#mylink").attr("href", "http://example.com/")
 ```
 
+
+# change Pseudo elements
+
+```html
+<style id='stylesheet' type='text/css'></style>
+```
+
+```js
+$("style").html('#red:before{color:red;}');
+$("#stylesheet").html('#red:before{color:red;}');
+```
+
+cf. [jQueryでcssの「:before」、「:after」などの疑似要素のstyleを変更させる方法 | webデザインメモ](https://mugenweb-note.com/web/css/before-jquery)

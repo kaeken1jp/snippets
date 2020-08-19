@@ -31,3 +31,23 @@ text-transform: capitalize; # 先頭大文字化
 }
 ```
 
+# visibility
+
+```
+The visibility CSS property shows or hides an element without changing the layout of a document.
+```
+
+```css
+/* Keyword values */
+visibility: visible;
+visibility: hidden;
+visibility: collapse;
+
+/* Global values */
+visibility: inherit;
+visibility: initial;
+visibility: unset;
+```
+
+[visibility - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/visibility)
+

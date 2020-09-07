@@ -34,3 +34,30 @@ optional arguments:
  --sum       sum the integers (default: find the max)
 
 ```
+
+
+# ex2
+
+```py
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument('--foo', help='foo help')
+args = parser.parse_args()
+```
+
+```sh
+$ py main.py -h
+usage: main.py [-h] [--foo FOO]
+
+optional arguments:
+  -h, --help  show this help message and exit
+  --foo FOO   foo help
+```
+
+```
+
+```
+
+
+
+

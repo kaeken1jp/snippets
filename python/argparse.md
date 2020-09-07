@@ -54,9 +54,6 @@ optional arguments:
   --foo FOO   foo help
 ```
 
-```
-
-```
 
 
 

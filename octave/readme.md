@@ -14,6 +14,8 @@ Copyright (C) 2020 John W. Eaton and others.
 
 # syntax
 
+## vector
+
 ```octave
 b = [4; 9; 2] # Column vector
 A = [ 3 4 5;
@@ -21,6 +23,8 @@ A = [ 3 4 5;
       3 5 9 ]
 x = A \ b     # Solve the system Ax = b
 ```
+
+## plot
 
 ```octave
 x = -10:0.1:10; # Create an evenly-spaced vector from -10..10
@@ -31,5 +35,6 @@ xlabel ("x");
 ylabel ("sin (x)");
 ```
 
+![](https://i.gyazo.com/7f55e1e0c3800d910f965d373cdfc11d.png)
 
 

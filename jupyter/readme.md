@@ -78,6 +78,12 @@ click `SourceHanCodeJP-Regular.otf`
 
 
 
+# how to use in VSCode
+
+[Working with Jupyter code cells in the Python Interactive window](https://code.visualstudio.com/docs/python/jupyter-support-py)
+
+[Working with Jupyter Notebooks in Visual Studio Code](https://code.visualstudio.com/docs/python/jupyter-support)
+
 
 
 

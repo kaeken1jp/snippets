@@ -29,6 +29,23 @@ PR  #0000 [ OUT     #0004, #000f           ]  STEP 0
 SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
 GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
 GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> h
+b ADDR        Set a breakpoint at specified address.
+d NUM         Delete breakpoints.
+di ADDR       Disassemble 32 words from specified address.
+du ADDR       Dump 128 words of memory.
+h             Print help.
+i             Print breakpoints.
+j ADDR        Set PR to ADDR.
+m ADDR VAL    Change the memory at ADDR to VAL.
+p             Print register status.
+q             Quit.
+r             Strat execution of program.
+s             Step execution.
+st            Dump 128 words of stack image.
+
+
 ```
 
 # CASLII コーディング書式

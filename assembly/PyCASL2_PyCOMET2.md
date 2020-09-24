@@ -7,6 +7,7 @@ PyCASL2, PyCOMET2は CASLII のアセンブラおよびシミュレータです�
 # hello world
 
 ```cas
+;comment area
 ;output text
 MAIN    START
         OUT    BUF,LEN
@@ -18,7 +19,16 @@ LEN     DC     11
 
 ```sh
 $ pycasl hello.cas
+
 $ pycomet -r hello.com
+Hello World
+
+$ pycomet hello.com
+load hello.com ... done.
+PR  #0000 [ OUT     #0004, #000f           ]  STEP 0
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
 ```
 
 # CASLII コーディング書式

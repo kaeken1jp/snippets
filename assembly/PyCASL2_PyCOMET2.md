@@ -62,6 +62,24 @@ st            Dump 128 words of stack image.
 ・オペランド：命令コードの処理対象を記述
 ```
 
+## 命令の種類
+
+### 機械語命令
+
+![](https://i.gyazo.com/1b49684ea813c1efb95c6b71705a7617.jpg)
+
+### アセンブラ命令
+
+![](https://i.gyazo.com/82067d845df6c06d29a393312559f087.jpg)
+
+### マクロ命令
+
+![](https://i.gyazo.com/603fe7795b22ffd283d8eaa6a35cdd68.jpg)
+
+## 命令の調べ方
+
+![](https://i.gyazo.com/ab63ea6947013b3e7a5ca2513668033f.jpg)
+
 # CPU動作
 
 ![](https://i.gyazo.com/bcb761e81cdfe123820340b3f15b4698.jpg)
@@ -170,10 +188,10 @@ Memory:
 
 ```sh
 $ cat calc.cas
- ; 足し算する
+; 足し算する
 CALC    START
         LD      GR0, A
-        ADDA    GR0, B
+        ADDA    GR0, B ; ADDAで足し算
         ST      GR0, ANS
         RET
 A       DC      03
@@ -223,5 +241,23 @@ GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
 ```
 pycomet2> s
 dump last status to last_state.txt
+```
+
+
+
+## マシン語で引き算
+
+```sh
+$ cat calc2.cas
+; 引き算する
+CAL2    START
+        LD      GR0, A
+        SUBA    GR0, B ; SUBAで引き算
+        ST      GR0, ANS
+        RET
+A       DC      05
+B       DC      02
+ANS     DS      01
+        END
 ```
 

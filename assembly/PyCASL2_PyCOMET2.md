@@ -165,3 +165,63 @@ Memory:
 0020: 0000 0000 0000 0000 0000 0000 0000 0000 ........
 ```
 
+
+## マシン語で足し算
+
+```sh
+$ cat calc.cas
+ ; 足し算する
+CALC    START
+        LD      GR0, A
+        ADDA    GR0, B
+        ST      GR0, ANS
+        RET
+A       DC      03
+B       DC      02
+ANS     DS      01
+        END
+```
+
+```sh
+$ pycasl calc.cas
+
+$ pycomet -d calc.com
+```
+
+```
+load calc.com ... done.
+PR  #0000 [ LD      GR0, #0007             ]  STEP 0
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+```
+
+```
+pycomet2> s
+PR  #0002 [ ADDA    GR0, #0008             ]  STEP 1
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #0003(      3) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+```
+
+```
+pycomet2> s
+PR  #0004 [ ST      GR0, #0009             ]  STEP 2
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #0005(      5) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+```
+
+```
+pycomet2> s
+PR  #0006 [ RET                            ]  STEP 3
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #0005(      5) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+```
+
+```
+pycomet2> s
+dump last status to last_state.txt
+```
+

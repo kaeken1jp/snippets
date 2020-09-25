@@ -74,3 +74,6 @@ st            Dump 128 words of stack image.
 
 ![](https://i.gyazo.com/501534f083391b85803b75eba09e832f.jpg)
 
+## プログラムレジスタの動き
+
+![](https://i.gyazo.com/4048731da83db88b26e7f0231498ea38.jpg)

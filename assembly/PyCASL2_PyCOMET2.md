@@ -61,3 +61,16 @@ st            Dump 128 words of stack image.
 
 ・オペランド：命令コードの処理対象を記述
 ```
+
+# CPU動作
+
+![](https://i.gyazo.com/bcb761e81cdfe123820340b3f15b4698.jpg)
+
+## COMET2 レジスタ構成
+
+![](https://i.gyazo.com/5ff66553c72400c6a7f59b5c54a7d4f4.jpg)
+
+## プログラムのメモリ配置
+
+![](https://i.gyazo.com/501534f083391b85803b75eba09e832f.jpg)
+

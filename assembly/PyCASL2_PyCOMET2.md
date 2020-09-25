@@ -142,7 +142,7 @@ $ wc -l last_state.txt
 ```
 
 ```sh
-k$ head -20 last_state.txt
+$ head -20 last_state.txt
 Step count: 2
 PR: #0003
 SP: #ff00

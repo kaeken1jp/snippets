@@ -457,3 +457,40 @@ A       DC      #FF
         END
 ```
 
+
+# アドレスの指定方法
+
+![](https://i.gyazo.com/50f612293433034a5b8adeaf637b6b6b.png)
+
+# インデックス修飾
+
+![](https://i.gyazo.com/87cfd665db450463243b2a7daae0cdc4.jpg)
+
+![](https://i.gyazo.com/37d829a062dbb937210554cd5a728989.png)
+
+- 「x」には、GR1 ~ GR7のどれかを指定します。指定すると、adrで指定したラベルに、指定したレジスタの値を足し算して、その計算結果のアドレスから、値をレジスタに読み込みます。
+
+## LDでインデックス修飾
+
+```
+MAIN    START
+        LAD     GR1, 1
+        LD      GR0, A, GR1
+        RET
+A       DC      05
+        DC      03
+        END
+```
+
+## LADでインデックス修飾
+
+```
+MAIN    START
+        LAD     GR1, 1
+        LD      GR0, A, GR1
+        LAD     GR2, A, GR1
+        RET
+A       DC      05
+        DC      03
+        END
+```

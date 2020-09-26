@@ -2106,7 +2106,61 @@ SP動作
 ```
 
 
+# PUSH命令
+
+![](https://i.gyazo.com/ea03d374ba10ad297301a28b99b39971.jpg)
+
+```
+スタックに値を入れる
+
+
+PUSH adr [, x]
+    SP ← (SP) -L １
+    (SP) ← 実効アドレス
 
 
 
+- レジスタの値だけをスタックに積む： PUSH 0, GR1
+- 指定の値をスタックに積む： PUSH #FF
+- ラベルの値をスタックに積む： PUSH DATA
 
+※保存できるレジスタは、GR1 - GR7、GR0は格納できない。
+```
+
+
+# POP命令
+
+![](https://i.gyazo.com/674d7a06986ba143cd9b93b1ea664730.png)
+
+```
+スタックからデータを取り出す
+
+
+POP r
+    r ← ((SP))
+    SP ← (SP) +L １
+
+
+※格納できるレジスタは、GR0からGR7
+```
+
+
+# スタックテスト
+
+```
+1. GR1に値をセット
+2. GR1の値をスタックに格納(PUSH)
+3. GR1に別の値をセット
+4. スタックからGR1に値を取り出す(POP)
+```
+
+```
+;スタックテスト
+MAIN    START
+        LAD     GR1, #FFFF
+        PUSH    0, GR1
+        LAD     GR1, #0000
+        POP     GR1
+        RET
+        END
+```

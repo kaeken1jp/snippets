@@ -366,7 +366,7 @@ Memory:
 ;  レジスタ間で転送
 CALC    START
         LD      GR0, A
-        LD      GR1, GR0
+        LD      GR1, GR0 ; GR0をGR1に転送
         RET
 A       DC      03
 B       DC      02

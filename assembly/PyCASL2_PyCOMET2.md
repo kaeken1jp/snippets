@@ -2198,5 +2198,41 @@ RET命令でサブルーチンから復帰
 - スタックのアドレスをプログラムレジスタに読み込む
 ```
 
+# CALL命令　サブルーチンを呼び出し
+
+```
+CALL adr [, x]
+    SP ← (SP) -L １,
+    (SP) ← (PR),
+    PR r← 実効アドレス
+```
+
+# RET命令　サブルーチンから復帰
+
+```
+RET
+```
+
+# 合計するサブルーチン
+
+```
+; サブルーチン
+MAIN    START
+        CALL    SUM
+        RET
+        END
+SUM     START
+        LAD     GR0, 01
+        LAD     GR1, 02
+        ADDA    GR0, GR1
+        RET
+        END
+```
+
+
+
+
+
+
 
 

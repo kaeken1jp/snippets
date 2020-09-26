@@ -447,6 +447,13 @@ A       DC       05
         END
 ```
 
-
-
+```
+; ラベルのアドレスを読み込む
+MAIN    START
+        LD      GR0, A
+        LAD     GR2, A    ; ここにアドレスを読み込むコードを書く
+        RET
+A       DC      #FF
+        END
+```
 

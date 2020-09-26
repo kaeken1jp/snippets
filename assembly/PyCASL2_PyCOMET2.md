@@ -646,6 +646,43 @@ XOR   0000 0000 0011 0000
 4ビット目・5ビット目を反転して、残りのビット「X」はそのまま
 ```
 
+```
+$ cat logic.cas
+; 論理演算
+CALC    START
+        LD      GR0, A
+        XOR     GR0, B
+        RET
+A       DC      #5555
+B       DC      #FF00
+        END
+```
+
+```
+$ pycomet logic.com
+load logic.com ... done.
+PR  #0000 [ LD      GR0, #0005             ]  STEP 0
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0002 [ XOR     GR0, #0006             ]  STEP 1
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #5555(  21845) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0004 [ RET                            ]  STEP 2
+SP  #ff00(  65280) FR(OF, SF, ZF)  010  (      2)
+GR0 #aa55( -21931) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+```
+
+
+
+
 
 # LD命令
 

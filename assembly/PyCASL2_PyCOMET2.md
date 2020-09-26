@@ -2230,7 +2230,57 @@ SUM     START
 ```
 
 
+# RPUSH命令
 
+![](https://i.gyazo.com/2909d8b309409e7475e01001ce18c9cc.jpg)
+
+```
+GR1からGR7の値を、この順番でスタックにPUSHする
+
+
+RPUSH
+```
+
+
+
+# RPOP命令
+
+![](https://i.gyazo.com/52f6a72a4c8125b5f2c760c0e7fb21c5.png)
+
+# RPUSHとRPOPの役割
+
+![](https://i.gyazo.com/3069681851a309d640f861d23ec2ae72.jpg)
+
+```
+サブルーチンを呼び出し
+- プログラムレジスタの値をスタックに格納
+- 戻り先のアドレスを一時退避
+
+サブルーチンは、レジスタの値は退避しない
+- サブルーチンの作業用にレジスタを使う
+- レジスタの値が変わってしまう
+
+
+RPUSHで、GR1からGR7の値を一時退避 > RPOPで復帰
+- 元の処理に戻ったとき、レジスタの値をそのまま使える
+- GR0で、サブルーチンの処理結果を受け取る
+```
+
+```
+; レジスタ退避
+MAIN    START
+        CALL    SUM
+        RET
+        END
+SUM     START
+        RPUSH
+        LAD     GR0, 01
+        LAD     GR1, 02
+        ADDA    GR0, GR1
+        RPOP
+        RET
+        END
+```
 
 
 

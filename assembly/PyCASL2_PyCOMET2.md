@@ -411,6 +411,9 @@ dump last status to last_state.txt
 
 - LAD命令は、オペランドに記述したアドレス自体を読み込む命令です。この機能で、オペランドの値を直接レジスタに読み込めます。
 
+![](https://i.gyazo.com/78d95c3525b690b554c411a0d590e90c.jpg)
+
+
 ## レジスタに値を読み込む
 
 ```

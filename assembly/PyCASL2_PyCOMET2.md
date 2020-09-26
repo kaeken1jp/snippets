@@ -2282,6 +2282,57 @@ SUM     START
         END
 ```
 
+```
+ pycomet rpush.com
+load rpush.com ... done.
+PR  #0000 [ CALL    #0003                  ]  STEP 0
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0003 [ RPUSH                          ]  STEP 1
+SP  #feff(  65279) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0004 [ LAD     GR0, #0001             ]  STEP 2
+SP  #fef7(  65271) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0006 [ LAD     GR1, #0002             ]  STEP 3
+SP  #fef7(  65271) FR(OF, SF, ZF)  001  (      1)
+GR0 #0001(      1) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0008 [ ADDA    GR0, GR1               ]  STEP 4
+SP  #fef7(  65271) FR(OF, SF, ZF)  001  (      1)
+GR0 #0001(      1) GR1 #0002(      2) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0009 [ RPOP                           ]  STEP 5
+SP  #fef7(  65271) FR(OF, SF, ZF)  000  (      0)
+GR0 #0003(      3) GR1 #0002(      2) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #000a [ RET                            ]  STEP 6
+SP  #feff(  65279) FR(OF, SF, ZF)  000  (      0)
+GR0 #0003(      3) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0002 [ RET                            ]  STEP 7
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #0003(      3) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+```
+
 
 
 

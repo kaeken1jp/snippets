@@ -1139,3 +1139,54 @@ LOOP    ADDA    GR0, GR1    ; 足し算
         RET
         END
 ```
+
+# データ領域の値を合計するプログラム
+
+![](https://i.gyazo.com/de455f1cf105a7f75745cde7843ccb60.jpg)
+
+```
+; データ領域の値を合計する
+MAIN    START
+        LAD     GR0, 0      ; 計算結果
+        LAD     GR1, 0      ; データ領域の現在位置
+        LAD     GR2, 1      ; 増加分
+;
+LOOP    ADDA    GR0, DATA, GR1     ; 足し算
+        ADDA    GR1, GR2           ; インデックスを加算
+        CPA     GR1, NUMBER    
+        JNZ     LOOP
+        RET
+NUMBER  DC      3
+DATA    DC      1
+        DC      2
+        DC      3
+        END
+```
+
+
+# データ領域の「1」から「9」までを合計する
+
+```
+; データ領域の値を合計する
+MAIN    START
+        LAD     GR0, 0      ; 計算結果
+        LAD     GR1, 0      ; データ領域の現在位置
+        LAD     GR2, 1      ; 増加分
+;
+LOOP    ADDA    GR0, DATA, GR1     ; 足し算
+        ADDA    GR1, GR2           ; インデックスを加算
+        CPA     GR1, NUMBER    
+        JNZ     LOOP
+        RET
+NUMBER  DC      9
+DATA    DC      1
+        DC      2
+        DC      3
+        DC      4
+        DC      5
+        DC      6
+        DC      7
+        DC      8
+        DC      9
+        END
+```

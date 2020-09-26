@@ -890,3 +890,52 @@ GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
 GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
 ```
 
+
+# 比較命令
+
+![](https://i.gyazo.com/7de1ad4ab6cd8d954008178a3a0c916f.jpg)
+
+```
+$ cat jump_test.cas
+; ジャンプ
+JUMP    START
+        LD      GR0, A
+        CPA     GR0, COND
+        JPL     SKIP
+        ADDA    GR0, B
+SKIP    RET
+A       DC      05
+B       DC      02
+COND    DC      03
+        END
+```
+
+```
+$ pycasl jump_test.cas
+$ pycomet jump_test.com
+load jump_test.com ... done.
+PR  #0000 [ LD      GR0, #0009             ]  STEP 0
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0002 [ CPA     GR0, #000b             ]  STEP 1
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #0005(      5) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0004 [ JPL     #0008                  ]  STEP 2
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #0005(      5) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0008 [ RET                            ]  STEP 3
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #0005(      5) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+```
+

@@ -306,6 +306,154 @@ ADD Logical  ADDL   r1, r2          r1 ← (r1) +L (r2)
 符号なし2進数 32768 > OF = 0
 ```
 
+```
+$ cat calc.cas
+; 足し算
+CALC    START
+        LD      GR0, A
+        ADDA    GR0, B  ; 算術加算
+        LD      GR0, A
+        ADDL    GR0, B  ; 論理加算
+        RET
+A       DC      #7fff
+B       DC      01
+        END
+```
+
+
+```
+$ pycomet -d calc.com
+load calc.com ... done.
+PR  #0000 [ LD      GR0, #0009             ]  STEP 0
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0002 [ ADDA    GR0, #000a             ]  STEP 1
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #7fff(  32767) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+pycomet2> s
+PR  #0004 [ LD      GR0, #0009             ]  STEP 2
+SP  #ff00(  65280) FR(OF, SF, ZF)  110  (      6)
+GR0 #8000( -32768) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0006 [ ADDL    GR0, #000a             ]  STEP 3
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #7fff(  32767) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0008 [ RET                            ]  STEP 4
+SP  #ff00(  65280) FR(OF, SF, ZF)  010  (      2)
+GR0 #8000( -32768) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+```
+
+
+# SUBA命令
+
+![](https://i.gyazo.com/00d2467237093010969139ca6566c2c5.jpg)
+
+```
+算術減算：符号付き2進数として減算をおこなう
+
+- 演算範囲は、-32768 ~ 32767
+- 演算結果がこの範囲を超えると、OFが「1」になる
+- レジスタ間の減算と、レジスタ・メモリ間の減算ができる
+
+SUBtract Arithmetic  SUBA   r1, r2          r1 ← (r1) - (r2)
+                            r, adr [, x]    r ← (r) + (実効アドレス)
+```
+
+
+# SUBL命令
+
+![](https://i.gyazo.com/22eb83d68f0be5661afbd4a077027095.jpg)
+
+```
+論理減算：符号なし2進数として減算をおこなう
+
+- 演算範囲は、0 ~ 65535
+- 演算結果がこの範囲を超えると、OFが「1」になる
+- レジスタ間の減算と、レジスタ・メモリ間の減算ができる
+
+SUBtract Logical  SUBL  r1, r2          r1 ← (r1) +L (r2)
+                        r, adr [, x]    r ← (r) +L (実効アドレス)
+```
+
+
+# 算術減算と論理減算
+
+![](https://i.gyazo.com/f66c7fc178f00c77c14c88ec9a9b7b07.jpg)
+
+```
+8000 - 01 = 7FFF
+
+  1000 0000 0000 0000
+- 0000 0000 0000 0001
+-----------------------------
+  0111 1111 1111 1111
+
+
+算術減算 -32768 - 1 = 32767 > OF = 1
+論理減算 32768 - 1 = 32767 > OF = 0
+```
+
+
+```
+$ cat calc.cas
+; 引き算
+CALC    START
+        LD      GR0, A
+        SUBA    GR0, B  ; 算術減算
+        LD      GR0, A
+        SUBL    GR0, B  ; 論理減算
+        RET
+A       DC      #8000
+B       DC      01
+        END
+```
+
+
+```
+$ pycomet calc.com
+load calc.com ... done.
+PR  #0000 [ LD      GR0, #0009             ]  STEP 0
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0002 [ SUBA    GR0, #000a             ]  STEP 1
+SP  #ff00(  65280) FR(OF, SF, ZF)  010  (      2)
+GR0 #8000( -32768) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0004 [ LD      GR0, #0009             ]  STEP 2
+SP  #ff00(  65280) FR(OF, SF, ZF)  100  (      4)
+GR0 #7fff(  32767) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0006 [ SUBL    GR0, #000a             ]  STEP 3
+SP  #ff00(  65280) FR(OF, SF, ZF)  010  (      2)
+GR0 #8000( -32768) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0008 [ RET                            ]  STEP 4
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #7fff(  32767) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+```
+
 
 
 

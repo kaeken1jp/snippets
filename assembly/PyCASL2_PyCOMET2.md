@@ -579,4 +579,47 @@ B       DS      01
 ```
 
 
+## フラグレジスタコード
+
+```
+$ cat flag_test.cas
+; フラグレジスタ
+FLAG    START
+        LD      GR0, A
+        ADDA    GR0, B  ;10000000 00000000
+        RET
+A       DC      #7FFF   ;01111111 11111111
+B       DC      01
+        END
+
+```
+
+```
+$ pycasl flag_test.cas
+$ pycomet flag_test.com
+load flag_test.com ... done.
+PR  #0000 [ LD      GR0, #0005             ]  STEP 0
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+```
+
+```
+pycomet2> s
+PR  #0002 [ ADDA    GR0, #0006             ]  STEP 1
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #7fff(  32767) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+```
+
+```
+pycomet2> s
+PR  #0004 [ RET                            ]  STEP 2
+SP  #ff00(  65280) FR(OF, SF, ZF)  110  (      6)
+GR0 #8000( -32768) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+pycomet2> s
+```
+
+
 

@@ -530,7 +530,29 @@ A       DS      01
 ## インデックス修飾する
 
 ```
-インデックス修飾する
+; レジスタの値をメモリに格納する
+MAIN    START
+        LAD     GR0, 1
+        LAD     GR2, 1
+        ST      GR0, A, GR2
+        LAD     GR1, A, GR2
+        RET
+A       DS      02
+        END
 ```
 
+## GR0の値を、ラベルBに格納する
 
+```
+
+; メモリに格納する
+MAIN    START
+        LD      GR0, A
+        ST      GR0, B
+        ; ここに、メモリに格納するコードを書く
+        RET
+A       DC      03
+B       DS      01
+        END
+
+```

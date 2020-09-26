@@ -845,6 +845,48 @@ GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
 ```
 
 
+## sample3: 論理加算(ADDL)命令の結果がオーバーフローしている場合、次のLAD命令を実行せず、SKIPに分岐する
+
+```
+; ジャンプ03
+JUMP    START
+        LD      GR0, A
+        ADDL    GR0, B
+        JOV     SKIP    ; Overflow Flagが「1」だったらSKIPに分岐する
+        LAD     GR1, 10
+SKIP    RET
+A       DC      #FFFF
+B       DC      01
+COND    DC      00
+        END
+```
 
 
+```
+$ pycasl calc.cas
+$ pycomet -d calc.com
+load calc.com ... done.
+PR  #0000 [ LD      GR0, #0009             ]  STEP 0
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0002 [ ADDL    GR0, #000a             ]  STEP 1
+SP  #ff00(  65280) FR(OF, SF, ZF)  010  (      2)
+GR0 #ffff(     -1) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0004 [ JOV     #0008                  ]  STEP 2
+SP  #ff00(  65280) FR(OF, SF, ZF)  100  (      4)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0008 [ RET                            ]  STEP 3
+SP  #ff00(  65280) FR(OF, SF, ZF)  100  (      4)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+```
 

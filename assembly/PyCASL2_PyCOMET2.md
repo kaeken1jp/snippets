@@ -939,3 +939,51 @@ GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
 
 ```
 
+- GR0の値と、CONDラベルの値が一致したら、足し算しないで、SKIPに分岐する
+
+```
+
+; ジャンプ01
+JUMP    START
+        LD      GR0, A
+        CPA     GR0, COND
+        JZE     SKIP    ; 一致したらSKIPに分岐する
+        ADDA    GR0, B
+SKIP    RET
+A       DC      00
+B       DC      02
+COND    DC      00
+        END
+
+```
+
+```
+$ pycasl calc.cas
+$ pycomet calc.com
+load calc.com ... done.
+PR  #0000 [ LD      GR0, #0009             ]  STEP 0
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0002 [ CPA     GR0, #000b             ]  STEP 1
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0004 [ JZE     #0008                  ]  STEP 2
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0008 [ RET                            ]  STEP 3
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+```
+
+

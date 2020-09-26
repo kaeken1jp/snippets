@@ -1033,3 +1033,93 @@ GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
 
 ```
 
+
+# ループで、1から3まで合計するプログラム
+
+```
+; 1から3まで合計する
+MAIN    START
+        LAD     GR0, 0      ; 計算結果
+        LAD     GR1, 3      ; 足し算する数(カウンタ)
+        LAD     GR2, 1      ; 減算分
+;
+LOOP    ADDA    GR0, GR1    ; 足し算
+        SUBA    GR1, GR2    ; カウンタを減算
+        JNZ     LOOP
+        RET
+        END
+```
+
+```
+$ pycasl loop_test.cas
+$ pycomet loop_test.com
+load loop_test.com ... done.
+PR  #0000 [ LAD     GR0, #0000             ]  STEP 0
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+pycomet2> s
+PR  #0002 [ LAD     GR1, #0003             ]  STEP 1
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+pycomet2> s
+PR  #0004 [ LAD     GR2, #0001             ]  STEP 2
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0003(      3) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0006 [ ADDA    GR0, GR1               ]  STEP 3
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0003(      3) GR2 #0001(      1) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+pycomet2> s
+PR  #0007 [ SUBA    GR1, GR2               ]  STEP 4
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #0003(      3) GR1 #0003(      3) GR2 #0001(      1) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+pycomet2> s
+PR  #0008 [ JNZ     #0006                  ]  STEP 5
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #0003(      3) GR1 #0002(      2) GR2 #0001(      1) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+pycomet2> s
+PR  #0006 [ ADDA    GR0, GR1               ]  STEP 6
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #0003(      3) GR1 #0002(      2) GR2 #0001(      1) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+pycomet2> s
+PR  #0007 [ SUBA    GR1, GR2               ]  STEP 7
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #0005(      5) GR1 #0002(      2) GR2 #0001(      1) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0008 [ JNZ     #0006                  ]  STEP 8
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #0005(      5) GR1 #0001(      1) GR2 #0001(      1) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+pycomet2> s
+PR  #0006 [ ADDA    GR0, GR1               ]  STEP 9
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #0005(      5) GR1 #0001(      1) GR2 #0001(      1) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+pycomet2> s
+PR  #0007 [ SUBA    GR1, GR2               ]  STEP 10
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #0006(      6) GR1 #0001(      1) GR2 #0001(      1) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+pycomet2> s
+PR  #0008 [ JNZ     #0006                  ]  STEP 11
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0006(      6) GR1 #0000(      0) GR2 #0001(      1) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+pycomet2> s
+PR  #000a [ RET                            ]  STEP 12
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0006(      6) GR1 #0000(      0) GR2 #0001(      1) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+```
+

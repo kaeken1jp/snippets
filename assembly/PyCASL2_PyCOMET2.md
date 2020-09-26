@@ -566,7 +566,7 @@ B       DS      01
 ## 種類
 
 ```
-・OF：計算結果がオーバーフローする
+・OF(Overflow Flag)：オーバーフローフラグ：計算結果がオーバーフローする
 ・SF(Sign Flag)：サインフラグ：計算結果がマイナスにする
 ・ZF(Zero Flag)：ゼロフラグ：計算結果がゼロになる
 ```
@@ -577,6 +577,52 @@ B       DS      01
 ・演算結果がゼロ（全部のビットが0）のとき1、それ以外のとき0になる
 ・算術演算、論理演算、LD命令などで変化する
 ```
+
+
+#### ZF sample
+
+```
+$ cat flag_test.cas
+; フラグレジスタ
+FLAG    START
+        LD      GR0, A
+        ADDA    GR0, B  ;10000000 00000000
+        RET
+A       DC      #7FFF   ;01111111 11111111
+B       DC      01
+        END
+
+```
+
+```
+$ pycasl flag_test.cas
+$ pycomet flag_test.com
+load flag_test.com ... done.
+PR  #0000 [ LD      GR0, #0005             ]  STEP 0
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+```
+
+```
+pycomet2> s
+PR  #0002 [ ADDA    GR0, #0006             ]  STEP 1
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #7fff(  32767) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+```
+
+```
+pycomet2> s
+PR  #0004 [ RET                            ]  STEP 2
+SP  #ff00(  65280) FR(OF, SF, ZF)  110  (      6)
+GR0 #8000( -32768) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+pycomet2> s
+```
+
+
+
 
 ### SF(Sign Flag)：サインフラグ
 
@@ -657,25 +703,35 @@ pycomet2> s
 ```
 
 
+### OF(Overflow Flag)：オーバーフローフラグ
 
 
+```
+演算結果の桁あふれをあらわす
+演算結果が、16ビットの範囲をこえたとき「1」、それ以外は「0」
 
-## フラグレジスタコード
+算術演算命令(ADDA、SUBA)
+・符号付き2進数として計算
+・演算結果が-32768 ~ 32767を超えた場合に「1」、それ以外は「0」
+
+論理演算命令(ADDL、SUBL)
+・符号なし2進数として計算
+・演算結果が0 ~ 65535を超えた場合に「1」、それ以外は「0」
+```
+
+#### OF sample
 
 ```
 $ cat flag_test.cas
 ; フラグレジスタ
 FLAG    START
         LD      GR0, A
-        ADDA    GR0, B  ;10000000 00000000
+        SUBA    GR0, B
         RET
-A       DC      #7FFF   ;01111111 11111111
+A       DC      00
 B       DC      01
         END
 
-```
-
-```
 $ pycasl flag_test.cas
 $ pycomet flag_test.com
 load flag_test.com ... done.
@@ -683,24 +739,22 @@ PR  #0000 [ LD      GR0, #0005             ]  STEP 0
 SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
 GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
 GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
-```
 
-```
 pycomet2> s
-PR  #0002 [ ADDA    GR0, #0006             ]  STEP 1
-SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
-GR0 #7fff(  32767) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+PR  #0002 [ ADDL    GR0, #0006             ]  STEP 1
+SP  #ff00(  65280) FR(OF, SF, ZF)  010  (      2)
+GR0 #ffff(     -1) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
 GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
-```
 
-```
 pycomet2> s
 PR  #0004 [ RET                            ]  STEP 2
-SP  #ff00(  65280) FR(OF, SF, ZF)  110  (      6)
-GR0 #8000( -32768) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+SP  #ff00(  65280) FR(OF, SF, ZF)  100  (      4)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
 GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
-pycomet2> s
+
 ```
+
+
 
 
 

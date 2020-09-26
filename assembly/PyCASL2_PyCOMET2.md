@@ -760,7 +760,91 @@ GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
 
 ![](https://i.gyazo.com/bd52005b5d97f93fbcba5e7a2804dc2f.png)
 
-## 
+## sample1
+
+```
+$ cat jump_test.cas
+; ジャンプ
+JUMP    START
+        LD      GR0, A
+        JPL     SKIP
+        ADDA    GR0, B
+SKIP    RET
+A       DC      01
+B       DC      02
+        END
+
+```
+
+```
+$ pycasl jump_test.cas
+$ pycomet jump_test.com
+load jump_test.com ... done.
+PR  #0000 [ LD      GR0, #0007             ]  STEP 0
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0002 [ JPL     #0006                  ]  STEP 1
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #0001(      1) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0006 [ RET                            ]  STEP 2
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #0001(      1) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+```
+
+## sample2
+
+```
+$ cat jump_test.cas
+; ジャンプ
+JUMP    START
+        LD      GR0, A
+        JPL     SKIP
+        ADDA    GR0, B
+SKIP    RET
+A       DC      00
+B       DC      02
+        END
+
+```
+
+```
+$ pycasl jump_test.cas
+~/mywork$ pycomet jump_test.com
+load jump_test.com ... done.
+PR  #0000 [ LD      GR0, #0007             ]  STEP 0
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0002 [ JPL     #0006                  ]  STEP 1
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0004 [ ADDA    GR0, #0008             ]  STEP 2
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+pycomet2> s
+PR  #0006 [ RET                            ]  STEP 3
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #0002(      2) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+
+```
+
+
 
 
 

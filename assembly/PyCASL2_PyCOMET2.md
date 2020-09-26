@@ -42,10 +42,8 @@ m ADDR VAL    Change the memory at ADDR to VAL.
 p             Print register status.
 q             Quit.
 r             Strat execution of program.
-s             Step execution.
+s             Step execution
 st            Dump 128 words of stack image.
-
-
 ```
 
 # CASLII コーディング書式
@@ -79,6 +77,44 @@ st            Dump 128 words of stack image.
 ## 命令の調べ方
 
 ![](https://i.gyazo.com/ab63ea6947013b3e7a5ca2513668033f.jpg)
+
+
+
+# 仕様書の読み方
+
+- アセンブリ言語の書き方は、アセンブラであるCASLⅡの仕様書に書いてあります。
+- また、アセンブラ命令やマクロ命令についても載っています。
+
+```
+アセンブラ言語CASLⅡの仕様
+
+言語の仕様
+
+1. CASLⅡは、COMETⅡのためのアセンブラ言語である。
+2. プログラムは、命令行および注釈行からなる。
+3. 1命令は1命令行で記述し、次の行へ継続できない。
+4. 命令行およびコメント行は、次に示す記述の形式で、行の1文字目から記述する。
+```
+
+```
+LD命令は、2つの機能があるのでオペランドの書き方が2つあります。
+```
+
+![](https://i.gyazo.com/c4ae4d91be639e5f28854b3086a81cc7.png)
+
+```
+r,r1,r2:     いずれもGRを示す｡指定できるGRは、GR0~GR7
+adr:         アドレスを示す｡指定できる値の範囲は0~65535
+x:           指標として用いるGRを示す｡指定できるGRはGR1~GR7
+[ ]:         [ ]内の指定は省略できることを示す｡
+
+( ):         ( )内のレジスタ又はアドレスに格納されている内容を示す｡
+実効アドレス:  adrとxの内容との論理加算値又はその値が示す番地｡
+￩:           演算結果を､左辺のレジスタまたはアドレスに格納することを示す｡
+```
+
+
+
 
 # CPU動作
 
@@ -321,4 +357,51 @@ Memory:
 0010: 0000 0000 0000 0000 0000 0000 0000 0000 ........
 0018: 0000 0000 0000 0000 0000 0000 0000 0000 ........
 0020: 0000 0000 0000 0000 0000 0000 0000 0000 ........
+```
+
+
+## レジスタ間で転送
+
+```
+;  レジスタ間で転送
+CALC    START
+        LD      GR0, A
+        LD      GR1, GR0
+        RET
+A       DC      03
+B       DC      02
+ANS     DS      01
+        END
+```
+
+
+```sh
+$ pycasl calc.cas
+$ pycomet -d calc.com
+load calc.com ... done.
+PR  #0000 [ LD      GR0, #0004             ]  STEP 0
+SP  #ff00(  65280) FR(OF, SF, ZF)  001  (      1)
+GR0 #0000(      0) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+```
+
+```
+pycomet2> s
+PR  #0002 [ LD      GR1, GR0               ]  STEP 1
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #0003(      3) GR1 #0000(      0) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+```
+
+```
+pycomet2> s
+PR  #0003 [ RET                            ]  STEP 2
+SP  #ff00(  65280) FR(OF, SF, ZF)  000  (      0)
+GR0 #0003(      3) GR1 #0003(      3) GR2 #0000(      0) GR3: #0000(      0)
+GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
+```
+
+```
+pycomet2> s
+dump last status to last_state.txt
 ```

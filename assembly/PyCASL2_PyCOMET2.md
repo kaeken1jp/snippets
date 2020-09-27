@@ -2340,6 +2340,9 @@ GR4 #0000(      0) GR5 #0000(      0) GR6 #0000(      0) GR7: #0000(      0)
 
 # 掛け算サブルーチン
 
+![](https://i.gyazo.com/673a86f0bc91ba0259fbfd0c877d2b42.jpg)
+
+
 ```
 掛け算は、足し算の繰り返し
 
@@ -2386,6 +2389,56 @@ LOOP    ADDA    GR0, GR1
         END
         
 ```
+
+
+# シフトで掛け算
+
+![](https://i.gyazo.com/2383aab53b885a5803d933a1c1c8eb2b.jpg)
+
+
+```
+手順
+1. 計算結果を初期化
+2. 掛けられる数を用意する
+3. 掛ける数を用意する
+
+4. 掛ける数の最下位ビットが「1」か調べる
+5. 「0」だったら、7にジャンプ
+
+6. 計算結果に、掛けられる数を足す
+
+7. 掛けられる数を1ビット左にシフトする
+8. 掛ける数を1ビット右にシフトする
+
+9. ゼロでなかったら、4にもどる
+
+10. 終了
+```
+
+```
+; 掛け算2
+MAIN    START
+        LAD     GR0, 0
+        LD      GR1, DATA1
+        LD      GR2, DATA2
+        CALL    MULTI
+        ST      GR0, ANS
+        RET
+DATA1   DC      03
+DATA2   DC      04
+ANS     DS      1
+        END
+MULTI   START
+        RPUSH
+LOOP    ADDA    GR0, GR1
+        SUBA    GR2, =1
+        JNZ     LOOP
+        RPOP
+        RET
+        END
+```
+
+
 
 
 # リテラル表記

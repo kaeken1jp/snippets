@@ -85,4 +85,28 @@ cf. [jQueryでcssの「:before」、「:after」などの疑似要素のstyleを
 
 
 
+# chain
+
+```js
+$(".class1")
+  .css("color","red")
+  .text("foo");
+```
+
+# css
+
+```js
+$(".class1")
+  .css({
+    "color":"red", 
+    "font-size":"10px"
+  });
+```
+
+# selector
+
+```js
+var $s = $(".class1 tag2 #id3");
+$s.f1($s.f2());
+```
 

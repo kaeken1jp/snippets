@@ -14,4 +14,7 @@ nest new project-name
 npm run start
 ```
 
-http://localhost:3000/
+```sh
+$ curl localhost:3000
+```
+

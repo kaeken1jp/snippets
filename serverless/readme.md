@@ -13,11 +13,10 @@ Serverless: You sucessfully logged in to Serverless.
 Serverless: Please run 'serverless' to configure your service
 
 $ serverless --version
-Framework Core: 1.54.0
-Plugin: 3.1.2
-SDK: 2.1.2
-Components Core: 1.1.1
-Components CLI: 1.4.0
+Framework Core: 2.4.0
+Plugin: 4.0.4
+SDK: 2.3.2
+Components: 3.2.1
 
 $ serverless
 Serverless: No project detected. Do you want to create a new one? No

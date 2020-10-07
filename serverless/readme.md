@@ -23,3 +23,10 @@ Serverless: No project detected. Do you want to create a new one? No
 
 
 ```
+
+# AWS Credentials
+
+[Serverless Framework - AWS Lambda Guide - Credentials](https://www.serverless.com/framework/docs/providers/aws/guide/credentials/)
+
+
+

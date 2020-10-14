@@ -2,6 +2,15 @@
 
 [Octave for macOS - Octave](https://wiki.octave.org/Octave_for_macOS)
 
+# overview
+
+```
+GNU Octave is software featuring a high-level programming language, primarily intended for numerical computations. Octave helps in solving linear and nonlinear problems numerically, and for performing other numerical experiments using a language that is mostly compatible with MATLAB. It may also be used as a batch-oriented language. Since it is part of the GNU Project, it is free software under the terms of the GNU General Public License.
+```
+
+[GNU Octave - Wikipedia](https://en.wikipedia.org/wiki/GNU_Octave)
+
+
 # install
 
 ```sh

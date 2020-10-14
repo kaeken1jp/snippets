@@ -23,6 +23,16 @@ Copyright (C) 2020 John W. Eaton and others.
 
 # syntax
 
+```octave
+octave:1> c = 12
+c =  12
+octave:2> disp(c)
+ 12
+octave:3> c
+c =  12
+```
+
+
 ## vector
 
 ```octave

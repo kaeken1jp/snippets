@@ -21,6 +21,14 @@ GNU Octave, version 5.2.0
 Copyright (C) 2020 John W. Eaton and others.
 ```
 
+# exec
+
+```sh
+$ octave
+```
+
+```
+
 # syntax
 
 ```octave

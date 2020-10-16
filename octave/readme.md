@@ -23,15 +23,13 @@ Copyright (C) 2020 John W. Eaton and others.
 
 # exec
 
+## exec cli
+
 ```sh
 $ octave
 ```
 
-```
-
-# syntax
-
-```octave
+```sh
 octave:1> c = 12
 c =  12
 octave:2> disp(c)
@@ -40,6 +38,27 @@ octave:3> c
 c =  12
 ```
 
+## exec file 
+
+- make file # .m extension
+
+```sh
+$ cat sample.m
+c = 12
+disp(c)
+```
+
+- exec
+
+```sh
+$ octave
+octave:1> sample
+c =  12
+ 12
+```
+
+
+# syntax
 
 ## vector
 

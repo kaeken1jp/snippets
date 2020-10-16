@@ -60,6 +60,54 @@ c =  12
 
 # syntax
 
+## image
+
+### imfinfo()
+
+[Information about graphics file - MATLAB imfinfo](https://www.mathworks.com/help/matlab/ref/imfinfo.html)
+
+```octave
+image_info = imfinfo('image.jpg')
+```
+
+- result
+
+```
+image_info =
+
+  scalar structure containing the fields:
+
+    Filename = /path/to/file.bmp
+    FileModDate =  2-Oct-2017 21:02:42
+    FileSize =  173558
+    Format = BMP
+    FormatVersion = 
+    Width =  319
+    Height =  539
+    BitDepth =  8
+    ColorType = indexed
+    DelayTime = 0
+    DisposalMethod = 
+    LoopCount = 0
+    ByteOrder = undefined
+    Gamma = 0
+    Chromaticities = [](1x0)
+    Comment = 
+    Quality =  75
+    ...(snip)...
+    ...
+```
+
+```octave
+image_info.Width
+```
+
+- result
+
+```
+319
+```
+
 ## vector
 
 ```octave

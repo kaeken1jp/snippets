@@ -4,6 +4,21 @@
 PyCASL2, PyCOMET2は CASLII のアセンブラおよびシミュレータです。
 ```
 
+# install
+
+```sh
+# download
+wget http://www.image.med.osaka-u.ac.jp/member/nakamoto/pycasl2/pycasl2-1-1-6.tgz
+
+# Uncompress a tar archive
+tar -xvf pycasl2-1-1-6.tgz
+
+# exec
+sh install.sh ~/bin
+```
+
+
+
 # hello world
 
 ```cas

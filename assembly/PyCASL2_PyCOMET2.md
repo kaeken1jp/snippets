@@ -15,6 +15,11 @@ tar -xvf pycasl2-1-1-6.tgz
 
 # exec
 sh install.sh ~/bin
+
+# check
+ls ~/bin/pyc*
+/Users/USERNAME/bin/pycasl2       /Users/USERNAME/bin/pycomet2
+
 ```
 
 

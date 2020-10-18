@@ -46,8 +46,14 @@ Options:
 ```
 
 
+# hell world (local)
 
-# hello world
+```
+python2 ~/bin/pycasl2 hello.cas
+python2 ~/bin/pycomet2 hello.com
+```
+
+# hello world (in Paiza) 
 
 ```cas
 ;comment area

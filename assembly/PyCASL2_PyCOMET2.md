@@ -4,6 +4,13 @@
 PyCASL2, PyCOMET2は CASLII のアセンブラおよびシミュレータです。
 ```
 
+# requirements
+
+```
+python2
+```
+
+
 # install
 
 ```sh
@@ -19,7 +26,23 @@ sh install.sh ~/bin
 # check
 ls ~/bin/pyc*
 /Users/USERNAME/bin/pycasl2       /Users/USERNAME/bin/pycomet2
+```
 
+# version, help
+
+```sh
+$ python2 ~/bin/pycasl2 -v
+PyCASL2 version 1.1.6
+$Revision: 42606859abf2 $
+Copyright (c) 2009,2011, Masahiko Nakamoto.
+
+$ python2 ~/bin/pycasl2 -h
+Usage: pycasl2 [options] input.cas [output.com]
+
+Options:
+  -h, --help     show this help message and exit
+  -a             turn on verbose listings
+  -v, --version  display version and exit
 ```
 
 

@@ -27,3 +27,34 @@ print(kivy.__version__)
 [INFO   ] [Python      ] Interpreter at "/opt/anaconda3/bin/python3"
 1.11.1
 ```
+
+# minimal application
+
+```py
+import kivy
+kivy.require('1.0.6') # replace with your current kivy version !
+
+from kivy.app import App
+from kivy.uix.label import Label
+
+
+class MyApp(App):
+
+    def build(self):
+        return Label(text='Hello world')
+
+
+if __name__ == '__main__':
+    MyApp().run()
+```
+
+```sh
+python main.py
+```
+
+- result
+
+![](https://i.gyazo.com/4618c0e6e4ca4bfea6961292c1225d77.png)
+
+
+

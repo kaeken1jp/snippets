@@ -48,10 +48,31 @@ Options:
 
 # hell world (local)
 
-```
+```sh
+# exec directly
+
 python2 ~/bin/pycasl2 hello.cas
 python2 ~/bin/pycomet2 hello.com
 ```
+
+```sh
+# exec via shell script
+
+$ cat ~/bin/pycasl2_pycomet2 
+#!/bin/bash
+
+FILENAME=$1 # e.g. 3-2 4-x 5-x ...
+/usr/bin/python2 ~/bin/pycasl2 ${FILENAME}.cas
+/usr/bin/python2 ~/bin/pycomet2 ${FILENAME}.com
+
+$ chmod +x ~/bin/pycasl2_pycomet2
+
+$ pycasl2_pycomet2 3-2
+# /usr/bin/python2 ~/bin/pycasl2 3-2.cas
+# /usr/bin/python2 ~/bin/pycomet2 3-2.com
+```
+
+
 
 # hello world (in Paiza) 
 

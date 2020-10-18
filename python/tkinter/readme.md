@@ -15,6 +15,10 @@ installed
 
 # version
 
+```sh
+$ python -m tkinter # view a popup window
+```
+
 ```py
 >>> import tkinter
 >>> tkinter._test() # view a popup window

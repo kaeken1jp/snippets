@@ -174,6 +174,35 @@ st            Dump 128 words of stack image.
 ![](https://i.gyazo.com/d3f0727a80328821f1f0bc06414a1465.jpg)
 
 ```
+'START命令
+プログラムの先頭を定義
+;テキスト出力
+MAIN START BEGIN
+命令コード
+オペランド
+START
+[実行開始番地)
+LAD
+GRO, 10
+BEGIN OUT
+BUF,LEN
+●実行開始番地で、プログラムの実行を
+開始するアドレスを指定できる
+RET
+BUF
+DC
+'Hello World'
+●実行開始番地を省略した場合は、
+STARTの次の命令から実行を開始する
+LEN
+DC
+11
+END
+● START命令の前のラベルで、
+このコードを他のプログラムから呼び出す
+```
+
+```
 START 	［実行開始番地］
 ```
 
@@ -215,6 +244,38 @@ END
 ![](https://i.gyazo.com/c24486da3fbb7a3184d34f00cb8da20e.jpg)
 
 ```
+DC命令
+データ領域に値を格納する
+命令コード
+オペランド
+;テキスト出力
+DC
+定数
+ΜΑΙΝ
+START
+LAD
+GRO, 10
+OUT
+BUF, LEN
+定数
+● 10進数:符号付き2進数-32768 ~ 32767
+RET
+BUF
+DC
+'Hello World'
+● 16進数:4桁の16進数、先頭は「#」
+LEN
+DC
+11
+●文字定数:文字数分の領域を確保し、
+文字データを格納する。アポストロフィで囲む
+END
+●アドレス:ラベルに対応するアドレスを格納
+```
+
+
+
+```
 データ領域に値を格納する
 
 
@@ -243,6 +304,39 @@ LEN     DC     11
 ![](https://i.gyazo.com/960c85a5cb016039d22bccddd2d65d83.jpg)
 
 ```
+DS命令
+データ領域を確保する
+;足し算する
+命令コード
+オペランド
+CALC
+START
+DS
+語数
+LD
+GRO, A
+GRO, B
+GRO, ANS
+ADDA
+ST
+●語数は10進数で記述する
+RET
+●指定した語数のメモリ領域を確保する
+A
+DC
+03
+●値のアクセスは、ラベルを利用する
+В
+DC
+02
+ANS
+DS
+01
+END
+```
+
+
+```
 データ領域を確保する
 
 
@@ -269,6 +363,35 @@ ANS     DS      01
 # OUT命令
 
 ![](https://i.gyazo.com/3d2e91117b15fbfea2a9928c82852728.jpg)
+
+```
+OUT命令
+テキストを出力する
+;テキスト出力
+命令コード
+オペランド
+ΜΑΙΝ
+START
+LAD
+GRO, 10
+OUT
+出力領域,出力文字長領域
+OUT
+BUF,LEN
+RET
+BUF
+DC
+'Hello World'
+●出力領域:
+文字定数が格納された領域のラベルを指定
+LEN
+DC
+11
+●出力文字長領域:
+出力する文字数を格納する領域のラベルを指定
+END
+```
+
 
 ```
 テキストを出力する

@@ -2673,3 +2673,86 @@ LOOP    ADDA    GR0, GR1
 ```
 
 
+# 符号なし乗算
+
+```
+; 符号なし乗算
+; 入力
+;   GR0 = 被乗数
+;   GR1 = 乗数
+; 出力
+;   GR0 = 結果
+;   GR0以外の汎用レジスタは保存される
+MULL     START
+; レジスタを退避
+         PUSH   0,GR1
+         PUSH   0,GR2
+; 初期化
+         XOR    GR2,GR2 ; GR2 = 積
+; 被乗数をシフトしながら加算していく
+LOOP     SRL    GR1,1   ; 最下位ビットが
+         JOV    ONE     ; 1なら加算
+         JUMP   ZERO    ; 0なら加算しない
+ONE      ADDL   GR2,GR0 ;
+ZERO     SLL    GR0,1   ; 被乗数をシフト
+         AND    GR1,GR1 ; 乗数に1のビットが
+         JNZ    LOOP    ; あれば続行
+; ループ終了
+         LD     GR0,GR2 ; 積をGR0に格納
+; レジスタを復元
+         POP    GR2
+         POP    GR1
+         RET
+         END
+
+```
+
+# 符号無し除算ルーチン
+
+```
+; 符号無し除算ルーチン
+; 入力  GR0=被除数
+;       GR1=除数
+; 出力　GR0=剰余
+;       GR1=商
+; 条件  除数は0でないこと。
+;
+DIVL     START 
+         PUSH   0,GR2          ; レジスタ待避
+         PUSH   0,GR3
+;
+         LAD    GR2,1          ; マスク
+         SUBL   GR3,GR3        ; 商
+;
+; 開始位置を求める
+;
+FINDENT  CPL    GR0,GR1        ; 引けないに決まっているなら
+         JZE    LOOP           ; 空回りしても無駄
+         JMI    LOOP           ;
+;
+         SLL    GR2,1          ; マスクを１ビットずらす
+         SLL    GR1,1          ; 除数を１ビットずらす
+         JPL    FINDENT        ; 最上位ビットが立ったらこれ以上無理
+;
+; 除算のメインループ。１ビットずつずらしながら引いていく
+;
+LOOP     CPL    GR0,GR1        ; 引ける？
+         JMI    DONTSET        ; 引けないならスキップ
+;
+         OR     GR3,GR2        ; 商のビットを立てる
+         SUBL   GR0,GR1        ; 被除数から引く
+         JZE    LOOPEND        ; 割り切れた
+;
+DONTSET  SRL    GR1,1          ; 除数
+         SRL    GR2,1          ; マスク
+         JNZ    LOOP           ; 全部のビットが終わった？
+;
+; 除算終了。GR3に入っている商を戻す
+;
+LOOPEND  LD     GR1,GR3
+         POP    GR3
+         POP    GR2
+         RET
+         END
+```
+

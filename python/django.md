@@ -1,3 +1,8 @@
+[The Web framework for perfectionists with deadlines | Django](https://www.djangoproject.com/)
+
+[Django documentation | Django documentation | Django](https://docs.djangoproject.com/)
+
+
 # django snippets
 
 ## check Django installed

@@ -143,9 +143,9 @@ sort file.txt | uniq -c | sort -u
 
 ## random string generator
 ```bash
-$ cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1
+$ cat /dev/urandom | LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1
 3tasR7LWwBcLyE05
-$ cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1
+$ cat /dev/urandom | LC_CTYPE=C tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1
 WWfrTpjVFaDroLyL
 ```
 

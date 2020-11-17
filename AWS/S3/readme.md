@@ -19,6 +19,11 @@ aws s3 ls s3://bucket/folder/ --summarize --human-readable --recursive
 aws s3 mb s3://mybucket
 aws s3 mb s3://mybucket --region us-west-1
 
+# rb
+# https://docs.aws.amazon.com/cli/latest/reference/s3/rb.html
+aws s3 rb s3://mybucket
+aws s3 rb s3://mybucket --force
+
 # mv
 # https://docs.aws.amazon.com/cli/latest/reference/s3/mv.html
 aws s3 mv test.txt s3://mybucket/test2.txt

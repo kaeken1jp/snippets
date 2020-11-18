@@ -10,7 +10,7 @@
 $ aws <command> <subcommand> [options and parameters]
 ```
 
-# configure
+# create a new configuration
 
 ```sh
 # To create a new configuration:
@@ -19,4 +19,19 @@ AWS Access Key ID [None]: accesskey
 AWS Secret Access Key [None]: secretkey
 Default region name [None]: # https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-region
 Default output format [None]: # https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-format
+```
+
+# show configuration
+
+```sh
+```
+
+# 
+
+```sh
+$ aws configure --profile PROFILE_NAME
+AWS Access Key ID [None]: accesskey
+AWS Secret Access Key [None]: secretkey
+Default region name [None]:
+Default output format [None]:
 ```

@@ -44,3 +44,8 @@ secret_key     ****************bbbb shared-credentials-file
     region                <not set>             None    None
 ```
 
+# change profile
+
+```sh
+$ export AWS_DEFAULT_PROFILE=profile-name
+```

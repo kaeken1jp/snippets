@@ -45,3 +45,11 @@ aws s3 sync <bucket> <target_folder> <options>
 aws s3 sync s3://mybucket . --acl public-read
 aws s3 sync <target_folder> <bucket>
 ```
+
+
+
+# Actions, resources, and condition keys for Amazon S3
+
+[Actions, resources, and condition keys for Amazon S3 - Service Authorization Reference](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html#amazons3-actions-as-permissions)
+
+

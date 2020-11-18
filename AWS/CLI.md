@@ -4,9 +4,19 @@
 
 [Search · aws cli](https://gist.github.com/search?q=aws+cli)
 
+# common
+
+```sh
+$ aws <command> <subcommand> [options and parameters]
+```
+
 # configure
 
 ```sh
-# 
-
+# To create a new configuration:
+$ aws configure
+AWS Access Key ID [None]: accesskey
+AWS Secret Access Key [None]: secretkey
+Default region name [None]: us-west-2 # https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-region
+Default output format [None]: # https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-format
 ```

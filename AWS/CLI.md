@@ -17,6 +17,6 @@ $ aws <command> <subcommand> [options and parameters]
 $ aws configure
 AWS Access Key ID [None]: accesskey
 AWS Secret Access Key [None]: secretkey
-Default region name [None]: us-west-2 # https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-region
+Default region name [None]: # https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-region
 Default output format [None]: # https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-format
 ```

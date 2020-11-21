@@ -1,0 +1,4 @@
+[AWS Perspective | Implementations | AWS Solutions](https://aws.amazon.com/solutions/implementations/aws-perspective/?nc1=h_ls)
+
+- Monitoring your AWS Cloud workloads is key to maintaining operational health and efficiency. However, keeping track of the AWS resources and the relationships between them can be a challenge. AWS Perspective is a visualization tool that quickly generates architecture diagrams of AWS Cloud workloads. You can use the solution to build, customize, and share detailed workload visualizations based on live data from AWS. This solution works by maintaining an inventory of the AWS resources across your accounts and Regions, mapping relationships between them, and displaying them in a web user interface (web UI). When making changes to a resource, AWS Perspective saves you time by providing a link to the resource in the AWS Management Console.
+

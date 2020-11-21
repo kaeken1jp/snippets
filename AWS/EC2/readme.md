@@ -49,6 +49,9 @@ nginx    32492  0.0  0.3 124196  4000 ?        S    02:52   0:00 nginx: worker p
 ec2-user 32494  0.0  0.0 119484   936 pts/0    S+   02:53   0:00 grep --color=auto nginx
 
 # access to Public IPv4 address
+
+# set to start automatically
+sudo chkconfig nginx on
 ```
 
 

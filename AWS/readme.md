@@ -2,6 +2,10 @@
 
 [Amazon Web Services (AWS) - Cloud Computing Services](https://aws.amazon.com/)
 
+[AWS Documentation](https://docs.aws.amazon.com/index.html)
+
+
+
 # ARN
 
 [Amazon Resource Names (ARNs) - AWS General Reference](https://docs.aws.amazon.com/en_pv/general/latest/gr/aws-arns-and-namespaces.html)

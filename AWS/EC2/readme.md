@@ -33,6 +33,22 @@ Linux xxx.compute.internal xxx.amzn2.x86_64 #1 SMP Fri Oct 30 19:19:33 UTC 2020 
 $ sudo amazon-linux-extras install nginx1.12
 $ nginx -v
 nginx version: nginx/1.12.2
+
+# check process
+$ ps aux | grep nginx
+ec2-user 32469  0.0  0.0 119484   980 pts/0    S+   02:52   0:00 grep --color=auto nginx
+
+# start service
+$ sudo service nginx start
+Redirecting to /bin/systemctl start nginx.service
+
+# check process
+$ ps aux | grep nginx
+root     32491  0.0  0.2 123740  2184 ?        Ss   02:52   0:00 nginx: master process /usr/sbin/nginx
+nginx    32492  0.0  0.3 124196  4000 ?        S    02:52   0:00 nginx: worker process
+ec2-user 32494  0.0  0.0 119484   936 pts/0    S+   02:53   0:00 grep --color=auto nginx
+
+# access to Public IPv4 address
 ```
 
 

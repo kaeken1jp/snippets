@@ -24,3 +24,15 @@ $ chmod 400 KeyPair.pem
 # Example:
 $ ssh -i "/path/to/KeyPairName.pem" ec2-user@xxx.compute.amazonaws.com
 ```
+
+# how to install nginx
+
+```sh
+$ uname -a
+Linux xxx.compute.internal xxx.amzn2.x86_64 #1 SMP Fri Oct 30 19:19:33 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+$ sudo amazon-linux-extras install nginx1.12
+$ nginx -v
+nginx version: nginx/1.12.2
+```
+
+

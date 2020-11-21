@@ -19,7 +19,7 @@
 $ chmod 400 KeyPair.pem
 
 # Connect to your instance using its Public DNS:
-  xxx.compute.amazonaws.com
+# xxx.compute.amazonaws.com
 
 # Example:
 $ ssh -i "/path/to/KeyPairName.pem" ec2-user@xxx.compute.amazonaws.com

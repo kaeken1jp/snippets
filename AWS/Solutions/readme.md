@@ -1,0 +1,3 @@
+[Vetted Technology | AWS Solutions Library](https://aws.amazon.com/solutions/)
+
+- The AWS Solutions Library offers a collection of cloud-based solutions for dozens of technical and business problems, vetted for you by AWS. You can use patterns from AWS Solutions Constructs if you want to build your own well-architected application, explore our collection of AWS Solutions Reference Architectures as a reference for your project, browse the portfolio of AWS Solutions Implementations for applications that you can automatically deploy directly into your AWS account, or choose an AWS Solutions Consulting Offer if you want help from an AWS Competency Partner with deploying, integrating, and managing a Solution.

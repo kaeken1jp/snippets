@@ -1529,3 +1529,30 @@ jar -xvf file.jar
 java -jar file.jar
 ```
 
+
+# key input
+
+```java
+import java.io.*;
+public class KeyInput {
+    public static void main(String[] args) {
+        int  i;
+        System.out.println( "input string:" );
+        try{
+            i = System.in.read();
+            System.out.print( "your input key is " + (char)i + ", ");
+            System.out.println( "the char code is " + i);
+        }
+        catch(IOException e){
+            System.err.println( "error" );
+        }
+    }
+}
+```
+
+```
+input string:
+A
+your input key is A, the char code is 65
+```
+

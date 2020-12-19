@@ -166,7 +166,11 @@ git commit --amend
 
 ## show branch
 ```bash
-git branch
+git branch # To see local branches
+
+git branch -r # To see remote branches
+
+git branch -a # To see all local and remote branches
 ```
 
 ## create new local branch

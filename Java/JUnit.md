@@ -7,3 +7,16 @@
 [JUnit 4 – About](https://junit.org/junit4/)
 
 [Getting started · junit-team/junit4 Wiki](https://github.com/junit-team/junit4/wiki/Getting-started)
+
+
+## compile
+
+```sh
+javac -cp .:junit-4.XX.jar:hamcrest-core-1.3.jar CalculatorTest.java
+```
+
+## run
+
+```sh
+java -cp .:junit-4.XX.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore CalculatorTest
+```

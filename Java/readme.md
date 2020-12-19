@@ -688,6 +688,44 @@ public class MyApp {
 }
 ```
 
+# TypeOf
+
+```java
+class Type {
+    static String of(byte x) {
+        return (x + " is a byte.");
+    }
+    static String of(short x) {
+        return (x + " is a short.");
+    }
+    static String of(int x) {
+        return (x + " is an int.");
+    }
+    static String of(float x) {
+        return (x + " is a float.");
+    }
+    static String of(double x) {
+        return (x + " is a double.");
+    }
+    static String of(char x) {
+        return (x + " is a char.");
+    }
+    static String of(boolean x) {
+        return (x + " is a boolean.");
+    }
+    static String of(Object x) {
+        final String className = x.getClass().getName();
+        return (x + " is instance of " + className);
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        Type t = new Type();
+        System.out.println(Type.of(t));
+    }
+}
+```
+
 # method
 
 ```java

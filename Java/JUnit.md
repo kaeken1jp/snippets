@@ -20,3 +20,5 @@ javac -cp .:junit-4.XX.jar:hamcrest-core-1.3.jar CalculatorTest.java
 ```sh
 java -cp .:junit-4.XX.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore CalculatorTest
 ```
+
+

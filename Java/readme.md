@@ -352,6 +352,19 @@ public class MyApp {
 20
 ```
 
+# sort
+
+```java
+List<String> names = Arrays.asList("Alex", "Charles", "Brian", "David");
+ 
+//Natural order
+Collections.sort(names);    //[Alex, Brian, Charles, David]
+ 
+//Reverse order
+Collections.sort(names, Collections.reverseOrder());    [David, Charles, Brian, Alex]   
+```
+
+
 
 # HashSet, TreeSet, LinkedHashSet
 

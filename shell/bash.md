@@ -13,6 +13,15 @@ $ : 一般ユーザーの時$,rootの時#を表示
 [Bashプロンプトの変更 - Qiita](https://qiita.com/zaburo/items/9194cd9eb841dea897a0)
 
 
+```sh
+$ vi ~/.bashrc
+##
+export PS1="[\u@TEST_SERVER \w]$"
+##
+$ source ~/.bashrc
+```
+
+
 ## set locale
 ```bash
 # JP

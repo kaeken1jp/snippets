@@ -25,6 +25,19 @@ $ chmod 400 KeyPair.pem
 $ ssh -i "/path/to/KeyPairName.pem" ec2-user@xxx.compute.amazonaws.com
 ```
 
+# su
+
+```sh
+$ whoami
+ec2-user
+
+$ sudo su -
+
+# whoami
+root
+```
+
+
 # how to install nginx
 
 ```sh

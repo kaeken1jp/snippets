@@ -8,6 +8,13 @@ https://docs.docker.com/
 
 ![](https://i.gyazo.com/29aa934b6ade49bb1fe9f6ac29fbb64d.jpg)
 
+![](https://i.gyazo.com/db07448100ad5ad5a119c1d8134e43a9.png)
+
+![](https://i.gyazo.com/8a39eb640ee0ec261df84f83dcc6a29a.jpg)
+
+
+
+
 # install (MacOS)
 
 ## download and install docker desktop software

@@ -4,6 +4,11 @@ https://docs.docker.com/
 
 ![](https://i.gyazo.com/90cc92abff873fcd6280ed12ae1b114c.png)
 
+
+# lifecycle
+
+![](https://i.gyazo.com/3a69a1de75e4540500101c95f4fb7b28.png)
+
 # flow
 
 ![](https://i.gyazo.com/29aa934b6ade49bb1fe9f6ac29fbb64d.jpg)

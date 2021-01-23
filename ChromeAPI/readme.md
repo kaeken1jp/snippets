@@ -47,16 +47,17 @@ console.table([[1,2,3], [2,3,4]]);
 http://anti-code.com/devtools-cheatsheet/#command-line-api
 
 ## $$ (Returns an array of elements that match the given CSS selector.)
+
 ```js
-# all body innerText
+// all body innerText
 $$('body').map(x=>x.innerText).join('\n')
 
-# all link href
+// all link href
 $$('a').map(x=>x.href).join('\n')
 
 
 
-# all form input attribute dump
+// all form input attribute dump
 console.log(
   $$('input').map(
     x=>'input'
@@ -70,7 +71,7 @@ console.log(
   ).join('\n')
 )
 
-# extract all href link
+// extract all href link
 $$('.class_name > a').map(x=>x.href).join('\n')
 ```
 

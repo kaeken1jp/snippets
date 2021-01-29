@@ -835,5 +835,11 @@ SELECT
 
 
 
+# limit of range_partitioning
 
+```sh
+bq mk --range_partitioning=partition_id,0,100000,1 DATASET.TABLE  ./schema.json
+BigQuery error in mk operation: The number of possible partitions for range partitioning is 100000, exceeding
+the limit of 10000.
+```
 

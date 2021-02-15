@@ -46,7 +46,9 @@ vue ui
 })();
 ```
 
-# two way data binding (to UI)
+# v-model
+
+- two way data binding (to UI)
 
 ```html
 <!DOCTYPE html>
@@ -84,3 +86,60 @@ vue ui
   });
 })();
 ```
+
+- output
+
+![](https://i.gyazo.com/a6023f2d206e5671febc211fe6575c13.png)
+
+
+# v-for
+
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Vue App</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div id="app">
+    <h1>My Todos</h1>
+    <ul>
+      <li v-for="todo in todos">{{ todo }}</li>
+    </ul>
+    <form>
+      <input type="text">
+      <input type="submit" value="Add">
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+```
+
+```js
+(function() {
+  'use strict';
+
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      todos: [
+        'task 1',
+        'task 2',
+        'task 3'
+      ]
+    }
+  });
+})();
+```
+
+- output
+
+![](https://i.gyazo.com/39cbaa985a1dbf188a3bdd989da02698.png)
+
+

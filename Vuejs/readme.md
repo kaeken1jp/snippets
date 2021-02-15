@@ -1,13 +1,25 @@
 [Vue.js](https://vuejs.org/)
 
 
+[Vue CLI](https://cli.vuejs.org/)
 
 # install Vue CLI
+
+[Vue CLI](https://cli.vuejs.org/)
+
 ```sh
 npm install -g @vue/cli
 
 npm install -g @vue/cli-service-global
 
+```
+
+# create a project
+
+```sh
+vue create my-project
+# OR
+vue ui
 ```
 
 

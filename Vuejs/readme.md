@@ -143,3 +143,67 @@ vue ui
 ![](https://i.gyazo.com/39cbaa985a1dbf188a3bdd989da02698.png)
 
 
+
+
+# v-on
+
+
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Vue App</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div id="app" class="container">
+    <h1>My Todos</h1>
+    <ul>
+      <li v-for="todo in todos">{{ todo }}</li>
+    </ul>
+    <!-- <form v-on:submit="addItem"> -->
+    <form @submit.prevent="addItem">
+      <input type="text" v-model="newItem">
+      <input type="submit" value="Add">
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+```
+
+```js
+(function() {
+  'use strict';
+
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      newItem: '',
+      todos: [
+        'task 1',
+        'task 2',
+        'task 3'
+      ]
+    },
+    methods: {
+      // addItem: function(e) {
+      //   e.preventDefault();
+      //   this.todos.push(this.newItem);
+      // }
+      addItem: function() {
+        this.todos.push(this.newItem);
+        this.newItem = '';
+      }
+    }
+  });
+})();
+```
+
+- output
+
+![](https://i.gyazo.com/874aab11213a78c4a2e1f54395657f4d.gif)

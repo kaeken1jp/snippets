@@ -455,3 +455,93 @@ vue ui
 - output
 
 ![](https://i.gyazo.com/b4bcde3fc40bd5f738be0bf3e7e37cb5.gif)
+
+
+
+# Computed Properties, Filter
+
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Vue App</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div id="app" class="container">
+    <h1>
+      My Todos
+      <span class="info">({{ remaining }}/{{ todos.length }})</span>
+    </h1>
+    <ul>
+      <li v-for="(todo, index) in todos">
+        <input type="checkbox" v-model="todo.isDone">
+        <span :class="{done: todo.isDone}">{{ todo.title }}</span>
+        <span @click="deleteItem(index)" class="command">[x]</span>
+      </li>
+      <li v-show="!todos.length">Nothing to do, yay!</li>
+    </ul>
+    <form @submit.prevent="addItem">
+      <input type="text" v-model="newItem">
+      <input type="submit" value="Add">
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+```
+
+```js
+(function() {
+  'use strict';
+
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      newItem: '',
+      todos: [{
+        title: 'task 1',
+        isDone: false
+      }, {
+        title: 'task 2',
+        isDone: false
+      }, {
+        title: 'task 3',
+        isDone: true
+      }]
+    },
+    methods: {
+      addItem: function() {
+        var item = {
+          title: this.newItem,
+          isDone: false
+        };
+        this.todos.push(item);
+        this.newItem = '';
+      },
+      deleteItem: function(index) {
+        if (confirm('are you sure?')) {
+          this.todos.splice(index, 1);
+        }
+      }
+    },
+    computed: {
+      remaining: function() {
+        var items = this.todos.filter(function(todo) {
+          return !todo.isDone;
+        });
+        return items.length;
+      }
+    }
+  });
+})();
+```
+
+- output
+
+![](https://i.gyazo.com/f1574ea973deeb8c854f944fc5d84574.gif)
+

@@ -882,3 +882,84 @@ vue ui
 
 
 ![]()
+
+
+
+# $emit
+
+
+```js
+(function() {
+  'use strict';
+
+  var likeComponent = Vue.extend({
+    props: {
+      message: {
+        type: String,
+        default: 'Like'
+      }
+    },
+    data: function() {
+      return {
+        count: 0
+      }
+    },
+    template: '<button @click="countUp">{{ message }} {{ count }}</button>',
+    methods: {
+      countUp: function() {
+        this.count++;
+        this.$emit('increment');
+      }
+    }
+  });
+
+  var app = new Vue({
+    el: '#app',
+    components: {
+      'like-component': likeComponent
+    },
+    data: {
+      total: 0
+    },
+    methods: {
+      incrementTotal: function() {
+        this.total++;
+      }
+    }
+  });
+
+})();
+```
+
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Vue App</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div id="app">
+    <p>Total Likes: {{ total }}</p>
+    <!-- <like-component message="Like" v-on:increment="incrementTotal"></like-component> -->
+    <like-component message="Like" @increment="incrementTotal"></like-component>
+    <like-component message="Awesome" @increment="incrementTotal"></like-component>
+    <like-component message="Great" @increment="incrementTotal"></like-component>
+    <like-component @increment="incrementTotal"></like-component>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+```
+
+
+- result
+
+
+![](https://i.gyazo.com/ca1d3036538cf0801d698e4a7d5f75f9.mp4)
+
+

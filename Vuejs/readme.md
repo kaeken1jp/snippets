@@ -649,3 +649,169 @@ vue ui
 
 
 ![](https://i.gyazo.com/469496c41145889ed4c7f3338227086f.gif)
+
+
+
+
+# LocalStorage, watch, deep watcher, mounted
+
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Vue App</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div id="app" class="container">
+    <h1>
+      <button @click="purge">Purge</button>
+      My Todos
+      <span class="info">({{ remaining.length }}/{{ todos.length }})</span>
+    </h1>
+    <ul>
+      <li v-for="(todo, index) in todos">
+        <input type="checkbox" v-model="todo.isDone">
+        <span :class="{done: todo.isDone}">{{ todo.title }}</span>
+        <span @click="deleteItem(index)" class="command">[x]</span>
+      </li>
+      <li v-show="!todos.length">Nothing to do, yay!</li>
+    </ul>
+    <form @submit.prevent="addItem">
+      <input type="text" v-model="newItem">
+      <input type="submit" value="Add">
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+```
+
+
+```js
+(function() {
+  'use strict';
+
+  var vm = new Vue({
+    el: '#app',
+    data: {
+      newItem: '',
+      todos: []
+    },
+    watch: {
+      todos: {
+        handler: function() {
+          localStorage.setItem('todos', JSON.stringify(this.todos));
+        },
+        deep: true
+      }
+    },
+    mounted: function() {
+      this.todos = JSON.parse(localStorage.getItem('todos')) || [];
+    },
+    methods: {
+      addItem: function() {
+        var item = {
+          title: this.newItem,
+          isDone: false
+        };
+        this.todos.push(item);
+        this.newItem = '';
+      },
+      deleteItem: function(index) {
+        if (confirm('are you sure?')) {
+          this.todos.splice(index, 1);
+        }
+      },
+      purge: function() {
+        if (!confirm('delete finished?')) {
+          return;
+        }
+        this.todos = this.remaining;
+      }
+    },
+    computed: {
+      remaining: function() {
+        return this.todos.filter(function(todo) {
+          return !todo.isDone;
+        });
+      }
+    }
+  });
+})();
+```
+
+- output
+
+
+![](https://i.gyazo.com/6549ff5b77283bc97878c855161ee682.gif)
+
+
+
+
+# Component
+
+
+```js
+(function() {
+  'use strict';
+
+  var likeComponent = Vue.extend({
+    data: function() {
+      return {
+        count: 0
+      }
+    },
+    template: '<button @click="countUp">Like {{ count }}</button>',
+    methods: {
+      countUp: function() {
+        this.count++;
+      }
+    }
+  });
+
+  var app = new Vue({
+    el: '#app',
+    components: {
+      'like-component': likeComponent
+    }
+  });
+
+})();
+```
+
+```css
+```
+
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Vue App</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div id="app">
+    <like-component></like-component>
+    <like-component></like-component>
+    <like-component></like-component>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+```
+
+- result
+
+![](https://i.gyazo.com/628a3d806a523c985ec286e341ff0640.gif)
+
+
+

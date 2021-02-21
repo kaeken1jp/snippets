@@ -815,3 +815,70 @@ vue ui
 
 
 
+# props
+
+
+```js
+(function() {
+  'use strict';
+
+  var likeComponent = Vue.extend({
+    // props: ['message'],
+    props: {
+      message: {
+        type: String,
+        default: 'Like'
+      }
+    },
+    data: function() {
+      return {
+        count: 0
+      }
+    },
+    template: '<button @click="countUp">{{ message }} {{ count }}</button>',
+    methods: {
+      countUp: function() {
+        this.count++;
+      }
+    }
+  });
+
+  var app = new Vue({
+    el: '#app',
+    components: {
+      'like-component': likeComponent
+    }
+  });
+
+})();
+```
+
+
+```html
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>My Vue App</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div id="app">
+    <like-component message="Like"></like-component>
+    <like-component message="Awesome"></like-component>
+    <like-component message="Great"></like-component>
+    <like-component></like-component>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+```
+
+
+- result
+
+
+![]()

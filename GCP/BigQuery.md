@@ -867,13 +867,13 @@ department 2
 
 ```sql
 SELECT name, department, start_date,
-  RANK() OVER (PARTITION BY department ORDER BY start_date) AS rank
+  RANK() OVER (PARTITION BY department ORDER BY start_date) AS rank_
 FROM Employees;
 ```
 
 ```
 +--------------------------------------------+
-| name      | department | start_date | rank |
+| name      | department | start_date | rank_|
 +--------------------------------------------+
 | Jacob     | 1          | 1990-07-11 | 1    |
 | Anthony   | 1          | 1995-11-29 | 2    |
@@ -882,4 +882,9 @@ FROM Employees;
 | Daniel    | 2          | 2004-06-24 | 2    |
 | Jose      | 2          | 2013-03-17 | 3    |
 +--------------------------------------------+
+```
+
+
+```
+
 ```

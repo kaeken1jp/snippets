@@ -843,3 +843,43 @@ BigQuery error in mk operation: The number of possible partitions for range part
 the limit of 10000.
 ```
 
+
+
+# Compute Rank
+
+[Analytic function concepts in Standard SQL  |  BigQuery  |  Google Cloud](https://cloud.google.com/bigquery/docs/reference/standard-sql/analytic-function-concepts#compute_rank)
+
+```
+This example calculates the rank of each employee within their department, 
+based on their start date. 
+The window specification is defined directly in the OVER clause. 
+The Employees table is referenced.
+
+department 1
+(Jacob, Anthony, Andrew) = Assign rank 1 to Jacob
+(Jacob, Anthony, Andrew) = Assign rank 2 to Anthony
+(Jacob, Anthony, Andrew) = Assign rank 3 to Andrew
+department 2
+(Isabella, Daniel, Jose) = Assign rank 1 to Isabella
+(Isabella, Daniel, Jose) = Assign rank 2 to Daniel
+(Isabella, Daniel, Jose) = Assign rank 3 to Jose
+```
+
+```sql
+SELECT name, department, start_date,
+  RANK() OVER (PARTITION BY department ORDER BY start_date) AS rank
+FROM Employees;
+```
+
+```
++--------------------------------------------+
+| name      | department | start_date | rank |
++--------------------------------------------+
+| Jacob     | 1          | 1990-07-11 | 1    |
+| Anthony   | 1          | 1995-11-29 | 2    |
+| Andrew    | 1          | 1999-01-23 | 3    |
+| Isabella  | 2          | 1997-09-28 | 1    |
+| Daniel    | 2          | 2004-06-24 | 2    |
+| Jose      | 2          | 2013-03-17 | 3    |
++--------------------------------------------+
+```

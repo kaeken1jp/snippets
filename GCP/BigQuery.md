@@ -885,6 +885,11 @@ FROM Employees;
 ```
 
 
-```
 
-```
+# how to download a bigdata via bigquery
+
+- step1: to save a table from query result
+- step2: to save a csv file on GCS from bq table
+- step3: to download from GCS
+
+

@@ -984,7 +984,8 @@ ROUND(123.45, 1) #=> 123.4
 ```sql
 SELECT uuid
 FROM `table`
-20,384,512
+
+record: 20,384,512
 ```
 
 - sampling
@@ -993,7 +994,14 @@ FROM `table`
 SELECT uuid
 FROM `table`
 TABLESAMPLE SYSTEM (10 PERCENT)
+
 first time: 1,457,001
 second time: 1,457,645
 ```
 
+- The following example reads approximately 20% of the data blocks from storage and then randomly selects 10% of the rows in those blocks:
+
+```sql
+SELECT * FROM dataset.my_table TABLESAMPLE SYSTEM (20 PERCENT)
+WHERE rand() < 0.1
+```

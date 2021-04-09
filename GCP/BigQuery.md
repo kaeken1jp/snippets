@@ -976,3 +976,24 @@ ROUND(123.45, 1) #=> 123.4
 
 
 
+
+# sampling
+
+[Table sampling  |  BigQuery  |  Google Cloud](https://cloud.google.com/bigquery/docs/table-sampling)
+
+```sql
+SELECT uuid
+FROM `table`
+20,384,512
+```
+
+- sampling
+
+```sql
+SELECT uuid
+FROM `table`
+TABLESAMPLE SYSTEM (10 PERCENT)
+first time: 1,457,001
+second time: 1,457,645
+```
+

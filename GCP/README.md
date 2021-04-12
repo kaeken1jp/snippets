@@ -4,6 +4,12 @@ https://cloud.google.com/sdk/docs/
 [Compare AWS and Azure services to Google Cloud](https://cloud.google.com/free/docs/aws-azure-gcp-service-comparison)
 
 
+[GoogleCloudPlatform/python-docs-samples: Code samples used on cloud.google.com](https://github.com/GoogleCloudPlatform/python-docs-samples)
+
+[Technical Guides  |  Solutions  |  Google Cloud](https://cloud.google.com/docs/tutorials)
+
+
+
 # install client(mac)
 ```bash
 # install

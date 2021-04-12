@@ -1,6 +1,9 @@
 # link
 https://cloud.google.com/sdk/docs/
 
+[Compare AWS and Azure services to Google Cloud](https://cloud.google.com/free/docs/aws-azure-gcp-service-comparison)
+
+
 # install client(mac)
 ```bash
 # install

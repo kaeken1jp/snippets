@@ -493,3 +493,11 @@ typography)</td>
 ```html
 <input type="file" name="upload_file[]" multiple="multiple">
 ```
+
+## video tag
+
+https://www.w3schools.com/tags/tag_video.asp
+
+```html
+<video width="100%" controls><source src="https://domain.com/file.mp4" type="video/mp4"></video>
+```

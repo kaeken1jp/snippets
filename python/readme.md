@@ -1063,3 +1063,13 @@ print({i * 3 for i in range(10) if i % 2 == 0}) # {0, 6, 12, 18, 24}
 list = [0,1,2,3,4,5]
 res = ",".join(map(str, list))# 0,1,2,3,4,5
 ```
+
+
+# copy file
+
+```py
+import shutil
+
+shutil.copy(src_file, dst_path)
+shutil.copy(src_file, dst_file)
+```

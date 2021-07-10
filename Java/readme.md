@@ -118,23 +118,41 @@ public class MyApp {
 
   public static void main(String[] args) {
     // + - * / %
-    // ++ --
+    // i = 10 + 3;
+    // System.out.println(i); // 13
+    // i = 10 - 3;
+    // System.out.println(i); // 7
     // int i;
     // i = 10 / 3;
     // System.out.println(i); // 3
     // i = 10 % 3;
     // System.out.println(i); // 1
     // int x = 5;
+    // ++ --
     // x++;
     // System.out.println(x); // 6
     // x--;
     // System.out.println(x); // 5
 
+    // Assignment
     // int x = 5;
-    // // x = x + 12;
-    // x += 12;
-    // System.out.println(x);
-
+    // x += 2;
+    // System.out.println(x); // 7
+    // int x = 5;
+    // x -= 2;
+    // System.out.println(x); // 3
+    // int x = 5;
+    // x *= 2;
+    // System.out.println(x); // 10
+    
+    // int x = 10;
+    // x /= 2;
+    // System.out.println(x); // 5
+    
+    // int x = 10;
+    // x %= 3;
+    // System.out.println(x); // 1
+    
     String s;
     s = "hello " + "world";
     System.out.println(s);
@@ -142,6 +160,9 @@ public class MyApp {
 
 }
 ```
+
+
+
 
 # Shift Operator
 

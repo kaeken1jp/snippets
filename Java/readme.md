@@ -17,6 +17,31 @@ Java(TM) SE Runtime Environment (build 1.6.0_65-b14-468)
 Java HotSpot(TM) 64-Bit Server VM (build 20.65-b04-468, mixed mode)
 ```
 
+# jshell
+
+https://docs.oracle.com/javase/9/jshell/introduction-jshell.htm#JSHEL-GUID-DA9FA090-7015-4F30-BBD0-5F6ED0EBDF91
+
+```
+The Java Shell tool (JShell) is an interactive tool for learning the Java programming language and prototyping Java code. JShell is a Read-Evaluate-Print Loop (REPL), which evaluates declarations, statements, and expressions as they are entered and immediately shows the results. The tool is run from the command line.
+```
+
+```sh
+> jshell
+
+jshell> 
+
+jshell> int a = 1
+a ==> 1
+
+jshell> String b = "str"
+b ==> "str"
+
+jshell> /exit
+|  Goodbye
+```
+
+
+
 # Hello World
 
 - ファイル名とクラス名は同名とする

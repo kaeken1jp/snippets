@@ -26,7 +26,7 @@ The Java Shell tool (JShell) is an interactive tool for learning the Java progra
 ```
 
 ```sh
-> jshell
+$ jshell
 
 jshell> 
 

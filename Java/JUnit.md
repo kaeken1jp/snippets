@@ -12,13 +12,19 @@
 ## compile
 
 ```sh
-javac -cp .:junit-4.XX.jar:hamcrest-core-1.3.jar CalculatorTest.java
+javac -cp .:junit-4.XX.jar:hamcrest-core-1.3.jar <FILE_NAME>.java
+
+
+javac -cp .:junit-4.13.jar:hamcrest-core-1.3.jar SampleTest.java
 ```
 
 ## run
 
 ```sh
-java -cp .:junit-4.XX.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore CalculatorTest
+java -cp .:junit-4.XX.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore <FILE_NAME>
+
+
+java -cp .:junit-4.13.jar:hamcrest-core-1.3.jar org.junit.runner.JUnitCore SampleTest
 ```
 
 

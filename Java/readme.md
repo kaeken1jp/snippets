@@ -345,6 +345,17 @@ public class MyApp {
 # array
 
 ```java
+String[] s1;
+String[] s2 = new String[100];
+String[] s3 = {"a", "b"};
+
+int i1;
+int[] i2 = new int[100];
+int[] i3 = {1, 2};
+```
+
+
+```java
 public class ClassName{
      public static void main(String []args){
         double array[] = {-0.2, 4.5, 2.0, 10, -5};

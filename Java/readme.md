@@ -230,7 +230,7 @@ class MyApp{
 String s = "abc"
 char[] c = s.toCharArray();
 
-// String to char
+// char to String
 char c = 'a'
 String s = String.valueOf(c);
 

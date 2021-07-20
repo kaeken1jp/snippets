@@ -225,6 +225,28 @@ class MyApp{
 
 # cast
 
+```
+// String to char
+String s = "abc"
+char[] c = s.toCharArray();
+
+// String to char
+char c = 'a'
+String s = String.valueOf(c);
+
+c = new char[] { 'a', 'b', 'c' };
+s = new String(c);
+
+// char to int
+char c = '5';
+int i = Character.getNumericValue(c);
+
+// int to char
+int i = 65;
+char c  = (char)i;
+```
+
+
 ```java
 public class MyApp {
 

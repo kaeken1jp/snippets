@@ -144,6 +144,8 @@ cf. chromium / apps / libapps / HEAD / . / nassh
 
 # Edit This Cookie
 
-# 
 
 
+# SpeechRecognition
+
+[SpeechRecognition - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition)

@@ -24,13 +24,32 @@ $ poetry new poetry-demo
 $ cd poetry-demo/
 
 $ tree
-
-poetry-demo
-├── pyproject.toml
+.
 ├── README.md
 ├── poetry_demo
-│   └── __init__.py
+│   └── __init__.py
+├── pyproject.toml
 └── tests
     └── __init__.py
+```
+
+
+```
+$ cat pyproject.toml
+[tool.poetry]
+name = "poetry-demo"
+version = "0.1.0"
+description = ""
+authors = ["xxx"]
+readme = "README.md"
+packages = [{include = "poetry_demo"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
 ```
 

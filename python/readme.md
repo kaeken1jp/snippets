@@ -340,11 +340,27 @@ list(set(l))
 ```
 
 
-## make dir
+## current dir = pwd
+```python
+import os
+working_dir = os.getcwd()
+```
+
+## change dir = cd
+```python
+import os
+print(os.getcwd()) # /dir
+os.chdir("./my-dir")
+print(os.getcwd()) # /dir/my-dir
+```
+
+## make dir = mkdir
 ```python
 import os
 os.makedirs("sample/example/test")
 ```
+
+
 
 ## upgrade pip
 ```bash

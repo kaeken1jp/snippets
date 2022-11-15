@@ -360,6 +360,36 @@ import os
 os.makedirs("sample/example/test")
 ```
 
+## list file = ls (listdir())
+
+```python
+import os
+os.listdir('.') #=> ['file1.txt', 'file2.csv']
+# NG os.listdir('./*.csv') # FileNotFoundError: [Errno 2] No such file or directory: './*.csv'
+# use glob
+```
+
+## list file (glob)
+```python
+import glob
+glob.glob("./*.csv") #=> ['./file2.csv']
+glob.glob("./**/*", recursive=True) #=> ['./file1.txt', './file2.csv', './sample', './sample/example', './sample/example/test']
+```
+
+## list file (pathlib)
+```python
+from pathlib import Path
+path = Path('.')
+for p in path.glob('./**/*'):
+    print(p)
+    
+#=> file1.txt
+#=> file2.csv
+#=> sample
+#=> sample/example
+#=> sample/example/test
+```
+
 
 
 ## upgrade pip
@@ -469,13 +499,6 @@ $ conda install nomkl
 ## "Cannot uninstall 'PyYAML'. It is a distutils installed project and thus we cannot accurately determine which files belong to it which would lead to only a partial uninstall."
 ```bash
 pip install PyYAML --ignore-installed
-```
-
-## file glob
-```python
-import glob
-file_list = glob.glob("./*.html")
-file_list = sorted(file_list)
 ```
 
 ## num padding

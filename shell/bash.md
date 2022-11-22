@@ -180,6 +180,8 @@ fi
 
 
 ## copy shellscript
+
+```bash
 #!/bin/bash
 
 src_dir="$1"

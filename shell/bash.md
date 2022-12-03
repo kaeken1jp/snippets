@@ -272,3 +272,27 @@ head -n 1 ${basefile} > ${outfile}
 shuf -n 100000 ${basefile} >> ${outfile}
 ```
 
+## How to Extract Filename & Extension in Shell Script
+
+```sh
+$ cat extract_filename_extension.sh
+#!/bin/bash
+
+fullfilename=$1
+filename=$(basename "$fullfilename")
+fname="${filename%.*}"
+ext="${filename##*.}"
+ 
+echo "Input File: $fullfilename"
+echo "Filename without Path: $filename"
+echo "Filename without Extension: $fname"
+echo "File Extension without Name: $ext"
+====
+
+$ cat extract_filename_extension.sh /path/to/file.1.2.3.4.ext
+Input File: /path/to/file.1.2.3.4.ext
+Filename without Path: file.1.2.3.4.ext
+Filename without Extension: file.1.2.3.4
+File Extension without Name: ext
+```
+

@@ -24,7 +24,10 @@ $ psql -h <HOSTNAME> \
 
 ## list db
 ```
-=> \l
+# List all databases using \l (or \list) (psql)
+=> \l [__DATABASES__]
+
+=> \l+ [__DATABASES__]
 ```
 
 ## list table

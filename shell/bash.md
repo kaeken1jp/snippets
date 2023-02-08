@@ -296,3 +296,33 @@ Filename without Extension: file.1.2.3.4
 File Extension without Name: ext
 ```
 
+## How to create a file
+
+```
+mkfile
+Create a file.
+
+Syntax
+          mkfile [ -nv ] size[b|k|m|g] filename ...
+Options
+   -n     Create an empty filename.  The size is noted,  but  disk  blocks
+          aren't allocated until data is written to them.
+
+   -v     Verbose.  Report the names and sizes of created files.
+mkfile creates one or more files that are suitable for use as NFS- mounted swap areas. The sticky bit is set, and the file is padded with zeroes by default. Non-root users must set the sticky bit using chmod(1).
+
+The default size unit is bytes, but the following suffixes may be used to multiply by the given factor:
+b (512), k (1024), m (1048576), and g (1073741824).
+
+The file may be given any extension, (e.g. .jpg) but the file created will not have the correct (.jpg) header inserted.
+
+If a client's swap file is removed and recreated, it must be re-exported before the client will be able to access it.
+This action may only be done when the client is not running.
+
+Examples
+Create a 10 MB file:
+$ mkfile 10m ~/newfile.txt
+
+Create a 10 MB 'empty' file:
+$ mkfile 10m ~/newfile.txt
+```

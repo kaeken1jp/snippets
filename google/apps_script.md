@@ -61,6 +61,8 @@ function searchDescription(url) {
 
 https://platform.openai.com/account/api-keys
 
+- gas code
+
 ```js
 /**
  * GPT-3 and Google Sheets

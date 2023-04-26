@@ -98,3 +98,60 @@ trainer.fit(model, train_loader, val_loader)
     
 
 ```
+
+
+```
+torch.utils.checkpoint.checkpoint()`関数を使用して、モデルのチェックポイントを少しずつ保存する例です。
+
+```python
+import torch
+import torch.nn as nn
+import torch.utils.checkpoint as checkpoint
+
+# モデルの定義
+class MyModel(nn.Module):
+    def __init__(self):
+        super(MyModel, self).__init__()
+        self.conv1 = nn.Conv2d(3, 64, kernel_size=3, stride=1, padding=1)
+        self.conv2 = nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1)
+        self.conv3 = nn.Conv2d(128, 256, kernel_size=3, stride=1, padding=1)
+        self.fc1 = nn.Linear(256*8*8, 1024)
+        self.fc2 = nn.Linear(1024, 10)
+
+    def forward(self, x):
+        x = checkpoint.checkpoint(self.conv1, x)
+        x = checkpoint.checkpoint(self.conv2, x)
+        x = checkpoint.checkpoint(self.conv3, x)
+        x = x.view(-1, 256*8*8)
+        x = checkpoint.checkpoint(self.fc1, x)
+        x = self.fc2(x)
+        return x
+
+# モデルのインスタンス化
+model = MyModel()
+
+# モデルのパラメータ
+learning_rate = 0.01
+optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
+
+# トレーニングループ
+for epoch in range(num_epochs):
+    for i, (images, labels) in enumerate(train_loader):
+        # 順伝播
+        outputs = model(images)
+        loss = criterion(outputs, labels)
+        
+        # 逆伝播とパラメータの更新
+        optimizer.zero_grad()
+        loss.backward()
+        optimizer.step()
+        
+        # チェックポイントの保存
+        if i % save_interval == 0:
+            checkpoint_name = f"checkpoint_{epoch}_{i}.pt"
+            checkpoint_data = {'model': model.state_dict(),
+                               'optimizer': optimizer.state_dict(),
+                               'epoch': epoch,
+                               'i': i}
+            torch.save(checkpoint_data, checkpoint_name)
+```

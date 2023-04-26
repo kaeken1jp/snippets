@@ -100,15 +100,13 @@ trainer.fit(model, train_loader, val_loader)
 ```
 
 
-```
-torch.utils.checkpoint.checkpoint()`関数を使用して、モデルのチェックポイントを少しずつ保存する例です。
+## torch.utils.checkpoint.checkpoint()
 
 ```python
 import torch
 import torch.nn as nn
 import torch.utils.checkpoint as checkpoint
 
-# モデルの定義
 class MyModel(nn.Module):
     def __init__(self):
         super(MyModel, self).__init__()
@@ -127,26 +125,26 @@ class MyModel(nn.Module):
         x = self.fc2(x)
         return x
 
-# モデルのインスタンス化
+
 model = MyModel()
 
-# モデルのパラメータ
+
 learning_rate = 0.01
 optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 
-# トレーニングループ
+
 for epoch in range(num_epochs):
     for i, (images, labels) in enumerate(train_loader):
-        # 順伝播
+       
         outputs = model(images)
         loss = criterion(outputs, labels)
         
-        # 逆伝播とパラメータの更新
+       
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
         
-        # チェックポイントの保存
+        
         if i % save_interval == 0:
             checkpoint_name = f"checkpoint_{epoch}_{i}.pt"
             checkpoint_data = {'model': model.state_dict(),

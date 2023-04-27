@@ -63,6 +63,28 @@ https://hub.docker.com/
 $ docker version
 ```
 
+some basic Docker commands:
+
+1. `docker run`: This command is used to start a container. You can specify which image to use and any additional options, such as environment variables or volume mappings.
+
+2. `docker ps`: This command shows a list of running containers.
+
+3. `docker stop`: This command is used to stop a running container.
+
+4. `docker rm`: This command removes a container.
+
+5. `docker images`: This command shows a list of available images on your system.
+
+6. `docker pull`: This command downloads an image from a Docker registry.
+
+7. `docker push`: This command pushes an image to a Docker registry.
+
+8. `docker exec`: This command allows you to run a command inside a running container.
+
+9. `docker build`: This command builds an image from a Dockerfile.
+
+10. `docker-compose`: This command is used to manage multi-container Docker applications.
+
 # run
 
 ```sh

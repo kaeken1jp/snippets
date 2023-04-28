@@ -11,6 +11,37 @@
 pip install torch torchvision
 ```
 
+## torch.cuda.is_available()
+
+`torch.cuda.is_available()` is a function provided by the PyTorch library in Python that returns a boolean value indicating whether CUDA-enabled GPU (Graphics Processing Unit) is available for running computations on the device. 
+
+CUDA is a parallel computing platform and programming model developed by NVIDIA, which is used to perform mathematical computations on GPUs. PyTorch can use GPUs to accelerate the training of deep neural networks, which is particularly useful for large-scale models that may require days or weeks to train on a CPU.
+
+The `torch.cuda.is_available()` function checks whether the GPU is available and properly configured for use with PyTorch. If the function returns `True`, then PyTorch can use the GPU to accelerate computations. If the function returns `False`, then PyTorch cannot use the GPU and computations will be performed on the CPU.
+
+Here's an example of using `torch.cuda.is_available()` in a PyTorch program:
+
+```python
+import torch
+
+# Check if CUDA is available
+if torch.cuda.is_available():
+    device = torch.device("cuda")          # Use GPU
+else:
+    device = torch.device("cpu")           # Use CPU
+
+# Create a tensor on the device
+x = torch.randn(3, 3, device=device)
+
+# Perform some computations
+y = torch.matmul(x, x.transpose(0, 1))
+
+# Move tensor back to CPU for printing
+print(y.cpu())
+```
+
+In the above example, we first check whether CUDA is available using `torch.cuda.is_available()`. If it is available, we create a PyTorch device object that uses the GPU (`torch.device("cuda")`). We then create a PyTorch tensor `x` on the device and perform some computations using the `torch.matmul()` function. Finally, we move the tensor back to the CPU using the `.cpu()` method before printing its values.
+
 
 
 # ###############################

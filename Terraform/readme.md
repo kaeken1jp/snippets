@@ -30,3 +30,32 @@ These are the basic steps for using Terraform, but there are many more advanced 
 
 
 
+
+# command
+
+## terraform import
+
+Terraform can import existing infrastructure resources. This functionality lets you bring existing resources under Terraform management.
+
+To import a resource, first write a resource block for it in your configuration, establishing the name by which it will be known to Terraform:
+
+```tf
+resource "aws_instance" "example" {
+  # ...instance configuration...
+}
+```
+
+The name "example" here is local to the module where it is declared and is chosen by the configuration author. This is distinct from any ID issued by the remote system, which may change over time while the resource name remains constant.
+
+If desired, you can leave the body of the resource block blank for now and return to fill it in once the instance is imported.
+
+Now terraform import can be run to attach an existing instance to this resource configuration:
+
+```sh
+terraform import aws_instance.example i-abcd1234
+```
+
+This command locates the AWS EC2 instance with ID i-abcd1234. Then it attaches the existing settings of the instance, as described by the EC2 API, to the name aws_instance.example of a module. In this example the module path implies that the root module is used. Finally, the mapping is saved in the Terraform state.
+
+
+

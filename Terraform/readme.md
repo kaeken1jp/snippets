@@ -33,6 +33,42 @@ These are the basic steps for using Terraform, but there are many more advanced 
 
 # command
 
+Here are some basic Terraform commands that are frequently used:
+
+## `terraform init`: 
+
+This command initializes a Terraform working directory by downloading the necessary provider plugins and setting up the backend configuration.
+
+## `terraform plan`: 
+
+This command creates an execution plan that shows the changes Terraform will make to the infrastructure. It compares the current state to the desired state defined in your Terraform configuration files.
+
+## `terraform apply`: 
+
+This command applies the changes and provisions the infrastructure based on the Terraform configuration. It prompts for confirmation before making any changes unless the `-auto-approve` flag is used.
+
+## `terraform destroy`: 
+
+This command destroys the infrastructure defined in the Terraform configuration. It prompts for confirmation before destroying unless the `-auto-approve` flag is used.
+
+## `terraform validate`: 
+
+This command checks the syntax and validates the configuration files in the current directory, ensuring that the Terraform code is correctly written.
+
+## `terraform fmt`: 
+
+This command automatically formats the Terraform code in the current directory, following Terraform's style conventions.
+
+## `terraform show`: 
+
+This command displays the current state or a previously generated execution plan in a human-readable format. It provides an overview of the resources managed by Terraform.
+
+## `terraform state`: 
+
+This command allows for advanced management of the Terraform state. It provides subcommands to inspect, modify, and manage the state file directly.
+
+These are some of the fundamental Terraform commands used in managing infrastructure. Terraform provides many other commands and options to handle more complex scenarios and interact with various aspects of the Terraform workflow. You can explore the Terraform documentation for more details on each command and its usage.
+
 ## terraform import
 
 Terraform can import existing infrastructure resources. This functionality lets you bring existing resources under Terraform management.

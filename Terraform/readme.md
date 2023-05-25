@@ -94,4 +94,21 @@ terraform import aws_instance.example i-abcd1234
 This command locates the AWS EC2 instance with ID i-abcd1234. Then it attaches the existing settings of the instance, as described by the EC2 API, to the name aws_instance.example of a module. In this example the module path implies that the root module is used. Finally, the mapping is saved in the Terraform state.
 
 
+```
+Modules
+Hands-on: Try the Reuse Configuration with Modules tutorials.
+
+Modules are containers for multiple resources that are used together. A module consists of a collection of .tf and/or .tf.json files kept together in a directory.
+
+Modules are the main way to package and reuse resource configurations with Terraform.
+
+The Root Module
+Every Terraform configuration has at least one module, known as its root module, which consists of the resources defined in the .tf files in the main working directory.
+
+Child Modules
+A Terraform module (usually the root module of a configuration) can call other modules to include their resources into the configuration. A module that has been called by another module is often referred to as a child module.
+
+Child modules can be called multiple times within the same configuration, and multiple configurations can use the same child module.
+```
+
 

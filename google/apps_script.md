@@ -108,4 +108,34 @@ function GPT(prompt,max_tokens=30) {
 https://i.gyazo.com/4758d13ff4d307173414b0000ab38b1f.png
 
 
+## random quiz
+
+https://zenn.dev/r_ngtm/articles/00d04f6315d51efbd7a3
+
+```js
+// シートを開いたタイミングで実行
+function onOpen(){
+  var sheet = SpreadsheetApp.getActiveSpreadsheet(); // 現在開いているGoogleスプレッドシート
+  var myMenu= [];
+  myMenu.push({name: "出題", functionName: "showQuiz"}); // メニューへ項目の登録
+  sheet.addMenu("クイズ", myMenu); // メニュー追加
+}
+// 問題をランダムに１つ選び、ポップアップとして出す
+function showQuiz() { 
+  const ui = SpreadsheetApp.getUi(); 
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet(); // 現在開いているシート
+  const lastRow = sheet.getLastRow(); // 最後の行
+  const row = Math.floor((lastRow - 1) * Math.random()) + 2; // ランダム抽選  
+  const range_question = sheet.getRange(row, 1); // セルの取得(問題)
+  const range_answer = sheet.getRange(row, 2); // セルの取得(答え)
+  
+  // 問題を出す
+  const response = ui.prompt("問題 " + (row - 1), range_question.getValue(), ui.ButtonSet.OK);
+  // OKを押したら答えを出す
+  const response_complete = ui.alert(
+    "答え", 
+    "【問題】\n" + range_question.getValue() + "\n\n【入力】\n" + response.getResponseText() + "\n\n【答え】\n" + range_answer.getValue(), ui.ButtonSet.OK);
+}
+```
+
 

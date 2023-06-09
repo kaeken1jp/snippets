@@ -60,6 +60,15 @@ $ cat ~/.gitconfig
 $ git config --global --unset KEY_NAME
 ```
 
+## How to check a repository's status in Git:
+
+- This command will show the status of the current repository including staged, unstaged, and untracked files.
+
+```bash
+$ git status
+```
+
+
 ## how to set ignore
 
 - set
@@ -205,24 +214,12 @@ git branch -D BRANCH_NAME
 
 
 
-# git log
+## How to see your commit history in Git:
+
+- This command shows the commit history for the current repository:
 
 ```sh
-echo "A" > test1.txt
-git add test1.txt
-git commit -m "1st commit"
-
-echo "B" > test2.txt
-git add test2.txt
-git commit -m "2nd commit"
-
-echo "C" >> test1.txt
-git add test1.txt
-git commit -m "3rd commit"
-
-echo "D" >> test2.txt
-git add test2.txt
-git commit -m "4th commit"
+git log
 ```
 
 ## default

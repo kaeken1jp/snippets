@@ -228,7 +228,7 @@ git commit -m "4th commit"
 ## default
 
 ```sh
-commit xxxxxxxxxxxxxxxxxxx (HEAD -> master)
+commit xxxxxxxxxxxxxxxxxxx (HEAD -> main)
 Author: xxxxxxxxxxxxxx
 Date:   xxxxxxxxxxxx
 

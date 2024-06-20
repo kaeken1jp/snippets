@@ -44,8 +44,8 @@ jshell> /exit
 
 # Hello World
 
-- ファイル名とクラス名は同名とする
-- 1ファイルに1クラスを記述するようにする
+- File name and class name should be the same.
+- One class should be described in one file.
 
 ```sh
 $ cat Hello.java
